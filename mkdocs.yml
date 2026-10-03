@@ -1,0 +1,83 @@
+site_name: Markets, Simplified
+site_description: Fiches détaillées de la série LinkedIn Markets, Simplified (taux, crédit, options)
+site_author: Marwane Benaddi
+site_url: https://senchi-dev.github.io/markets-simplified/
+repo_url: https://github.com/senchi-dev/markets-simplified
+
+theme:
+  name: material
+  language: fr
+  icon:
+    logo: material/lightbulb-outline
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Mode clair
+  features:
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+    - toc.follow
+    - content.code.copy
+
+plugins:
+  - search:
+      lang: fr
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Accueil: index.md
+  - Taux et obligations:
+      - episodes/01-fixed-vs-floating-rate-debt.md
+      - episodes/02-the-yield-curve.md
+      - episodes/03-duration.md
+      - episodes/04-dv01.md
+  - Crédit:
+      - episodes/05-credit-spread.md
+      - episodes/06-credit-default-swaps.md
+      - episodes/07-cds-indices.md
+      - episodes/08-cdo-tranches.md
+      - episodes/09-the-big-short.md
+  - Swaps et financement:
+      - episodes/10-interest-rate-swaps.md
+      - episodes/11-repo.md
+      - episodes/12-short-selling.md
+  - Options:
+      - episodes/13-options.md
+      - episodes/14-put-call-parity.md
+  - Les Greeks:
+      - episodes/15-delta.md
+      - episodes/16-gamma.md
+      - episodes/17-theta.md
+      - episodes/18-vega.md
+  - Volatilité:
+      - episodes/19-implied-volatility.md
+      - episodes/20-the-gamma-squeeze.md
+      - episodes/21-the-volatility-skew.md
+  - Stratégies:
+      - episodes/22-the-straddle.md
+      - episodes/23-the-strangle.md
+      - episodes/24-the-vertical-spread.md
