@@ -1,4 +1,6 @@
-# 18. Vega
+<p class="ms-kicker">Épisode 18</p>
+
+# <span class="ms-outline">Vega.</span>
 
 ## Pourquoi cet épisode
 
@@ -42,6 +44,10 @@ Juste avant un gros événement (résultats trimestriels), la volatilité implic
 
 Maximal **ATM** et pour les **échéances longues** (plus il reste de temps, plus la volatilité a d'espace pour agir). Même endroit que le gamma et le theta max, tout ça mesure la même « valeur temps » sous des angles différents.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Vega = sensibilité du prix de l'option à la volatilité. Long vega (acheteur) gagne si la vol monte, short vega (vendeur) si elle baisse. Permet de parier sur l'ampleur des mouvements sans avis de direction. Attention au vol crush après les événements.
+
+</div>

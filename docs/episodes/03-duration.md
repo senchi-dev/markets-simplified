@@ -1,4 +1,6 @@
-# 3. Duration
+<p class="ms-kicker">Épisode 03</p>
+
+# <span class="ms-outline">Duration.</span>
 
 ## Le piège de vocabulaire à éviter dès le départ
 
@@ -21,11 +23,15 @@ C'est la **moyenne pondérée du temps** auquel tu reçois tes flux (coupons + r
 
 **Exemple avec coupons.** Une obligation à 5 ans qui paie un coupon chaque année **plus** le principal à la fin a une Macaulay duration **inférieure à 5 ans** (par exemple ~4,3 ans), parce qu'une partie de l'argent est récupérée **avant** l'échéance finale via les coupons. Plus le coupon est élevé, plus la duration est courte, tu récupères ton argent plus vite.
 
+<div class="ms-takeaway" markdown>
+
 ## La règle d'or à retenir
 
 - Duration **augmente** avec la **maturité** (plus long terme = duration plus grande, logique).
 - Duration **diminue** avec un **coupon plus élevé** (tu es remboursé plus vite en cours de route).
 - Une obligation zéro-coupon a la duration **maximale** possible pour sa maturité, égale à sa maturité elle-même.
+
+</div>
 
 ## Modified Duration, la version utilisable en pratique
 

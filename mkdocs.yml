@@ -7,32 +7,28 @@ repo_url: https://github.com/senchi-dev/markets-simplified
 theme:
   name: material
   language: fr
+  font: false
   icon:
-    logo: material/lightbulb-outline
+    logo: material/lightbulb-on-outline
+    repo: fontawesome/brands/github
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Mode sombre
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Mode clair
+    scheme: default
+    primary: custom
+    accent: custom
   features:
     - navigation.sections
     - navigation.footer
     - navigation.top
-    - navigation.indexes
     - search.highlight
     - search.suggest
     - toc.follow
     - content.code.copy
+
+extra_css:
+  - stylesheets/brand.css
+
+extra:
+  generator: false
 
 plugins:
   - search:
@@ -51,33 +47,33 @@ markdown_extensions:
 nav:
   - Accueil: index.md
   - Taux et obligations:
-      - episodes/01-fixed-vs-floating-rate-debt.md
-      - episodes/02-the-yield-curve.md
-      - episodes/03-duration.md
-      - episodes/04-dv01.md
+      - "1. Fixed vs Floating Rate Debt": episodes/01-fixed-vs-floating-rate-debt.md
+      - "2. The Yield Curve": episodes/02-the-yield-curve.md
+      - "3. Duration": episodes/03-duration.md
+      - "4. DV01": episodes/04-dv01.md
   - Crédit:
-      - episodes/05-credit-spread.md
-      - episodes/06-credit-default-swaps.md
-      - episodes/07-cds-indices.md
-      - episodes/08-cdo-tranches.md
-      - episodes/09-the-big-short.md
+      - "5. Credit Spread": episodes/05-credit-spread.md
+      - "6. Credit Default Swaps (CDS)": episodes/06-credit-default-swaps.md
+      - "7. CDS Indices (CDX & iTraxx)": episodes/07-cds-indices.md
+      - "8. CDO Tranches": episodes/08-cdo-tranches.md
+      - "9. The Big Short": episodes/09-the-big-short.md
   - Swaps et financement:
-      - episodes/10-interest-rate-swaps.md
-      - episodes/11-repo.md
-      - episodes/12-short-selling.md
+      - "10. Interest Rate Swaps (IRS)": episodes/10-interest-rate-swaps.md
+      - "11. Repo": episodes/11-repo.md
+      - "12. Short Selling": episodes/12-short-selling.md
   - Options:
-      - episodes/13-options.md
-      - episodes/14-put-call-parity.md
+      - "13. Options (Calls & Puts)": episodes/13-options.md
+      - "14. Put-Call Parity": episodes/14-put-call-parity.md
   - Les Greeks:
-      - episodes/15-delta.md
-      - episodes/16-gamma.md
-      - episodes/17-theta.md
-      - episodes/18-vega.md
+      - "15. Delta": episodes/15-delta.md
+      - "16. Gamma": episodes/16-gamma.md
+      - "17. Theta": episodes/17-theta.md
+      - "18. Vega": episodes/18-vega.md
   - Volatilité:
-      - episodes/19-implied-volatility.md
-      - episodes/20-the-gamma-squeeze.md
-      - episodes/21-the-volatility-skew.md
+      - "19. Implied Volatility": episodes/19-implied-volatility.md
+      - "20. The Gamma Squeeze": episodes/20-the-gamma-squeeze.md
+      - "21. The Volatility Skew": episodes/21-the-volatility-skew.md
   - Stratégies:
-      - episodes/22-the-straddle.md
-      - episodes/23-the-strangle.md
-      - episodes/24-the-vertical-spread.md
+      - "22. The Straddle": episodes/22-the-straddle.md
+      - "23. The Strangle": episodes/23-the-strangle.md
+      - "24. The Vertical Spread": episodes/24-the-vertical-spread.md

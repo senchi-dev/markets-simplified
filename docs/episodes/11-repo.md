@@ -1,4 +1,6 @@
-# 11. Repo (Repurchase Agreements)
+<p class="ms-kicker">Épisode 11</p>
+
+# Repo <span class="ms-outline">(Repurchase Agreements).</span>
 
 ## Définition
 
@@ -65,6 +67,10 @@ Une combinaison de grosses échéances fiscales et d'un règlement massif d'émi
 
 Au Maroc, le repo s'appelle **pension livrée**, encadré par la **Loi 24-01** (2004). Bank Al-Maghrib l'utilise comme outil principal de politique monétaire (avances à 7 jours pour injecter, pensions livrées pour retirer de la liquidité), avec un marché privé interbancaire très mince en comparaison (BAM ≈ 156,6 Mds MAD/jour d'intervention vs ~1,7 Md MAD/jour de marché interbancaire libre). Lancement récent (février 2025) d'un marché à terme interbancaire avec l'indice **MONIA**, l'équivalent marocain du SOFR. Sources primaires, [bkam.ma](http://bkam.ma) et [ammc.ma](http://ammc.ma).
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Le repo n'est pas une vente, c'est un prêt garanti où le prix de rachat fixe à l'avance sépare le financement (cash contre collatéral) du risque de prix (qui reste chez le propriétaire d'origine). C'est le marché qui fait tourner le financement à court terme de tout le système bancaire, et sa référence moderne (SOFR) en est directement issue.
+
+</div>

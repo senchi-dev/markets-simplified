@@ -1,4 +1,6 @@
-# 6. Credit Default Swaps (CDS)
+<p class="ms-kicker">Épisode 06</p>
+
+# Credit Default Swaps <span class="ms-outline">(CDS).</span>
 
 ## Définition
 
@@ -97,8 +99,12 @@ On isole PD en divisant les deux côtés par (1 − Recovery).
 
 **Check d'intuition (sans formule).** Tu paies 3€/an, si défaut, on te verse 60€. Pour que payer 3 soit "juste" face à recevoir 60, il faut que la chance de défaut soit environ 3/60 = 1/20 = **5%**. Un prix de marché se traduit directement en probabilité.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Un CDS permet de prendre une vue sur le risque de crédit **sans jamais détenir l'obligation**, et son prix (le spread) est littéralement **l'estimation du marché** de la probabilité de défaut d'une entité.
+
+</div>
 
 > Suite logique, **CDS Indices (CDX & iTraxx)**, le même principe, mais appliqué à un panier de 125 entreprises en un seul contrat.

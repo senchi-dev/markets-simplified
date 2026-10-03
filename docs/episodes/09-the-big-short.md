@@ -1,4 +1,6 @@
-# 9. The Big Short
+<p class="ms-kicker">Épisode 09</p>
+
+# The Big <span class="ms-outline">Short.</span>
 
 ## Pourquoi cet épisode est la synthèse de toute la série
 
@@ -30,6 +32,10 @@ Il a ciblé spécifiquement les **tranches mezzanine notées BBB** des MBS subpr
 
 Quand les prix de l'immobilier ont stagné en 2007, les défauts corrélés ont traversé des tranches entières, certaines totalement rayées (write-down proche de 100%, recovery proche de 0%). Son CDS a payé sur des pertes que le marché avait notées comme improbables.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 La leçon ne concerne pas vraiment l'immobilier. Une notation construite sur une hypothèse de diversification ne vaut que ce que vaut cette hypothèse. Quand l'hypothèse casse (ici, la hausse continue des prix), toute la notation s'effondre avec elle.
+
+</div>

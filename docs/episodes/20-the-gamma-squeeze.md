@@ -1,4 +1,6 @@
-# 20. The Gamma Squeeze
+<p class="ms-kicker">Épisode 20</p>
+
+# The Gamma <span class="ms-outline">Squeeze.</span>
 
 ## Pourquoi cet épisode
 
@@ -33,6 +35,10 @@ Personnes différentes, raison différente. **GameStop 2021 était les deux en m
 
 Personne dans la boucle ne cherche à faire monter le prix. Les market makers préféreraient ne pas acheter du tout. Ils y sont forcés, encore et encore, par leur propre couverture.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Gamma squeeze = boucle où l'achat massif de calls force les market makers à acheter l'action pour se couvrir, ce qui fait monter le cours, ce qui les force à acheter encore plus. C'est le delta hedging + le gamma qui s'emballent. À ne pas confondre avec le short squeeze, même si les deux peuvent se combiner.
+
+</div>

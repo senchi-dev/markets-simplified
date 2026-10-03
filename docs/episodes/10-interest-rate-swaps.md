@@ -1,4 +1,6 @@
-# 10. Interest Rate Swaps (IRS)
+<p class="ms-kicker">Épisode 10</p>
+
+# Interest Rate Swaps <span class="ms-outline">(IRS).</span>
 
 ## Définition
 
@@ -81,6 +83,10 @@ Même organisation que pour le CDS, l'**ISDA**. Les deux parties signent une foi
 
 Depuis 2008, les régulateurs (Dodd-Frank aux US, EMIR en Europe) ont poussé les swaps standardisés vers des plateformes électroniques obligatoires (SEFs) et une compensation centrale (LCH SwapClear), pour plus de transparence après le rôle des dérivés OTC opaques dans la crise.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Un IRS ne supprime pas le prêt sous-jacent, il superpose un deuxième contrat qui transforme son exposition, variable en fixe ou l'inverse, sans jamais toucher au capital emprunté. Le coût de cette transformation est un petit spread caché dans le taux proposé, la contrepartie de la banque pour fournir la certitude recherchée.
+
+</div>

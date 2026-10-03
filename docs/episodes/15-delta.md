@@ -1,4 +1,6 @@
-# 15. Delta
+<p class="ms-kicker">Épisode 15</p>
+
+# <span class="ms-outline">Delta.</span>
 
 ## Pourquoi cet épisode
 
@@ -66,6 +68,10 @@ Un trader qui vend des options se retrouve avec une exposition Delta à l'action
 
 Le Delta est souvent utilisé comme une **approximation grossière** de la probabilité que l'option finisse dans la monnaie. Un Delta de 0,3 suggère très approximativement environ 30% de chances, pas exact, mais un raccourci réellement utilisé par les traders.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Le Delta mesure la sensibilité d'une option au prix du sous-jacent, de 0 à 1 pour un call, de -1 à 0 pour un put. Deep ITM se comporte comme l'action, deep OTM bouge à peine dans les deux sens, et c'est l'outil central du hedging pour les market makers.
+
+</div>

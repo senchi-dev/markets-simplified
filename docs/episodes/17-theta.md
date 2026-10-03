@@ -1,4 +1,6 @@
-# 17. Theta
+<p class="ms-kicker">Épisode 17</p>
+
+# <span class="ms-outline">Theta.</span>
 
 ## Pourquoi cet épisode
 
@@ -43,6 +45,10 @@ Maximal pour les options **ATM** (là où la valeur temps est la plus grosse, le
 
 Elle **s'accélère** à l'approche de l'échéance, surtout pour une ATM. Les derniers jours de vie d'une option ATM sont brutaux, la valeur temps s'effondre.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Theta = érosion quotidienne de la valeur temps de l'option. Négatif pour l'acheteur, positif pour le vendeur. Maximal ATM, s'accélère près de l'échéance. Toujours le miroir du gamma, le prix à payer pour la convexité.
+
+</div>

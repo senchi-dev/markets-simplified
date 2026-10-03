@@ -1,4 +1,6 @@
-# 24. The Vertical Spread
+<p class="ms-kicker">Épisode 24</p>
+
+# The Vertical <span class="ms-outline">Spread.</span>
 
 ## Pourquoi cet épisode
 
@@ -78,6 +80,10 @@ On est payé d'abord, et on prend un risque plafonné si on a tort.
 
 **Bear put spread** (le pendant baissier en debit) : acheter le put 100, vendre le put 90. Gagne si l'action baisse, gain plafonné sous 90.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Vertical spread = acheter une option et en vendre une autre de même type, même échéance, strike différent. Moins cher et moins risqué qu'une option seule, gain plafonné. Greeks atténués (delta, theta, vega plus petits). Debit spread si on paie au départ, credit spread si on encaisse.
+
+</div>

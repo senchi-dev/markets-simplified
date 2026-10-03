@@ -1,4 +1,6 @@
-# 12. Short Selling
+<p class="ms-kicker">Épisode 12</p>
+
+# Short <span class="ms-outline">Selling.</span>
 
 ## Pourquoi cet épisode
 
@@ -61,6 +63,10 @@ Mécanisme qui s'auto-alimente. Un actif fortement shorté commence à **monter*
 
 Action massivement shortée par de gros hedge funds (Melvin Capital notamment). Une communauté de traders particuliers (Reddit WallStreetBets) a repéré ce fort taux de short et acheté massivement. Prix passé de **~20$ à près de 500$** en quelques semaines, forçant les fonds shortés à racheter à pertes colossales (Melvin Capital, pertes de plusieurs milliards, renfloué en urgence).
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Shorter = parier à la baisse sur n'importe quel actif, en l'empruntant, le vendant, puis le rachetant moins cher. Perte théoriquement illimitée (contrairement à l'achat classique), coût d'emprunt continu, et risque d'être forcé de racheter au pire moment si le marché tourne contre soi (squeeze).
+
+</div>

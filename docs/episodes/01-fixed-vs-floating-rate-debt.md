@@ -1,4 +1,6 @@
-# 1. Fixed vs Floating Rate Debt
+<p class="ms-kicker">Épisode 01</p>
+
+# Fixed vs Floating Rate <span class="ms-outline">Debt.</span>
 
 ## Le principe de base
 
@@ -57,12 +59,16 @@ Deux raisons principales.
 1. **Meilleures conditions à l'émission.** Les banques prêtent naturellement plus volontiers (et moins cher) à taux variable car elles transfèrent le risque de taux à l'emprunteur.
 2. **Le risque se gère après coup** avec des swaps, séparément de la décision de financement initiale.
 
+<div class="ms-takeaway" markdown>
+
 ## L'intuition à retenir
 
 Le taux fixe et le taux variable ne sont pas juste "deux façons de calculer un intérêt", c'est un **partage du risque de taux** entre le prêteur et l'emprunteur.
 
 - **Fixe.** Le prêteur prend le risque que les taux montent (il est bloqué à un rendement fixe pendant que le marché paie mieux ailleurs), donc il facture une **prime de certitude** à l'emprunteur.
 - **Variable.** L'emprunteur prend le risque que les taux montent, donc il paie **moins cher au départ** en échange d'assumer ce risque.
+
+</div>
 
 ## Connexion avec la suite de la série
 

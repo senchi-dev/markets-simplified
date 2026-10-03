@@ -1,4 +1,6 @@
-# 2. The Yield Curve
+<p class="ms-kicker">Épisode 02</p>
+
+# The Yield <span class="ms-outline">Curve.</span>
 
 ## Définition
 
@@ -49,8 +51,12 @@ Une obligation paie des flux fixes (coupons + principal). Si le prix de marché 
 - Confondre le **niveau** des taux (tous les taux montent ou baissent ensemble) et la **forme** de la courbe (l'écart entre taux courts et longs change). Ce sont deux choses différentes.
 - Une courbe inversée ne dit pas *quand* la récession arrivera précisément, juste qu'elle est anticipée par le marché.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 La yield curve encode les **anticipations collectives** du marché sur la trajectoire future des taux et de l'économie. Son **inversion** est l'un des signaux macro les plus suivis au monde.
+
+</div>
 
 > Suite logique, **Duration** et **DV01**, comment mesurer précisément la sensibilité d'une obligation à ces mouvements de taux.

@@ -1,4 +1,6 @@
-# 16. Gamma
+<p class="ms-kicker">Épisode 16</p>
+
+# <span class="ms-outline">Gamma.</span>
 
 ## Pourquoi cet épisode
 
@@ -63,6 +65,10 @@ Pour une option ATM, le Gamma **explose** à l'approche de l'expiration. À quel
 
 Dans le short squeeze de GameStop, il y avait une composante gamma. La foule achète massivement des calls, les market makers qui les vendent sont short gamma et doivent se couvrir en **achetant l'action**, ce qui fait monter le prix, ce qui augmente leur Delta (via le Gamma), ce qui les force à acheter encore plus. Boucle auto-alimentée, un **gamma squeeze**, qui a amplifié la flambée de 2021.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Le Gamma mesure la vitesse à laquelle le Delta change. Maximal ATM (fil du rasoir), proche de 0 aux extrêmes. Acheter une option = long gamma (convexité pour toi), vendre = short gamma (convexité contre toi, compensée par la prime). C'est le moteur du re-hedging permanent des market makers.
+
+</div>

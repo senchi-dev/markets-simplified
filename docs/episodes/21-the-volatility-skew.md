@@ -1,4 +1,6 @@
-# 21. The Volatility Skew
+<p class="ms-kicker">Épisode 21</p>
+
+# The Volatility <span class="ms-outline">Skew.</span>
 
 ## Pourquoi cet épisode
 
@@ -57,6 +59,10 @@ d2 = d1 − σ·√T
 
 Le seul input inconnu est σ. Le skew, c'est le fait que σ_impl(K) dépend de K au lieu d'être constant, la preuve directe que l'hypothèse de vol constante est fausse.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Le skew = la vol implicite tracée contre le strike n'est pas plate mais penchée (actions) ou en sourire (FX). Causé par la peur des krachs et la demande de couverture qui gonflent la vol des puts à strike bas. Chaque point est partagé par le call et le put du strike (parité). C'est la preuve empirique que Black-Scholes (vol constante) est faux.
+
+</div>

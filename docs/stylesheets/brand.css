@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root,
+[data-md-color-scheme="default"] {
+  --ms-cream: #fbf0e8;
+  --ms-cream-deep: #f4e3d5;
+  --ms-blue: #1f5ea8;
+  --ms-light: #92b4df;
+
+  --md-text-font: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --md-code-font: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --md-primary-fg-color: var(--ms-cream);
+  --md-primary-fg-color--light: var(--ms-cream);
+  --md-primary-fg-color--dark: var(--ms-cream);
+  --md-primary-bg-color: var(--ms-blue);
+  --md-primary-bg-color--light: var(--ms-blue);
+  --md-accent-fg-color: var(--ms-blue);
+  --md-accent-fg-color--transparent: rgba(31, 94, 168, 0.08);
+
+  --md-default-bg-color: var(--ms-cream);
+  --md-default-fg-color: var(--ms-blue);
+  --md-default-fg-color--light: var(--ms-light);
+  --md-default-fg-color--lighter: var(--ms-light);
+  --md-default-fg-color--lightest: rgba(146, 180, 223, 0.35);
+
+  --md-typeset-color: var(--ms-blue);
+  --md-typeset-a-color: var(--ms-blue);
+  --md-typeset-mark-color: rgba(146, 180, 223, 0.45);
+  --md-code-bg-color: var(--ms-cream-deep);
+  --md-code-fg-color: var(--ms-blue);
+  --md-code-hl-color: rgba(146, 180, 223, 0.35);
+
+  --md-footer-bg-color: var(--ms-blue);
+  --md-footer-bg-color--dark: var(--ms-blue);
+  --md-footer-fg-color: var(--ms-cream);
+  --md-footer-fg-color--light: var(--ms-light);
+  --md-footer-fg-color--lighter: var(--ms-light);
+}
+
+body,
+.md-main {
+  background-color: var(--ms-cream);
+}
+
+/* Header: cream bar, letter-spaced caps like the carousel kicker */
+.md-header {
+  background-color: var(--ms-cream);
+  color: var(--ms-blue);
+  box-shadow: none;
+  border-bottom: 2px solid var(--ms-blue);
+}
+.md-header__title {
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.md-search__input {
+  background-color: rgba(31, 94, 168, 0.07);
+  color: var(--ms-blue);
+  border-radius: 0;
+}
+.md-search__input::placeholder {
+  color: var(--ms-blue);
+  opacity: 0.6;
+}
+.md-search__icon[for="__search"] {
+  color: var(--ms-blue);
+}
+
+/* Body type */
+.md-typeset {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--ms-blue);
+}
+.md-typeset strong {
+  font-weight: 700;
+}
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-color: var(--ms-light);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.md-typeset a:hover {
+  text-decoration-color: var(--ms-blue);
+}
+
+/* Kicker above every title */
+.md-typeset .ms-kicker {
+  margin: 0.4rem 0 0;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ms-blue);
+}
+
+/* Titles: extra-bold, tight, last word in outline */
+.md-typeset h1 {
+  margin: 0.25em 0 0.9em;
+  font-size: 2.9em;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--ms-blue);
+}
+.md-typeset .ms-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ms-blue);
+  paint-order: stroke fill;
+}
+.md-typeset h2 {
+  margin: 2.2em 0 0.8em;
+  font-size: 1.65em;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ms-blue);
+}
+.md-typeset h2::after {
+  content: "";
+  display: block;
+  width: 5.5rem;
+  height: 3px;
+  margin-top: 0.55em;
+  background: var(--ms-light);
+}
+.md-typeset h3 {
+  margin: 1.8em 0 0.5em;
+  font-size: 1.2em;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--ms-blue);
+}
+.md-typeset .headerlink {
+  color: var(--ms-light);
+}
+
+/* Tables: 2px blue grid, caps light-blue column labels */
+.md-typeset__table {
+  width: 100%;
+}
+.md-typeset table:not([class]) {
+  border: 2px solid var(--ms-blue);
+  border-collapse: collapse;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0.8rem;
+}
+.md-typeset table:not([class]) th {
+  background: transparent;
+  border: 2px solid var(--ms-blue);
+  color: var(--ms-light);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.9em 1.1em;
+}
+.md-typeset table:not([class]) td {
+  border: 2px solid var(--ms-blue);
+  padding: 0.85em 1.1em;
+  font-weight: 600;
+  vertical-align: top;
+}
+.md-typeset table:not([class]) td strong {
+  font-weight: 800;
+}
+.md-typeset table:not([class]) tr:hover {
+  background: rgba(31, 94, 168, 0.05);
+  box-shadow: none;
+}
+
+/* Quotes: light-blue bar, like slide 11 */
+.md-typeset blockquote {
+  margin: 1.6em 0;
+  padding: 0.1em 0 0.1em 1.2em;
+  border-left: 3px solid var(--ms-light);
+  color: var(--ms-blue);
+}
+
+/* Formulas and code */
+.md-typeset code {
+  padding: 0.12em 0.4em;
+  border-radius: 0;
+  background: rgba(31, 94, 168, 0.08);
+  color: var(--ms-blue);
+  font-size: 0.86em;
+}
+.md-typeset pre {
+  border: 2px solid var(--ms-blue);
+}
+.md-typeset pre > code {
+  background: var(--ms-cream-deep);
+  padding: 1em 1.2em;
+}
+
+/* "À retenir": the solid blue closing slide */
+.md-typeset .ms-takeaway {
+  margin: 2.8em 0 1.4em;
+  padding: 1.6em 2em 1.4em;
+  background: var(--ms-blue);
+  color: var(--ms-cream);
+}
+.md-typeset .ms-takeaway h2 {
+  margin-top: 0;
+  color: var(--ms-cream);
+}
+.md-typeset .ms-takeaway h2::after {
+  background: var(--ms-light);
+}
+.md-typeset .ms-takeaway p,
+.md-typeset .ms-takeaway li,
+.md-typeset .ms-takeaway strong {
+  color: var(--ms-cream);
+}
+.md-typeset .ms-takeaway code {
+  background: rgba(251, 240, 232, 0.15);
+  color: var(--ms-cream);
+}
+.md-typeset .ms-takeaway .headerlink {
+  color: var(--ms-light);
+}
+
+/* Sidebar navigation */
+.md-nav {
+  font-size: 0.72rem;
+}
+.md-nav__link {
+  color: var(--ms-blue);
+}
+.md-nav__item--section > .md-nav__link {
+  color: var(--ms-light);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.md-nav__link--active,
+.md-nav__link--active:hover {
+  color: var(--ms-blue);
+  font-weight: 700;
+}
+.md-nav__link:hover {
+  color: var(--ms-blue);
+  text-decoration: underline;
+  text-decoration-color: var(--ms-light);
+}
+.md-nav__title {
+  color: var(--ms-blue);
+  font-weight: 700;
+}
+
+/* Footer: solid blue like the last carousel slide */
+.md-footer {
+  background: var(--ms-blue);
+}
+.md-footer__title {
+  font-weight: 700;
+}
+.md-footer__direction {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 1;
+  color: var(--ms-light);
+}
+.md-footer-meta {
+  display: none;
+}
+
+/* Home: cover slide + outlined episode cards */
+.md-typeset .ms-hero h1 {
+  margin: 0.3em 0 0.7em;
+  font-size: 4.2em;
+  line-height: 1;
+}
+.md-typeset .ms-callout {
+  max-width: 34rem;
+  margin: 0 0 2.2em;
+  padding: 1.1em 1.4em;
+  border: 2px solid var(--ms-blue);
+  border-radius: 1.4rem;
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+.md-typeset .ms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.9rem;
+  margin: 0 0 1em;
+}
+.md-typeset a.ms-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  padding: 1.1em 1.2em 1.2em;
+  border: 2px solid var(--ms-blue);
+  color: var(--ms-blue);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.md-typeset a.ms-card:hover,
+.md-typeset a.ms-card:focus-visible {
+  background: var(--ms-blue);
+  color: var(--ms-cream);
+}
+.md-typeset .ms-card__num {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ms-light);
+}
+.md-typeset .ms-card__title {
+  font-size: 1.12em;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.md-typeset .ms-card__desc {
+  font-size: 0.86em;
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset h1 {
+    font-size: 2.2em;
+  }
+  .md-typeset .ms-hero h1 {
+    font-size: 3em;
+  }
+  .md-typeset .ms-takeaway {
+    padding: 1.3em 1.3em 1.1em;
+  }
+}

@@ -1,4 +1,6 @@
-# 13. Options (Calls & Puts)
+<p class="ms-kicker">Épisode 13</p>
+
+# Options <span class="ms-outline">(Calls & Puts).</span>
 
 ## Pourquoi cet épisode
 
@@ -70,6 +72,10 @@ Le facteur le plus important derrière la valeur temps est la **volatilité**. P
 
 Relation d'arbitrage classique, `Call − Put = Prix de l'action − Strike (actualisé)`. Acheter un call et vendre un put de même strike/échéance recrée exactement l'exposition d'être long l'action (même sensibilité euro pour euro au prix, à un coût fixe près lié au différentiel de primes). Utile pour un effet de levier massif (immobiliser 1€ de coût net au lieu de 100€ pour la même exposition), et c'est cette équivalence, maintenue par l'arbitrage, qui garde les prix du call, du put et de l'action cohérents entre eux.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Une option déplace le risque illimité du short selling vers le vendeur de l'option, en échange d'une prime. L'acheteur a toujours une perte plafonnée, le vendeur porte le vrai risque, exactement la même logique acheteur/vendeur que le CDS.
+
+</div>

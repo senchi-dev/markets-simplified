@@ -1,4 +1,6 @@
-# 19. Implied Volatility
+<p class="ms-kicker">Épisode 19</p>
+
+# Implied <span class="ms-outline">Volatility.</span>
 
 ## Pourquoi cet épisode
 
@@ -43,6 +45,10 @@ Sur un desk / entre dealers, les options ne sont pas cotées en euros mais en **
 
 C'est la vraie monnaie d'échange des options. Un trader compare l'IV cotée à sa propre prévision de vol pour repérer les options mal priceées (IV > sa prévision = option chère à vendre, IV < sa prévision = option bon marché à acheter).
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Volatilité implicite = la vol extraite du prix de marché en inversant le modèle. C'est l'anticipation (risque-neutre) du marché sur les mouvements futurs, elle tourne quasi toujours plus haut que la réalisée (variance risk premium), et c'est en vol, pas en prix, que les desks négocient réellement les options.
+
+</div>

@@ -1,4 +1,6 @@
-# 7. CDS Indices (CDX & iTraxx)
+<p class="ms-kicker">Épisode 07</p>
+
+# CDS Indices <span class="ms-outline">(CDX & iTraxx).</span>
 
 ## L'idée de départ
 
@@ -78,6 +80,10 @@ Le CIO de JPMorgan avait **vendu de la protection** sur le CDX.IG.9, ce qui les 
 
 Le spread s'est effectivement écarté (100 bps → 140 bps dans l'exemple pédagogique). Même mécanique que le prix d'une obligation à taux fixe quand les yields montent, JPMorgan restait bloqué à encaisser l'ancien spread bas pendant que le marché en exigeait un plus élevé pour le même risque. Leur position, réévaluée au prix de marché (mark-to-market), affichait une perte de plusieurs milliards **sans qu'aucun des 125 noms n'ait fait défaut**. En essayant de défendre leur prix en rajoutant encore plus de taille, ils ont amplifié le problème avant de finalement couper la position, plus de 6,2 milliards $ de pertes au total.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Single-name CDS couvre **une** entreprise précise. Indice CDS couvre (ou parie sur) **tout un marché** en un seul contrat, avec un coût qui dépend du notionnel choisi, pas du nombre de noms référencés.
+
+</div>

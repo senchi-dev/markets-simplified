@@ -1,4 +1,6 @@
-# 8. CDO Tranches
+<p class="ms-kicker">Épisode 08</p>
+
+# CDO <span class="ms-outline">Tranches.</span>
 
 ## L'idée de départ
 
@@ -63,8 +65,12 @@ Tant qu'on ne vend pas, la chute de cours n'est qu'une perte sur le papier (non 
 
 **Le piège comptable de 2008.** Les banques et fonds sont obligés comptablement de valoriser leurs positions au prix de marché actuel (mark-to-market en comptabilité), même sans intention de vendre. Dès que les cours se sont effondrés, ces institutions ont dû afficher des pertes énormes immédiatement, déclenchant appels de marge et ventes forcées, transformant une perte de papier en perte bien réelle. Un des mécanismes qui a transformé une crise de crédit en crise de liquidité généralisée.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Un CDO ne supprime pas le risque, il réorganise juste qui encaisse le choc en premier. La protection réelle de la tranche senior dépend entièrement d'une hypothèse sur la corrélation entre les actifs du pool, et c'est exactement cette hypothèse qui s'est effondrée en 2008.
+
+</div>
 
 > Suite logique, **The Big Short**, comment Michael Burry et d'autres ont identifié et tradé cette faille exacte.

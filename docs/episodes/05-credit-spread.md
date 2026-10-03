@@ -1,4 +1,6 @@
-# 5. Credit Spread
+<p class="ms-kicker">Épisode 05</p>
+
+# Credit <span class="ms-outline">Spread.</span>
 
 ## Définition
 
@@ -38,8 +40,12 @@ En pratique, les spreads sont un baromètre macro presque aussi suivi que les in
 
 En 2008, les spreads de crédit corporate IG sont passés d'environ 100-150 bps à plus de **600 bps** en quelques mois, pas parce que toutes ces entreprises ont soudainement eu 6 fois plus de chances de faire faillite, mais parce que la liquidité s'est asséchée et la panique a fait grimper la prime d'incertitude partout.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Le credit spread mesure le prix du risque de crédit, mais c'est un signal **composite**, qualité de crédit, liquidité et confiance de marché mélangés. Ne jamais l'interpréter comme une mesure pure du risque de défaut.
+
+</div>
 
 > Suite logique, **Credit Default Swaps (CDS)**, l'instrument qui permet de trader ce risque de crédit directement, sans passer par l'obligation elle-même.

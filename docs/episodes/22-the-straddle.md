@@ -1,4 +1,6 @@
-# 22. The Straddle
+<p class="ms-kicker">Épisode 22</p>
+
+# The <span class="ms-outline">Straddle.</span>
 
 ## Pourquoi cet épisode
 
@@ -36,6 +38,10 @@ Un straddle est le plus tentant **avant un événement** (résultats, élection)
 
 L'inverse exact : encaisse les deux primes, veut que l'action reste immobile. Short gamma, short vega, theta positif. Très dangereux, perd si ça bouge fort dans n'importe quel sens.
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Straddle long = call + put même strike. Delta neutral (au départ), long gamma, long vega, short theta. Pari pur sur l'ampleur du mouvement, pas la direction. Gagne si gros mouvement OU hausse de vol, perd si l'action stagne. Attention au vol crush après les événements.
+
+</div>

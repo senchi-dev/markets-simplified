@@ -1,4 +1,6 @@
-# 23. The Strangle
+<p class="ms-kicker">Épisode 23</p>
+
+# The <span class="ms-outline">Strangle.</span>
 
 ## Pourquoi cet épisode
 
@@ -41,6 +43,10 @@ Même profil que le straddle à l'ouverture : **delta neutral, long gamma, long 
 - combien on paie pour cette exposition (moins cher)
 - jusqu'où l'action doit aller avant que ça compte (plus loin)
 
+<div class="ms-takeaway" markdown>
+
 ## À retenir
 
 Le vrai choix n'est pas straddle contre strangle dans l'absolu. C'est : quelle ampleur de mouvement on attend réellement, et vaut-il mieux payer plus cher au départ pour une barre de rentabilité plus basse (straddle), ou payer moins cher en ayant besoin d'un plus gros mouvement (strangle).
+
+</div>

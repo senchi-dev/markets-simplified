@@ -1,4 +1,6 @@
-# 14. Put-Call Parity
+<p class="ms-kicker">Épisode 14</p>
+
+# Put-Call <span class="ms-outline">Parity.</span>
 
 ## Pourquoi cet épisode
 
@@ -8,11 +10,15 @@ L'épisode Options a traité call et put comme deux paris indépendants. Ils ne 
 
 Un **call** = droit d'acheter à un prix fixé (le **strike**). Un **put** = droit de vendre à ce même prix fixé. Les deux coûtent une petite somme dès le départ, la **prime**.
 
+<div class="ms-takeaway" markdown>
+
 ## La formule, à retenir en premier
 
 `Call − Put = Prix de l'action − Strike (actualisé)`
 
 Tout le reste de la fiche n'est que l'intuition derrière cette équation.
+
+</div>
 
 ## La construction, call acheté + put vendu, même strike/échéance
 
