@@ -12,7 +12,7 @@ Un **modèle**, c'est juste une formule qui prend plusieurs éléments connus, f
 
 Le prix d'une option sort donc de ce modèle, qui prend en entrée le prix de l'action, le strike, le temps restant, les taux, et la **volatilité**. Tous ces inputs sont connus **sauf la volatilité future**.
 
-*(Nuance pour un futur épisode : Black-Scholes pur suppose une vol unique et constante, faux en pratique, d'où le volatility smile/skew et des modèles plus avancés comme Heston, Dupire, SABR. Ne pas mettre dans ce post-ci.)*
+*(Nuance : Black-Scholes pur suppose une vol unique et constante, faux en pratique, d'où le volatility skew (épisode 21) et des modèles plus avancés comme Heston, Dupire, SABR.)*
 
 La volatilité implicite s'obtient en faisant tourner le modèle **à l'envers** : on observe le prix de marché réel de l'option, et on cherche quelle volatilité il faudrait mettre dans le modèle pour retomber sur ce prix. La vol est la seule inconnue (le reste est observable).
 
@@ -28,7 +28,7 @@ L'anticipation du marché sur l'ampleur des mouvements futurs, telle qu'intégr�
 
 Point qui fait la différence entre réciter et comprendre. L'IV **surestime systématiquement** les mouvements réels. C'est le **variance risk premium (VRP)**. Les gens paient une prime pour la protection (institutions qui achètent des puts) et pour le risque de saut brutal, donc le prix des options porte une prime au-dessus du mouvement réellement attendu.
 
-Chiffres au 12/03/2026 sur le SPY : IV 30 jours à **25,74%** vs volatilité réalisée à **16,68%**, écart ~9 points. Positif ~79% du temps. Vendre cet écart est une stratégie à part entière. \[source SharpeTwo\]
+Chiffres au 12 mars 2026 sur le SPY : IV 30 jours à **25,74%** vs volatilité réalisée à **16,68%**, écart ~9 points. Positif ~79% du temps. Vendre cet écart est une stratégie à part entière. \[source SharpeTwo\]
 
 ## Distinction implicite vs réalisée
 

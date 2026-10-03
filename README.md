@@ -26,8 +26,9 @@ Detailed study notes for the LinkedIn series Markets, Simplified, built with MkD
 
    The last word of the title (or the parenthetical, or the only word) goes in the outline span, with a period.
 
-2. Add it to `nav` in `mkdocs.yml` with an explicit title (`"NN. Title": episodes/NN-slug.md`) and add a card in `docs/index.md`.
-3. Run `mkdocs build --strict`, then push to `main`. The GitHub Action deploys it.
+2. Create the English version next to it as `docs/episodes/NN-slug.en.md`, same markup, with `Épisode` → `Episode` and `À retenir` → `Key takeaway`. French is the default language at `/`, English lives at `/en/`, and the header switcher links each page to its translation.
+3. Add it to `nav` in `mkdocs.yml` with an explicit title (`"NN. Title": episodes/NN-slug.md`, used by both languages), and add a card in both `docs/index.md` and `docs/index.en.md`. A new nav section name also needs an English entry under `nav_translations`.
+4. Run `mkdocs build --strict`, then push to `main`. The GitHub Action deploys it.
 
 ## Preview locally
 

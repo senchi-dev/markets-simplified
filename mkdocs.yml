@@ -32,7 +32,31 @@ extra:
 
 plugins:
   - search:
-      lang: fr
+      lang:
+        - fr
+        - en
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: fr
+          default: true
+          name: Français
+          build: true
+        - locale: en
+          name: English
+          build: true
+          site_description: Detailed notes for the Markets, Simplified LinkedIn series (rates, credit, options)
+          nav_translations:
+            Accueil: Home
+            Taux et obligations: Rates and bonds
+            Crédit: Credit
+            Swaps et financement: Swaps and funding
+            Les Greeks: The Greeks
+            Volatilité: Volatility
+            Stratégies: Strategies
 
 markdown_extensions:
   - tables

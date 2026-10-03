@@ -63,7 +63,7 @@ Pas juste deux acteurs isolés au téléphone. Marché liquide avec un taux de r
 
 Une combinaison de grosses échéances fiscales et d'un règlement massif d'émissions du Trésor US a asséché le cash disponible d'un coup. Le taux repo overnight a explosé jusqu'à **10%** en une nuit, contre ~2% habituellement. La Fed a dû intervenir en urgence en injectant massivement des liquidités.
 
-## Contexte Maroc (pour information, pas dans le post LinkedIn)
+## Contexte Maroc
 
 Au Maroc, le repo s'appelle **pension livrée**, encadré par la **Loi 24-01** (2004). Bank Al-Maghrib l'utilise comme outil principal de politique monétaire (avances à 7 jours pour injecter, pensions livrées pour retirer de la liquidité), avec un marché privé interbancaire très mince en comparaison (BAM ≈ 156,6 Mds MAD/jour d'intervention vs ~1,7 Md MAD/jour de marché interbancaire libre). Lancement récent (février 2025) d'un marché à terme interbancaire avec l'indice **MONIA**, l'équivalent marocain du SOFR. Sources primaires, [bkam.ma](http://bkam.ma) et [ammc.ma](http://ammc.ma).
 
