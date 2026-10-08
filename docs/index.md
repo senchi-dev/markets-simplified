@@ -70,3 +70,9 @@ Les fiches détaillées de la série LinkedIn. Chaque épisode reprend le post e
 <a class="ms-card" href="episodes/23-the-strangle/"><span class="ms-card__num">Épisode 23</span><span class="ms-card__title">The Strangle</span><span class="ms-card__desc">La version moins chère du straddle</span></a>
 <a class="ms-card" href="episodes/24-the-vertical-spread/"><span class="ms-card__num">Épisode 24</span><span class="ms-card__title">The Vertical Spread</span><span class="ms-card__desc">Un pari directionnel moins cher et plafonné</span></a>
 </div>
+
+## Modèles
+
+<div class="ms-grid">
+<a class="ms-card" href="episodes/25-black-scholes/"><span class="ms-card__num">Épisode 25</span><span class="ms-card__title">Black-Scholes</span><span class="ms-card__desc">La formule derrière le prix des options</span></a>
+</div>

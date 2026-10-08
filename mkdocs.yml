@@ -57,6 +57,7 @@ plugins:
             Les Greeks: The Greeks
             Volatilité: Volatility
             Stratégies: Strategies
+            Modèles: Models
 
 markdown_extensions:
   - tables
@@ -101,3 +102,5 @@ nav:
       - "22. The Straddle": episodes/22-the-straddle.md
       - "23. The Strangle": episodes/23-the-strangle.md
       - "24. The Vertical Spread": episodes/24-the-vertical-spread.md
+  - Modèles:
+      - "25. Black-Scholes": episodes/25-black-scholes.md
