@@ -1,0 +1,2553 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Detailed notes for the Markets, Simplified LinkedIn series (rates, credit, options)">
+      
+      
+        <meta name="author" content="Marwane Benaddi">
+      
+      
+        <link rel="canonical" href="https://senchi-dev.github.io/markets-simplified/en/episodes/26-the-policy-rate/">
+      
+      
+        <link rel="prev" href="../25-black-scholes/">
+      
+      
+      
+        
+          <link rel="alternate" href="../../../episodes/26-the-policy-rate/" hreflang="fr">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>26. The Policy Rate - Markets, Simplified</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-policy-rate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="Markets, Simplified" class="md-header__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markets, Simplified
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              26. The Policy Rate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../episodes/26-the-policy-rate/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Markets, Simplified" class="md-nav__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    Markets, Simplified
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rates and bonds
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rates and bonds
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fixed-vs-floating-rate-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fixed vs Floating Rate Debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-yield-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Yield Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dv01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. DV01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Credit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-credit-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Credit Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-credit-default-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Credit Default Swaps (CDS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cds-indices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. CDS Indices (CDX & iTraxx)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-cdo-tranches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. CDO Tranches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-the-big-short/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The Big Short
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swaps and funding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Swaps and funding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-interest-rate-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interest Rate Swaps (IRS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-short-selling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Short Selling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Options
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Options (Calls & Puts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-put-call-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Put-Call Parity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Greeks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Greeks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-delta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Delta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-gamma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Gamma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-theta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Theta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-vega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volatility
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Volatility
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-implied-volatility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Implied Volatility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-the-gamma-squeeze/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. The Gamma Squeeze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-the-volatility-skew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. The Volatility Skew
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-the-straddle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. The Straddle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-the-strangle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. The Strangle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-the-vertical-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. The Vertical Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-black-scholes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Black-Scholes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Central banks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Central banks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. The Policy Rate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. The Policy Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-central-bank-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a central bank is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-policy-rate-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the policy rate is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mechanism-a-floor-and-a-ceiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mechanism, a floor and a ceiling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The mechanism, a floor and a ceiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-the-ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example, the ECB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corridor-system-or-floor-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corridor system or floor system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-fed-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the Fed side
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-rate-spreads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the rate spreads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the rate spreads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-overnight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1, overnight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-the-curve-through-expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2, the curve, through expectations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-the-real-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3, the real economy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-market-prices-future-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the market prices future decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-hike-or-cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why hike or cut
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why hike or cut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mandate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mandate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The lag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nominal-and-real-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nominal and real rates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-taylor-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Taylor rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-rate-is-at-zero-qe-and-qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the rate is at zero, QE and QT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-link-with-duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The link with duration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-central-bank-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a central bank is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-policy-rate-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the policy rate is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mechanism-a-floor-and-a-ceiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mechanism, a floor and a ceiling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The mechanism, a floor and a ceiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-the-ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example, the ECB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corridor-system-or-floor-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corridor system or floor system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-fed-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the Fed side
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-rate-spreads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the rate spreads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the rate spreads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-overnight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1, overnight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-the-curve-through-expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2, the curve, through expectations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-the-real-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3, the real economy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-market-prices-future-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the market prices future decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-hike-or-cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why hike or cut
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why hike or cut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mandate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mandate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The lag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nominal-and-real-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nominal and real rates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-taylor-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Taylor rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-rate-is-at-zero-qe-and-qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the rate is at zero, QE and QT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-link-with-duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The link with duration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p class="ms-kicker">Episode 26</p>
+
+<h1 id="the-policy-rate">The Policy <span class="ms-outline">Rate.</span><a class="headerlink" href="#the-policy-rate" title="Permanent link">&para;</a></h1>
+<h2 id="why-this-episode">Why this episode<a class="headerlink" href="#why-this-episode" title="Permanent link">&para;</a></h2>
+<p>Every rates episode in the series starts from the same point without ever explaining it. The <a href="../02-the-yield-curve/">yield curve</a> starts at the overnight rate, the floating leg of a <a href="../10-interest-rate-swaps/">swap</a> resets on an overnight rate, and <a href="../11-repo/">repo</a> produces SOFR. All of these rates are anchored by one decision, the central bank's policy rate. This episode explains what a central bank is, how it sets that rate without ever telling a bank what rate to charge, how the rate spreads to the rest of the economy, and why it gets raised or cut.</p>
+<h2 id="what-a-central-bank-is">What a central bank is<a class="headerlink" href="#what-a-central-bank-is" title="Permanent link">&para;</a></h2>
+<p>It is the bank of the banks. Commercial banks (BNP, JPMorgan, Deutsche Bank...) hold an account at the central bank. The money in those accounts is called <strong>reserves</strong>. Banks use reserves to pay each other at the end of every day. When you send money from your bank to someone at another bank, at the end of the chain it is reserves that move from one account to another at the central bank.</p>
+<p>Key point, <strong>only the central bank can create reserves</strong>. Banks can lend reserves to each other, but they cannot make new ones. That monopoly is what lets the central bank control the price of very short-term money.</p>
+<p>The main central banks.</p>
+<table>
+<thead>
+<tr>
+<th>Central bank</th>
+<th>Area</th>
+<th>Deciding committee</th>
+<th>Meetings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Federal Reserve (Fed)</td>
+<td>United States</td>
+<td>FOMC (Federal Open Market Committee)</td>
+<td>8 a year</td>
+</tr>
+<tr>
+<td>European Central Bank (ECB)</td>
+<td>Euro area</td>
+<td>Governing Council</td>
+<td>8 monetary policy meetings a year</td>
+</tr>
+<tr>
+<td>Bank of England (BoE)</td>
+<td>United Kingdom</td>
+<td>Monetary Policy Committee (MPC)</td>
+<td>8 a year</td>
+</tr>
+<tr>
+<td>Bank of Japan (BoJ)</td>
+<td>Japan</td>
+<td>Policy Board</td>
+<td>8 a year</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-the-policy-rate-is">What the policy rate is<a class="headerlink" href="#what-the-policy-rate-is" title="Permanent link">&para;</a></h2>
+<p>It is the rate the central bank uses to steer the price of <strong>overnight</strong> money, meaning money lent from today to tomorrow. Each central bank has its own.</p>
+<ul>
+<li><strong>Fed.</strong> A <strong>target range</strong> for the fed funds rate, 0.25% wide. For example 4.25% to 4.50%. The fed funds rate is the rate at which banks lend reserves to each other overnight, unsecured.</li>
+<li><strong>ECB.</strong> Three rates, of which only one really matters today, the <strong>deposit facility rate</strong> (DFR).</li>
+<li><strong>BoE.</strong> Bank Rate, a single rate.</li>
+</ul>
+<p>When people say "the Fed hiked by 25 bps", it means the whole range moved up by 0.25% (1 bp, a basis point, is 0.01%).</p>
+<h2 id="the-mechanism-a-floor-and-a-ceiling">The mechanism, a floor and a ceiling<a class="headerlink" href="#the-mechanism-a-floor-and-a-ceiling" title="Permanent link">&para;</a></h2>
+<p>The central bank does not call anyone to impose a rate. It sets two rates, and the market settles between them.</p>
+<ul>
+<li><strong>The floor.</strong> The rate the central bank pays banks on money left with it. No bank will lend to another bank below that, because leaving the money at the central bank earns that rate with zero risk.</li>
+<li><strong>The ceiling.</strong> The rate at which the central bank lends to banks against securities pledged as collateral. No bank will borrow from another bank above that, because it can borrow from the central bank directly.</li>
+</ul>
+<h3 id="worked-example-the-ecb">Worked example, the ECB<a class="headerlink" href="#worked-example-the-ecb" title="Permanent link">&para;</a></h3>
+<p>Take ECB rates of 2.00% on deposits (DFR), 2.15% on main refinancing operations (MRO), and 2.40% on the marginal lending facility (MLF).</p>
+<ul>
+<li>Bank A has €1bn spare tonight. It will not lend it to Bank B below 2.00%, because the ECB pays 2.00% with no risk.</li>
+<li>Bank B needs €1bn tonight. It will not pay more than 2.40%, because it can borrow from the ECB at 2.40% (if it has collateral).</li>
+<li>So the overnight rate between banks ends up between 2.00% and 2.40%. That is the <strong>corridor</strong>.</li>
+</ul>
+<p>If the ECB cuts by 25 bps, the whole corridor moves to 1.75% to 2.15%, and the overnight rate follows <strong>the same day</strong>.</p>
+<p>Since September 2024 the gap between the DFR and the MRO is 0.15%, and the gap between the MRO and the MLF is still 0.25%.</p>
+<h3 id="corridor-system-or-floor-system">Corridor system or floor system<a class="headerlink" href="#corridor-system-or-floor-system" title="Permanent link">&para;</a></h3>
+<p>Where the market rate sits inside the corridor depends on how many reserves there are.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Scarce reserves (corridor system)</th>
+<th>Abundant reserves (floor system)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Situation</td>
+<td>Banks have just about the reserves they need</td>
+<td>Banks have far more reserves than they need</td>
+</tr>
+<tr>
+<td>Central bank's job</td>
+<td>Adjust the amount of reserves every day to aim for the middle of the corridor</td>
+<td>Set the floor rate, quantity is no longer the issue</td>
+</tr>
+<tr>
+<td>Where the market rate sits</td>
+<td>Near the middle, close to the main rate</td>
+<td>Stuck to the floor</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>ECB and Fed before 2008</td>
+<td>ECB and Fed after the QE years</td>
+</tr>
+</tbody>
+</table>
+<p>After the 2008 crisis and quantitative easing (QE, see below), the system is flooded with reserves. Nobody needs to borrow, everyone has cash to place. So the market rate drops to the floor. That is why <strong>€STR</strong> (the euro overnight benchmark, published by the ECB) trades a few basis points below the DFR. In March 2024 the ECB confirmed it steers policy through the DFR.</p>
+<h3 id="on-the-fed-side">On the Fed side<a class="headerlink" href="#on-the-fed-side" title="Permanent link">&para;</a></h3>
+<p>The Fed has also run an "ample reserves" system since 2008. Its tools, with example levels for a 4.25% to 4.50% range.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ON RRP (overnight reverse repo facility)</td>
+<td>Floor. The Fed borrows cash from money market funds against Treasuries, including from firms that cannot hold reserves</td>
+<td>4.25% (bottom of the range)</td>
+</tr>
+<tr>
+<td>IORB (interest on reserve balances)</td>
+<td>The rate paid to banks on their reserves, the main tool</td>
+<td>4.40%</td>
+</tr>
+<tr>
+<td>EFFR (effective fed funds rate)</td>
+<td>The market rate that results</td>
+<td>about 4.33%</td>
+</tr>
+<tr>
+<td>Standing Repo Facility and discount window</td>
+<td>Ceiling. The Fed lends against collateral</td>
+<td>4.50% (top of the range)</td>
+</tr>
+</tbody>
+</table>
+<p>The ON RRP exists because money market funds cannot hold reserves at the Fed. Without that floor they would lend their cash below the range.</p>
+<h2 id="how-the-rate-spreads">How the rate spreads<a class="headerlink" href="#how-the-rate-spreads" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>policy rate
+  -&gt; overnight rates (fed funds, €STR, SOFR, repo)     same day
+  -&gt; front end of the curve (T-bills, 2y bonds)        through expectations
+  -&gt; swaps, mortgages, corporate loans
+  -&gt; borrowing, spending, hiring
+  -&gt; inflation                                          12 to 24 months later
+</code></pre></div>
+<h3 id="step-1-overnight">Step 1, overnight<a class="headerlink" href="#step-1-overnight" title="Permanent link">&para;</a></h3>
+<p>Overnight rates move on the day of the decision, mechanically, through the corridor arbitrage. SOFR (the US repo rate, <a href="../11-repo/">episode 11</a>) and €STR follow.</p>
+<h3 id="step-2-the-curve-through-expectations">Step 2, the curve, through expectations<a class="headerlink" href="#step-2-the-curve-through-expectations" title="Permanent link">&para;</a></h3>
+<p>A 2-year rate does not follow today's decision. It follows what the market <strong>expects</strong> from every decision over the next 2 years. As a first approximation:</p>
+<div class="highlight"><pre><span></span><code>2y rate ≈ average of expected overnight rates over 2 years + term premium
+</code></pre></div>
+<p>The term premium is the small extra that investors ask for locking their money up for longer.</p>
+<p><strong>Example.</strong> The overnight rate is 4.00%. The market expects an average of 4.00% in year one and 3.00% in year two (cuts are coming).</p>
+<div class="highlight"><pre><span></span><code>2y rate ≈ (4.00% + 3.00%) / 2 = 3.50%   (+ a small term premium)
+</code></pre></div>
+<p>The 2-year is already below overnight even though the central bank has not done anything yet. That is exactly what creates an <a href="../02-the-yield-curve/">inverted curve</a>. An inverted curve is the market pricing future rate cuts.</p>
+<h3 id="step-3-the-real-economy">Step 3, the real economy<a class="headerlink" href="#step-3-the-real-economy" title="Permanent link">&para;</a></h3>
+<p>Banks fund themselves at rates linked to overnight and the front end of the curve. When their funding cost rises, they lend more expensively to households and companies. A floating-rate mortgage moves quickly (<a href="../01-fixed-vs-floating-rate-debt/">episode 1</a>). A fixed-rate one follows long-term rates more.</p>
+<h2 id="how-the-market-prices-future-decisions">How the market prices future decisions<a class="headerlink" href="#how-the-market-prices-future-decisions" title="Permanent link">&para;</a></h2>
+<p>On a desk nobody says "I think the Fed will cut". People say "the market is pricing 3 cuts this year". That number comes from <strong>OIS swaps</strong> (overnight index swaps), swaps whose floating leg is the overnight rate (same logic as <a href="../10-interest-rate-swaps/">episode 10</a>), and from fed funds futures.</p>
+<p><strong>Example.</strong> Overnight at 4.00%. The market expects a 25 bp cut every quarter starting in 3 months.</p>
+<div class="highlight"><pre><span></span><code>months 0-3   : 4.00%
+months 3-6   : 3.75%
+months 6-9   : 3.50%
+months 9-12  : 3.25%
+average      : 3.625%
+</code></pre></div>
+<p>So the 1-year OIS trades around 3.625%. Reading that rate, a trader says "3 cuts priced over the year". If 1-year OIS moves to 3.75% after a strong jobs number, the market has taken out part of a cut.</p>
+<p>Important consequence, <strong>a decision that is already priced does not move the market</strong>. If everyone expects a 25 bp cut and it happens, the curve barely moves. What moves the market is the <strong>surprise</strong>, or what the central bank says about what comes next (forward guidance).</p>
+<h2 id="why-hike-or-cut">Why hike or cut<a class="headerlink" href="#why-hike-or-cut" title="Permanent link">&para;</a></h2>
+<h3 id="the-mandate">The mandate<a class="headerlink" href="#the-mandate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Central bank</th>
+<th>Mandate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fed</td>
+<td>Dual mandate, maximum employment and stable prices. 2% inflation target (formalised in 2012)</td>
+</tr>
+<tr>
+<td>ECB</td>
+<td>Price stability first. Symmetric 2% target over the medium term (2021 strategy review)</td>
+</tr>
+<tr>
+<td>BoE</td>
+<td>2% target set by the government</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Inflation too high -&gt; hike.</strong> Borrowing costs more, saving pays more, so households and companies spend less, demand slows, and prices rise more slowly.</li>
+<li><strong>Economy too weak, inflation low -&gt; cut.</strong> Borrowing gets cheaper, which supports investment and spending.</li>
+</ul>
+<h3 id="the-lag">The lag<a class="headerlink" href="#the-lag" title="Permanent link">&para;</a></h3>
+<p>The effect on inflation often takes 12 to 24 months, and the delay is not stable (Milton Friedman talked about long and variable lags). So a central bank decides on <strong>forecasts</strong>, not on this month's number. If it waited for inflation to be back at 2% before it stopped hiking, it would already have hiked too much.</p>
+<h3 id="nominal-and-real-rates">Nominal and real rates<a class="headerlink" href="#nominal-and-real-rates" title="Permanent link">&para;</a></h3>
+<p>The real rate is the nominal rate minus inflation.</p>
+<div class="highlight"><pre><span></span><code>policy rate 4%, inflation 3%  -&gt; real rate = 1%    (fairly restrictive)
+policy rate 2%, inflation 5%  -&gt; real rate = −3%   (very loose)
+</code></pre></div>
+<p>What slows the economy is the real rate. In 2021-2022 policy rates were still close to zero while inflation was above 5%, so policy stayed very loose even after the first hikes.</p>
+<h3 id="the-taylor-rule">The Taylor rule<a class="headerlink" href="#the-taylor-rule" title="Permanent link">&para;</a></h3>
+<p>A reference economists use to judge whether the rate is "at the right level" (John Taylor, 1993).</p>
+<div class="highlight"><pre><span></span><code>rate = r* + inflation + 0.5 × (inflation − 2%) + 0.5 × output gap
+</code></pre></div>
+<ul>
+<li><strong>r*</strong> = the neutral real rate, the one that neither slows nor speeds up the economy. You cannot observe it, you estimate it (often around 0.5% to 1%).</li>
+<li><strong>output gap</strong> = the gap in % between what the economy produces and what it could produce without creating inflation.</li>
+</ul>
+<p><strong>Example.</strong> r* = 1%, inflation = 4%, output gap = 0.</p>
+<div class="highlight"><pre><span></span><code>rate = 1% + 4% + 0.5 × (4% − 2%) + 0 = 6%
+</code></pre></div>
+<p>If the policy rate is at 4%, the rule says it is too low. No central bank applies it mechanically, but markets and journalists use it as a benchmark.</p>
+<h2 id="when-the-rate-is-at-zero-qe-and-qt">When the rate is at zero, QE and QT<a class="headerlink" href="#when-the-rate-is-at-zero-qe-and-qt" title="Permanent link">&para;</a></h2>
+<p>A central bank cannot go much below zero. The ECB still had a negative DFR from June 2014 to July 2022 (down to −0.50%). When the policy rate cannot go lower, there is another tool.</p>
+<ul>
+<li><strong>QE (quantitative easing).</strong> The central bank buys large amounts of government bonds with reserves it creates. That pushes bond prices up, so long-term rates down. It also creates the excess reserves that moved systems to floor mode.</li>
+<li><strong>QT (quantitative tightening).</strong> The reverse. The central bank lets its bonds mature without replacing them, or sells them. Reserves shrink.</li>
+</ul>
+<p>The policy rate works on the front end of the curve, QE and QT work more on the long end.</p>
+<h2 id="real-cases">Real cases<a class="headerlink" href="#real-cases" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Volcker, 1979-1981.</strong> US inflation goes above 14% in 1980. Paul Volcker, Fed chair, lets the fed funds rate rise to around 20%. Severe recession, but inflation falls below 4% by 1983. It is the historical reference for a central bank breaking inflation.</li>
+<li><strong>2008 and 2020.</strong> Rates cut to zero and massive QE in both crises.</li>
+<li><strong>2022-2023.</strong> The Fed goes from 0% to 0.25% (March 2022) to 5.25% to 5.50% (July 2023), including 4 consecutive 0.75% hikes in 2022. The fastest cycle since the 1980s. The ECB hikes in July 2022 for the first time in 11 years. The US 2-year goes from under 1% to over 4% during 2022, and the 2s10s curve stays inverted for about two years.</li>
+<li><strong>September 2024.</strong> The Fed cuts by 0.50%. Four months later the US 10-year rate is about 1% higher. The market raised its growth and inflation expectations and the term premium went up. A policy rate cut does not guarantee lower long-term rates.</li>
+</ul>
+<h2 id="classic-pitfalls">Classic pitfalls<a class="headerlink" href="#classic-pitfalls" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>"The central bank sets loan rates."</strong> No. It sets overnight. The rest is set by the market, which adds its expectations, the term premium and credit risk (<a href="../05-credit-spread/">episode 5</a>).</li>
+<li><strong>"A hike always lifts the whole curve."</strong> No. If the market thinks the hike will hurt growth, long rates can fall. The curve flattens or inverts.</li>
+<li><strong>"The decision moves the market."</strong> Only the part that was not expected. On the day, you compare the decision and the statement with what was priced.</li>
+<li><strong>Basis points.</strong> 25 bps = 0.25%, not 25%. And a "25 bp hike" on a Fed range moves both ends.</li>
+<li><strong>Nominal vs real.</strong> A 5% rate with 6% inflation is not restrictive.</li>
+<li><strong>Unsecured vs secured overnight.</strong> Fed funds is an unsecured loan between banks. SOFR is repo, so it is secured by Treasuries. They are close but not the same rate.</li>
+</ul>
+<h2 id="the-link-with-duration">The link with duration<a class="headerlink" href="#the-link-with-duration" title="Permanent link">&para;</a></h2>
+<p>When the market prices more hikes, rates go up and bond prices go down. How much is given by <a href="../03-duration/">duration</a>.</p>
+<p><strong>Example.</strong> A 2-year bond has a duration of about 1.9. A hawkish surprise (tougher than expected) lifts the 2-year by 0.50%.</p>
+<div class="highlight"><pre><span></span><code>price change ≈ −1.9 × 0.50% = −0.95%
+</code></pre></div>
+<p>On €10m notional that is a loss of about €95,000. In <a href="../04-dv01/">DV01</a> terms, about €1,900 per basis point.</p>
+<h2 id="the-st-interview-angle">The S&amp;T interview angle<a class="headerlink" href="#the-st-interview-angle" title="Permanent link">&para;</a></h2>
+<p><strong>"How does the Fed actually set rates?"</strong> It sets a target range for the fed funds rate and enforces it with administered rates. IORB pays banks on their reserves, ON RRP puts a floor for money market funds, and the Standing Repo Facility acts as a ceiling. Because reserves are abundant, the market rate sits near the bottom of the range.</p>
+<p><strong>"The Fed cuts 25 bps, what does the 2-year do?"</strong> It depends on what was priced. If the cut was expected, almost nothing. The 2-year reacts to the surprise and to the message about the next meetings.</p>
+<p><strong>"Why does the curve invert?"</strong> Because the market expects rate cuts, often because it expects a slowdown. Short rates are held by the current policy rate, longer rates include the future cuts.</p>
+<p><strong>"How do you know how many cuts are priced?"</strong> By reading OIS swaps and fed funds futures, and comparing forward rates with today's overnight rate.</p>
+<p><strong>"Your trade if you think the Fed will cut more than the market prices?"</strong> Receive fixed on a short-dated swap (a receiver), or buy 2-year bonds. If the cuts come, short rates fall and the position makes money.</p>
+<p><strong>"Corridor vs floor system?"</strong> Corridor when reserves are scarce and the central bank adjusts the quantity to aim for the middle. Floor when reserves are abundant and the market rate sticks to the deposit rate.</p>
+<h2 id="links-to-previous-episodes">Links to previous episodes<a class="headerlink" href="#links-to-previous-episodes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../01-fixed-vs-floating-rate-debt/">Fixed vs Floating</a>, floating-rate debt follows the policy rate directly.</li>
+<li><a href="../02-the-yield-curve/">The Yield Curve</a>, the policy rate anchors the left end of the curve.</li>
+<li><a href="../03-duration/">Duration</a> and <a href="../04-dv01/">DV01</a>, what a bond loses when expectations move.</li>
+<li><a href="../10-interest-rate-swaps/">Interest Rate Swaps</a>, the fixed rate on a swap is the market's bet on future policy rates.</li>
+<li><a href="../11-repo/">Repo</a>, repo rates and SOFR sit inside the corridor.</li>
+</ul>
+<div class="ms-takeaway">
+<h2 id="key-takeaway">Key takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The central bank is the bank of the banks. Only it can create reserves, which lets it control the overnight rate.</li>
+<li>It does not impose any rate. It sets a floor (what it pays on deposits) and a ceiling (what it charges to lend), and arbitrage does the rest.</li>
+<li>With abundant reserves, the market rate sticks to the floor. That is the case for the Fed and the ECB today.</li>
+<li>Overnight moves the same day. The rest of the curve moves on expectations of the next decisions.</li>
+<li>A decision that is already priced barely moves anything. The surprise is what counts.</li>
+<li>Hike when inflation is too high, cut when the economy is too weak, with a 12 to 24 month lag, so decisions are made on forecasts.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../25-black-scholes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 25. Black-Scholes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                25. Black-Scholes
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "search.highlight", "search.suggest", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

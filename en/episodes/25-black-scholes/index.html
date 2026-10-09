@@ -1,0 +1,2796 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Detailed notes for the Markets, Simplified LinkedIn series (rates, credit, options)">
+      
+      
+        <meta name="author" content="Marwane Benaddi">
+      
+      
+        <link rel="canonical" href="https://senchi-dev.github.io/markets-simplified/en/episodes/25-black-scholes/">
+      
+      
+        <link rel="prev" href="../24-the-vertical-spread/">
+      
+      
+        <link rel="next" href="../26-the-policy-rate/">
+      
+      
+        
+          <link rel="alternate" href="../../../episodes/25-black-scholes/" hreflang="fr">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>25. Black-Scholes - Markets, Simplified</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#black-scholes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="Markets, Simplified" class="md-header__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markets, Simplified
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              25. Black-Scholes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../episodes/25-black-scholes/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Markets, Simplified" class="md-nav__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    Markets, Simplified
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rates and bonds
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rates and bonds
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fixed-vs-floating-rate-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fixed vs Floating Rate Debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-yield-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Yield Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dv01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. DV01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Credit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-credit-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Credit Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-credit-default-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Credit Default Swaps (CDS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cds-indices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. CDS Indices (CDX & iTraxx)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-cdo-tranches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. CDO Tranches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-the-big-short/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The Big Short
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swaps and funding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Swaps and funding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-interest-rate-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interest Rate Swaps (IRS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-short-selling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Short Selling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Options
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Options (Calls & Puts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-put-call-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Put-Call Parity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Greeks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Greeks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-delta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Delta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-gamma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Gamma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-theta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Theta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-vega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volatility
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Volatility
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-implied-volatility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Implied Volatility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-the-gamma-squeeze/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. The Gamma Squeeze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-the-volatility-skew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. The Volatility Skew
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-the-straddle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. The Straddle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-the-strangle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. The Strangle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-the-vertical-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. The Vertical Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Black-Scholes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Black-Scholes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-model-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a model is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-before-1973" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem before 1973
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-5-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 5 inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea-copying-the-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The core idea, copying the option
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The core idea, copying the option">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-one-period-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple one-period version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-to-the-real-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving to the real model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-expected-return-disappears" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the expected return disappears
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The formula">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#every-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every symbol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nx-and-the-bell-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N(x) and the bell curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d1-and-d2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d1 and d2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-the-formula-in-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the formula in words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example, step by step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-moves-the-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What moves the price
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-desk-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The desk shortcut
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-greeks-come-out-of-the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Greeks come out of the formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-it-backwards-implied-vol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running it backwards, implied vol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-assumptions-and-where-they-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The assumptions and where they break
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The assumptions and where they break">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-1987-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 1987 crash
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-desks-still-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How desks still use it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rates-cousins-of-black-scholes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rates cousins of Black-Scholes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-bit-of-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A bit of history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Central banks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Central banks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-the-policy-rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. The Policy Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-model-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a model is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-before-1973" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem before 1973
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-5-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 5 inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea-copying-the-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The core idea, copying the option
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The core idea, copying the option">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-one-period-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple one-period version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-to-the-real-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving to the real model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-expected-return-disappears" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the expected return disappears
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The formula">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#every-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every symbol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nx-and-the-bell-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N(x) and the bell curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d1-and-d2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d1 and d2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-the-formula-in-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the formula in words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example, step by step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-moves-the-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What moves the price
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-desk-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The desk shortcut
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-greeks-come-out-of-the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Greeks come out of the formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-it-backwards-implied-vol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running it backwards, implied vol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-assumptions-and-where-they-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The assumptions and where they break
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The assumptions and where they break">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-1987-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 1987 crash
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-desks-still-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How desks still use it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rates-cousins-of-black-scholes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rates cousins of Black-Scholes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-bit-of-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A bit of history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p class="ms-kicker">Episode 25</p>
+
+<h1 id="black-scholes">Black-<span class="ms-outline">Scholes.</span><a class="headerlink" href="#black-scholes" title="Permanent link">&para;</a></h1>
+<h2 id="why-this-episode">Why this episode<a class="headerlink" href="#why-this-episode" title="Permanent link">&para;</a></h2>
+<p>Black-Scholes shows up in almost every options episode. <a href="../15-delta/">Delta</a> comes from it, <a href="../19-implied-volatility/">implied volatility</a> is what you get by running it backwards, and the <a href="../21-the-volatility-skew/">skew</a> exists because one of its assumptions is wrong. We never opened it up. This episode closes the options arc by explaining the model itself, where it comes from, how to price an option by hand, and why desks still use it when everyone knows it is wrong.</p>
+<h2 id="what-a-model-is">What a model is<a class="headerlink" href="#what-a-model-is" title="Permanent link">&para;</a></h2>
+<p>A model is a simplified version of reality written as a formula. You give it inputs, it gives you a number. It makes assumptions so the maths becomes possible, and those assumptions are never perfectly true. A good model is not an exact model. It is a model whose errors you know.</p>
+<p>Black-Scholes takes 5 inputs and gives the "fair" price of a European option (one that can only be exercised at expiry).</p>
+<h2 id="the-problem-before-1973">The problem before 1973<a class="headerlink" href="#the-problem-before-1973" title="Permanent link">&para;</a></h2>
+<p>Before Black-Scholes, pricing a call meant guessing two things. Where the stock would end up, and what rate to use to discount a risky payoff. Everyone had their own estimate of the stock's return and their own appetite for risk, so everyone had their own price. There was no reference price.</p>
+<p>What Black, Scholes and Merton showed is that you need neither the expected return nor the risk appetite. The price comes out of an arbitrage argument, just like <a href="../14-put-call-parity/">put-call parity</a>.</p>
+<h2 id="the-5-inputs">The 5 inputs<a class="headerlink" href="#the-5-inputs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Symbol</th>
+<th>What it is</th>
+<th>Where you find it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Underlying price</td>
+<td><code>S</code></td>
+<td>The stock price today</td>
+<td>On the screen</td>
+</tr>
+<tr>
+<td>Strike</td>
+<td><code>K</code></td>
+<td>The exercise price written in the contract</td>
+<td>In the contract</td>
+</tr>
+<tr>
+<td>Maturity</td>
+<td><code>T</code></td>
+<td>Time left until expiry, <strong>in years</strong> (6 months = 0.5)</td>
+<td>In the contract</td>
+</tr>
+<tr>
+<td>Risk-free rate</td>
+<td><code>r</code></td>
+<td>What a riskless loan pays (government rate), continuously compounded</td>
+<td>On the screen</td>
+</tr>
+<tr>
+<td>Volatility</td>
+<td><code>σ</code> (sigma)</td>
+<td>How much the stock moves around, in % per year</td>
+<td><strong>Nobody knows it</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Four of the five inputs are observable. The only one you have to estimate is volatility. That is why the whole options market revolves around vol, and why traders quote in vol rather than in dollars or euros.</p>
+<p>What is <strong>not</strong> on the list matters just as much. There is no expected return for the stock, and no view from the trader on direction.</p>
+<h2 id="the-core-idea-copying-the-option">The core idea, copying the option<a class="headerlink" href="#the-core-idea-copying-the-option" title="Permanent link">&para;</a></h2>
+<p>You can build an exact copy of an option with only two ingredients, shares and cash (borrowed or lent). If the copy pays exactly the same as the option in every scenario, the two must cost the same. Otherwise you buy the cheaper one, sell the more expensive one, and lock in a risk-free profit. This is the law of one price.</p>
+<h3 id="a-simple-one-period-version">A simple one-period version<a class="headerlink" href="#a-simple-one-period-version" title="Permanent link">&para;</a></h3>
+<p>To see the mechanism, simplify as much as possible. Stock at €100, in one year it is worth either €120 or €80. Interest rate 0%. Call with a €100 strike.</p>
+<ul>
+<li>If the stock goes to €120, the call pays €20.</li>
+<li>If it falls to €80, the call pays €0.</li>
+</ul>
+<p>How many shares do you need to reproduce that? The call's payoff moves by €20, the stock's price moves by €40. So you need 20 / 40 = <strong>0.5 shares</strong>. That 0.5 is the <a href="../15-delta/">delta</a>.</p>
+<ul>
+<li>0.5 shares are worth €60 if the stock goes up, €40 if it goes down.</li>
+<li>You borrow €40 today (and pay back €40, since the rate is zero).</li>
+<li>In the up scenario, 60 − 40 = €20. In the down scenario, 40 − 40 = €0.</li>
+</ul>
+<p>The copy pays exactly like the call. Today it costs 0.5 × 100 − 40 = <strong>€10</strong>. So the call is worth €10.</p>
+<p>We never used the probability that the stock goes up. Whether you think it has a 90% chance of rising or 10%, the call is worth €10. If someone sells it at €12, you sell it too, buy the copy at €10, and keep €2 whatever happens.</p>
+<h3 id="moving-to-the-real-model">Moving to the real model<a class="headerlink" href="#moving-to-the-real-model" title="Permanent link">&para;</a></h3>
+<p>In reality the price does not take two values, it moves continuously. Black-Scholes does the same thing by cutting time into infinitely small steps. At every instant you adjust the number of shares you hold (this is <strong>delta hedging</strong>), and the copy tracks the option all the time. The formula is what you get when you push this reasoning to the limit.</p>
+<h2 id="why-the-expected-return-disappears">Why the expected return disappears<a class="headerlink" href="#why-the-expected-return-disappears" title="Permanent link">&para;</a></h2>
+<p>Because the price comes from a copy, it is the same for an optimistic investor, a pessimistic one, a careful one or a gambler. So you can do the maths in an imaginary world where everyone is risk-neutral and every stock earns, on average, the risk-free rate <code>r</code>. This is called <strong>risk-neutral pricing</strong>. It is not a claim about real life. It is a calculation shortcut that gives the right price because the copying argument guarantees it.</p>
+<p>In practice this means the probabilities that come out of Black-Scholes (like <code>N(d2)</code>) are probabilities in that risk-neutral world, not real-world probabilities. On a desk people say "risk-neutral probability".</p>
+<h2 id="the-formula">The formula<a class="headerlink" href="#the-formula" title="Permanent link">&para;</a></h2>
+<p>For a European call on a stock that pays no dividend:</p>
+<div class="highlight"><pre><span></span><code>C = S × N(d1) − K × e^(−rT) × N(d2)
+
+d1 = [ ln(S / K) + (r + σ² / 2) × T ] / ( σ × √T )
+d2 = d1 − σ × √T
+</code></pre></div>
+<p>For a European put:</p>
+<div class="highlight"><pre><span></span><code>P = K × e^(−rT) × N(−d2) − S × N(−d1)
+</code></pre></div>
+<h3 id="every-symbol">Every symbol<a class="headerlink" href="#every-symbol" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>C</strong> and <strong>P</strong>, the price of the call and the put.</li>
+<li><strong>e</strong>, a mathematical constant worth about 2.718.</li>
+<li><strong>e^(−rT)</strong>, the <strong>discount factor</strong>. It turns an amount paid at expiry into what it is worth today. At r = 4% and T = 1 year it equals 0.9608. So €100 in a year is worth €96.08 today.</li>
+<li><strong>ln</strong>, the natural logarithm. <code>ln(S / K)</code> measures the gap between the stock price and the strike as a (continuous) percentage. ln(1) = 0, so at the money (S = K) this term is zero. ln(110 / 100) ≈ 0.095, so about +9.5%.</li>
+<li><strong>√T</strong>, the square root of the maturity. Volatility grows with the square root of time, not with time. Over 4 years a stock moves roughly 2 times more than over 1 year, not 4 times more.</li>
+<li><strong>σ × √T</strong>, the total volatility over the whole life of the option.</li>
+<li><strong>N(x)</strong>, a probability between 0 and 1, explained just below.</li>
+</ul>
+<h3 id="nx-and-the-bell-curve">N(x) and the bell curve<a class="headerlink" href="#nx-and-the-bell-curve" title="Permanent link">&para;</a></h3>
+<p>Picture a bell curve (the normal distribution). Most values sit close to 0, extreme values are rare. N(x) is the share of the bell curve that sits to the left of x.</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>N(x)</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>−2</td>
+<td>0.023</td>
+<td>Almost nothing to the left</td>
+</tr>
+<tr>
+<td>−1</td>
+<td>0.159</td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0.500</td>
+<td>Exactly half</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>0.540</td>
+<td></td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>0.618</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.841</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.977</td>
+<td>Almost everything to the left</td>
+</tr>
+</tbody>
+</table>
+<p>Useful property, N(−x) = 1 − N(x). The bell curve is symmetric.</p>
+<p>Black-Scholes assumes the <strong>logarithm</strong> of the price follows this normal distribution, so the price itself follows a <strong>log-normal</strong> distribution. In plain words, the price can never go negative, and a +50% move is roughly as likely as a −33% move (both are the same distance in log terms).</p>
+<h3 id="d1-and-d2">d1 and d2<a class="headerlink" href="#d1-and-d2" title="Permanent link">&para;</a></h3>
+<p>d1 and d2 measure how far in or out of the money the option is, in number of standard deviations (of "total vols"). The bigger they are, the deeper in the money the option is.</p>
+<ul>
+<li><strong>N(d2)</strong> = the (risk-neutral) probability that the call finishes in the money, so that you actually pay the strike.</li>
+<li><strong>N(d1)</strong> = the call's <strong>delta</strong>. It is the number of shares to hold in the copy. It is not exactly a probability, it is the sensitivity of the price to the stock (see <a href="../15-delta/">episode 15</a>).</li>
+</ul>
+<p>d1 is always bigger than d2, and the gap between them is σ√T. That is why a call's delta is always a bit bigger than its probability of finishing in the money.</p>
+<h2 id="reading-the-formula-in-words">Reading the formula in words<a class="headerlink" href="#reading-the-formula-in-words" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>C = (what you get in stock, weighted) − (what you pay at the strike, weighted)
+</code></pre></div>
+<ul>
+<li><code>S × N(d1)</code> = the value of the stock part of the copy. You hold N(d1) shares worth S each.</li>
+<li><code>K × e^(−rT) × N(d2)</code> = the cash borrowed in the copy. It is the discounted strike, multiplied by the probability of having to pay it.</li>
+</ul>
+<p>This is exactly the structure of the one-period example (0.5 shares minus €40 borrowed), with values computed continuously.</p>
+<h2 id="worked-example-step-by-step">Worked example, step by step<a class="headerlink" href="#worked-example-step-by-step" title="Permanent link">&para;</a></h2>
+<p>Stock at €100, strike €100 (at the money), 1 year, rate 4%, vol 20%.</p>
+<p><strong>Step 1, d1.</strong></p>
+<div class="highlight"><pre><span></span><code>ln(100 / 100) = 0
+(r + σ² / 2) × T = (0.04 + 0.02) × 1 = 0.06
+σ × √T = 0.20 × 1 = 0.20
+d1 = (0 + 0.06) / 0.20 = 0.30
+</code></pre></div>
+<p><strong>Step 2, d2.</strong></p>
+<div class="highlight"><pre><span></span><code>d2 = 0.30 − 0.20 = 0.10
+</code></pre></div>
+<p><strong>Step 3, the probabilities.</strong></p>
+<div class="highlight"><pre><span></span><code>N(0.30) = 0.6179    (delta)
+N(0.10) = 0.5398    (risk-neutral probability of finishing ITM)
+</code></pre></div>
+<p><strong>Step 4, the discount factor.</strong></p>
+<div class="highlight"><pre><span></span><code>e^(−0.04 × 1) = 0.9608
+</code></pre></div>
+<p><strong>Step 5, the price.</strong></p>
+<div class="highlight"><pre><span></span><code>C = 100 × 0.6179 − 100 × 0.9608 × 0.5398
+C = 61.79 − 51.87
+C = €9.93
+</code></pre></div>
+<p><strong>The put, same inputs.</strong></p>
+<div class="highlight"><pre><span></span><code>P = 100 × 0.9608 × N(−0.10) − 100 × N(−0.30)
+P = 96.08 × 0.4602 − 100 × 0.3821
+P = 44.21 − 38.21
+P = €6.00
+</code></pre></div>
+<p><strong>Check with <a href="../14-put-call-parity/">put-call parity</a>.</strong> C − P = S − K × e^(−rT), so 9.93 − 6.00 = 3.93 and 100 − 96.08 = 3.92. It matches (the gap is rounding). Black-Scholes respects parity by construction.</p>
+<p>Why is the call worth more than the put when both are at the money? Because the strike is paid in a year. With a positive rate, paying €100 later costs less than paying €100 today, which helps the call buyer. At a zero rate, the at-the-money call and put are worth exactly the same (€7.97 each in this example).</p>
+<h2 id="what-moves-the-price">What moves the price<a class="headerlink" href="#what-moves-the-price" title="Permanent link">&para;</a></h2>
+<p>Same base option (S = 100, K = 100, T = 1 year, r = 4%, σ = 20%), changing one input at a time.</p>
+<table>
+<thead>
+<tr>
+<th>What changes</th>
+<th>Call</th>
+<th>Put</th>
+<th>What to take from it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base case</td>
+<td>€9.93</td>
+<td>€6.00</td>
+<td></td>
+</tr>
+<tr>
+<td>Vol at 30%</td>
+<td>€13.75</td>
+<td>€9.83</td>
+<td>More vol = both more expensive</td>
+</tr>
+<tr>
+<td>Vol at 10%</td>
+<td>€6.18</td>
+<td>€2.26</td>
+<td>Less vol = both cheaper</td>
+</tr>
+<tr>
+<td>Vol at 21% (+1 point)</td>
+<td>€10.31</td>
+<td>€6.39</td>
+<td>+€0.38, that is <a href="../18-vega/">vega</a></td>
+</tr>
+<tr>
+<td>Stock at €101</td>
+<td>€10.55</td>
+<td>€5.63</td>
+<td>Call +€0.63, close to the 0.62 delta</td>
+</tr>
+<tr>
+<td>Strike at €110 (OTM call)</td>
+<td>€5.66</td>
+<td>€11.35</td>
+<td></td>
+</tr>
+<tr>
+<td>Strike at €90 (ITM call)</td>
+<td>€16.06</td>
+<td>€2.53</td>
+<td></td>
+</tr>
+<tr>
+<td>3 months to expiry</td>
+<td>€4.49</td>
+<td>€3.49</td>
+<td>Less time = cheaper</td>
+</tr>
+<tr>
+<td>1 month to expiry</td>
+<td>€2.47</td>
+<td>€2.14</td>
+<td></td>
+</tr>
+<tr>
+<td>Rate at 0%</td>
+<td>€7.97</td>
+<td>€7.97</td>
+<td>Call = put at the money</td>
+</tr>
+</tbody>
+</table>
+<p>Two things to see in this table.</p>
+<ol>
+<li>Vol is the input that matters most. Going from 20% to 30% lifts the call by almost 40%, without the stock or the date moving.</li>
+<li>Time does not work linearly. 3 months are worth €4.49, not a quarter of €9.93. That is the square root of time, and it is what makes <a href="../17-theta/">theta</a> speed up near expiry.</li>
+</ol>
+<h2 id="the-desk-shortcut">The desk shortcut<a class="headerlink" href="#the-desk-shortcut" title="Permanent link">&para;</a></h2>
+<p>For an at-the-money option with a low rate:</p>
+<div class="highlight"><pre><span></span><code>Call ≈ Put ≈ 0.4 × S × σ × √T
+</code></pre></div>
+<p>In the example, 0.4 × 100 × 0.20 × 1 = €8. The true price at a zero rate is €7.97. The 0.4 comes from 1 / √(2π) ≈ 0.399. It lets you price a straddle in your head (2 × 0.4 × S × σ × √T ≈ 0.8 × S × σ × √T) and read an option price as an expected move. That is the maths behind <a href="../22-the-straddle/">episode 22 on the straddle</a>.</p>
+<h2 id="the-greeks-come-out-of-the-formula">The Greeks come out of the formula<a class="headerlink" href="#the-greeks-come-out-of-the-formula" title="Permanent link">&para;</a></h2>
+<p>Each Greek is the derivative of the Black-Scholes price with respect to one input. Write n(x) for the height of the bell curve at x, n(x) = e^(−x²/2) / √(2π).</p>
+<table>
+<thead>
+<tr>
+<th>Greek</th>
+<th>Formula (call)</th>
+<th>Value in the example</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../15-delta/">Delta</a></td>
+<td><code>N(d1)</code></td>
+<td>0.618</td>
+<td>+€0.62 if the stock gains €1</td>
+</tr>
+<tr>
+<td><a href="../16-gamma/">Gamma</a></td>
+<td><code>n(d1) / (S × σ × √T)</code></td>
+<td>0.019</td>
+<td>Delta gains 0.019 per €1 rise</td>
+</tr>
+<tr>
+<td><a href="../18-vega/">Vega</a></td>
+<td><code>S × n(d1) × √T</code> (÷ 100 per vol point)</td>
+<td>€0.38</td>
+<td>+€0.38 per vol point</td>
+</tr>
+<tr>
+<td><a href="../17-theta/">Theta</a></td>
+<td><code>−S × n(d1) × σ / (2√T) − r × K × e^(−rT) × N(d2)</code> (÷ 365)</td>
+<td>−€0.016 per day</td>
+<td>The option loses 1.6 cents a day</td>
+</tr>
+<tr>
+<td>Rho</td>
+<td><code>K × T × e^(−rT) × N(d2)</code> (÷ 100)</td>
+<td>€0.52</td>
+<td>+€0.52 if rates rise by 1 point</td>
+</tr>
+</tbody>
+</table>
+<p>The put's delta is N(d1) − 1 = −0.382. Gamma and vega are identical for a call and a put with the same strike and expiry, which follows from parity.</p>
+<h2 id="running-it-backwards-implied-vol">Running it backwards, implied vol<a class="headerlink" href="#running-it-backwards-implied-vol" title="Permanent link">&para;</a></h2>
+<p>In real life you do not know σ, but you can see the option's price on the screen. So you run the formula backwards. You look for the vol that, plugged into Black-Scholes, gives back the observed price. That is <a href="../19-implied-volatility/">implied volatility</a>.</p>
+<p>If the at-the-money call in the example trades at €10.31 instead of €9.93, the implied vol is 21%. There is no closed-form formula for this reverse calculation, you solve it by trial and error (the price always rises with vol, so there is only one answer).</p>
+<p>This is where Black-Scholes changes job. It is no longer used to find a price, it is used to <strong>translate</strong> a price into a vol. Options with different strikes and maturities become comparable on a single unit.</p>
+<h2 id="the-assumptions-and-where-they-break">The assumptions and where they break<a class="headerlink" href="#the-assumptions-and-where-they-break" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Assumption</th>
+<th>In reality</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constant volatility</td>
+<td>Vol changes all the time and depends on the strike</td>
+<td>The <a href="../21-the-volatility-skew/">skew and the smile</a></td>
+</tr>
+<tr>
+<td>No jumps, the price moves continuously</td>
+<td>Crashes, earnings announcements, gaps at the open</td>
+<td>Deep OTM puts are worth more than the model says</td>
+</tr>
+<tr>
+<td>Log-normal returns</td>
+<td>Tails are fatter, big moves happen more often</td>
+<td>Same effect, extremes are underpriced</td>
+</tr>
+<tr>
+<td>Continuous hedging with no costs</td>
+<td>You hedge at intervals, with fees and a bid-ask spread</td>
+<td>The hedge is never perfect, hedging P&amp;L moves around</td>
+</tr>
+<tr>
+<td>Constant risk-free rate, borrow and lend at the same rate</td>
+<td>Rates move, borrowing costs more than lending</td>
+<td>Small effect on short options, bigger on long ones</td>
+</tr>
+<tr>
+<td>No dividends</td>
+<td>Many stocks pay dividends</td>
+<td>Merton's extension, you subtract the dividend yield</td>
+</tr>
+<tr>
+<td>Exercise only at expiry (European)</td>
+<td>US single-stock options are usually American</td>
+<td>You need binomial trees or other methods</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-1987-crash">The 1987 crash<a class="headerlink" href="#the-1987-crash" title="Permanent link">&para;</a></h3>
+<p>Before October 1987, implied vol was roughly the same for every strike, as the model predicts. On 19 October 1987 the S&amp;P 500 lost about 20% in a single day. Under a log-normal distribution with the vols of the time, that move was supposed to almost never happen. Since then the market charges more for OTM puts, and the skew has been a permanent feature of equity indices.</p>
+<h2 id="how-desks-still-use-it">How desks still use it<a class="headerlink" href="#how-desks-still-use-it" title="Permanent link">&para;</a></h2>
+<p>Nobody on a desk believes vol is constant. But everyone uses Black-Scholes as a <strong>quoting convention</strong>. You use a different vol for each strike and each maturity, which gives a <strong>volatility surface</strong>. The formula is still wrong, but by plugging the right vol into it for each option, you get back the market prices. A well-known line in the industry sums it up, roughly, you put the wrong number into the wrong formula to get the right price.</p>
+<p>For exotic products, desks use richer models (local vol, stochastic vol like Heston, jump models), but those are calibrated to match the Black-Scholes prices of plain options.</p>
+<h2 id="the-rates-cousins-of-black-scholes">The rates cousins of Black-Scholes<a class="headerlink" href="#the-rates-cousins-of-black-scholes" title="Permanent link">&para;</a></h2>
+<p>On a rates desk you mostly see two variants.</p>
+<ul>
+<li><strong>Black 76</strong>, adapted by Fischer Black in 1976 for options on futures and forwards. It is the standard model for <strong>caps</strong>, <strong>floors</strong> and <strong>swaptions</strong>. You replace S with the forward rate.</li>
+<li><strong>Bachelier (the normal model)</strong>, where the underlying moves in basis points rather than in percent. When European rates went below zero, Black 76 stopped working (you cannot take the log of a negative number). The swaption market moved to quoting in <strong>normal vol</strong>, in basis points per year.</li>
+</ul>
+<p>This links directly to the <a href="../10-interest-rate-swaps/">swaps</a> and <a href="../02-the-yield-curve/">yield curve</a> episodes.</p>
+<h2 id="a-bit-of-history">A bit of history<a class="headerlink" href="#a-bit-of-history" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>1973.</strong> Fischer Black and Myron Scholes publish "The Pricing of Options and Corporate Liabilities" in the Journal of Political Economy. Robert Merton publishes a paper the same year that formalises the proof. The same year, the Chicago Board Options Exchange (CBOE) opens, the first organised exchange for listed options. Traders adopt the formula very quickly.</li>
+<li><strong>1987.</strong> The crash exposes the limits of the constant-vol assumption. The skew is born.</li>
+<li><strong>1995.</strong> Fischer Black dies.</li>
+<li><strong>1997.</strong> Scholes and Merton receive the Nobel prize in economics. The Nobel is not awarded posthumously, but the committee mentions Black's role.</li>
+<li><strong>1998.</strong> Long-Term Capital Management (LTCM), the hedge fund where Scholes and Merton were partners, loses about $4.6 billion in a few months. The New York Fed organises a rescue by a group of banks. The collapse came mostly from huge leverage and bets on spreads converging, not from the option formula itself.</li>
+</ul>
+<h2 id="classic-pitfalls">Classic pitfalls<a class="headerlink" href="#classic-pitfalls" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Units.</strong> σ as an annual decimal (20% = 0.20), T in years (3 months = 0.25, 30 days ≈ 30 / 365). Putting T in days or σ in percent gives absurd prices.</li>
+<li><strong>Continuous rate.</strong> The formula uses a continuously compounded rate. A 4% annual rate is a continuous rate of ln(1.04) ≈ 3.92%. Small effect, but real.</li>
+<li><strong>N(d2) is not the real probability.</strong> It is a risk-neutral probability. It says nothing about what will actually happen.</li>
+<li><strong>N(d1) is not a probability.</strong> It is the delta. People sometimes use it as a rough proxy for the probability of finishing ITM, but in the model that role belongs to N(d2).</li>
+<li><strong>Historical vs implied vol.</strong> Plugging historical vol into the formula gives a "theoretical" price. The market quotes with implied vol. The two are almost always different (see the variance risk premium in <a href="../19-implied-volatility/">episode 19</a>).</li>
+<li><strong>American options and dividends.</strong> The basic formula only works for a European option with no dividend. An American call on a non-dividend stock is worth the same as a European one (early exercise is never worth it), but that is not true for an American put.</li>
+<li><strong>"The model is wrong so it is useless."</strong> Wrong. It is wrong, but it is the common language of the market. Everyone knows how to turn a price into a vol with the same formula.</li>
+</ul>
+<h2 id="the-st-interview-angle">The S&amp;T interview angle<a class="headerlink" href="#the-st-interview-angle" title="Permanent link">&para;</a></h2>
+<p><strong>"Walk me through Black-Scholes."</strong> The price of a European option depends on 5 inputs, stock price, strike, maturity, rate and vol. You can replicate the option with the stock and cash by adjusting the delta continuously, so by no-arbitrage the option is worth what the copy costs. The expected return does not appear. The formula is C = S N(d1) − K e^(−rT) N(d2), where N(d1) is the delta and N(d2) the risk-neutral probability of exercise.</p>
+<p><strong>"Which input matters most?"</strong> Vol, because it is the only one you cannot observe. The rest you read on the screen.</p>
+<p><strong>"Why doesn't the stock's expected return matter?"</strong> Because the price comes from replication. Two people who disagree on direction still have to agree on the price, otherwise one of them can arbitrage it.</p>
+<p><strong>"What are the model's limits?"</strong> Constant vol (contradicted by the skew), no jumps, tails too thin, continuous costless hedging. In practice the formula is kept as a convention and used with a vol surface.</p>
+<p><strong>"Roughly what is a 1-year at-the-money call worth, stock at 100, vol at 20%?"</strong> 0.4 × 100 × 0.20 ≈ 8. A bit more with positive rates (9.93 at 4%).</p>
+<p><strong>"Which model for a swaption?"</strong> Black 76 historically, Bachelier (normal vol) since negative rates.</p>
+<h2 id="links-to-previous-episodes">Links to previous episodes<a class="headerlink" href="#links-to-previous-episodes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../13-options/">Options</a> for the definitions of call, put, strike and premium.</li>
+<li><a href="../14-put-call-parity/">Put-Call Parity</a>, the same arbitrage reasoning, and a relationship Black-Scholes respects automatically.</li>
+<li><a href="../15-delta/">Delta</a>, <a href="../16-gamma/">Gamma</a>, <a href="../17-theta/">Theta</a>, <a href="../18-vega/">Vega</a>, the derivatives of the formula.</li>
+<li><a href="../19-implied-volatility/">Implied Volatility</a>, the formula run backwards.</li>
+<li><a href="../21-the-volatility-skew/">The Volatility Skew</a>, the proof that the constant-vol assumption is wrong.</li>
+<li><a href="../22-the-straddle/">The Straddle</a>, the 0.8 × S × σ × √T shortcut in practice.</li>
+</ul>
+<div class="ms-takeaway">
+<h2 id="key-takeaway">Key takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Black-Scholes gives the price of a European option from 5 inputs, stock price, strike, maturity, rate and vol.</li>
+<li>The core idea, you can copy the option with the stock and cash, so the option is worth what the copy costs. The expected return and any view on direction play no part.</li>
+<li><code>C = S × N(d1) − K × e^(−rT) × N(d2)</code>. N(d1) is the delta, N(d2) the risk-neutral probability of finishing in the money.</li>
+<li>Vol is the only unknown input, hence quoting in vol and implied vol.</li>
+<li>At-the-money shortcut, price ≈ 0.4 × S × σ × √T.</li>
+<li>The model is wrong (constant vol, no jumps) and the skew proves it. Desks still use it as a common language, with a different vol for each strike and maturity.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../24-the-vertical-spread/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 24. The Vertical Spread">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                24. The Vertical Spread
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../26-the-policy-rate/" class="md-footer__link md-footer__link--next" aria-label="Next: 26. The Policy Rate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                26. The Policy Rate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "search.highlight", "search.suggest", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
