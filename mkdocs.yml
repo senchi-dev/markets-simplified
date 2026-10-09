@@ -58,6 +58,7 @@ plugins:
             Volatilité: Volatility
             Stratégies: Strategies
             Modèles: Models
+            Banques centrales: Central banks
 
 markdown_extensions:
   - tables
@@ -104,3 +105,5 @@ nav:
       - "24. The Vertical Spread": episodes/24-the-vertical-spread.md
   - Modèles:
       - "25. Black-Scholes": episodes/25-black-scholes.md
+  - Banques centrales:
+      - "26. The Policy Rate": episodes/26-the-policy-rate.md

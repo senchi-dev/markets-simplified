@@ -76,3 +76,9 @@ The detailed notes behind the LinkedIn series. Each episode takes the post and g
 <div class="ms-grid">
 <a class="ms-card" href="episodes/25-black-scholes/"><span class="ms-card__num">Episode 25</span><span class="ms-card__title">Black-Scholes</span><span class="ms-card__desc">The formula behind option prices</span></a>
 </div>
+
+## Central banks
+
+<div class="ms-grid">
+<a class="ms-card" href="episodes/26-the-policy-rate/"><span class="ms-card__num">Episode 26</span><span class="ms-card__title">The Policy Rate</span><span class="ms-card__desc">How a central bank sets the price of money</span></a>
+</div>
