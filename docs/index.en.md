@@ -83,3 +83,9 @@ The detailed notes behind the LinkedIn series. Each episode takes the post and g
 <a class="ms-card" href="episodes/26-the-policy-rate/"><span class="ms-card__num">Episode 26</span><span class="ms-card__title">The Policy Rate</span><span class="ms-card__desc">How a central bank sets the price of money</span></a>
 <a class="ms-card" href="episodes/27-qe-and-qt/"><span class="ms-card__num">Episode 27</span><span class="ms-card__title">QE and QT</span><span class="ms-card__desc">When the central bank buys bonds</span></a>
 </div>
+
+## FX
+
+<div class="ms-grid">
+<a class="ms-card" href="episodes/28-fx-forwards/"><span class="ms-card__num">Episode 28</span><span class="ms-card__title">FX Forwards</span><span class="ms-card__desc">Why the forward rate comes from interest rates</span></a>
+</div>

@@ -83,3 +83,9 @@ Les fiches détaillées de la série LinkedIn. Chaque épisode reprend le post e
 <a class="ms-card" href="episodes/26-the-policy-rate/"><span class="ms-card__num">Épisode 26</span><span class="ms-card__title">The Policy Rate</span><span class="ms-card__desc">Comment une banque centrale fixe le prix de l'argent</span></a>
 <a class="ms-card" href="episodes/27-qe-and-qt/"><span class="ms-card__num">Épisode 27</span><span class="ms-card__title">QE and QT</span><span class="ms-card__desc">Quand la banque centrale achète des obligations</span></a>
 </div>
+
+## Changes
+
+<div class="ms-grid">
+<a class="ms-card" href="episodes/28-fx-forwards/"><span class="ms-card__num">Épisode 28</span><span class="ms-card__title">FX Forwards</span><span class="ms-card__desc">Pourquoi le taux à terme vient des taux d'intérêt</span></a>
+</div>
