@@ -88,4 +88,5 @@ Les fiches détaillées de la série LinkedIn. Chaque épisode reprend le post e
 
 <div class="ms-grid">
 <a class="ms-card" href="episodes/28-fx-forwards/"><span class="ms-card__num">Épisode 28</span><span class="ms-card__title">FX Forwards</span><span class="ms-card__desc">Pourquoi le taux à terme vient des taux d'intérêt</span></a>
+<a class="ms-card" href="episodes/29-the-carry-trade/"><span class="ms-card__num">Épisode 29</span><span class="ms-card__title">The Carry Trade</span><span class="ms-card__desc">Emprunter pas cher, placer plus haut, sans couverture</span></a>
 </div>

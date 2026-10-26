@@ -88,4 +88,5 @@ The detailed notes behind the LinkedIn series. Each episode takes the post and g
 
 <div class="ms-grid">
 <a class="ms-card" href="episodes/28-fx-forwards/"><span class="ms-card__num">Episode 28</span><span class="ms-card__title">FX Forwards</span><span class="ms-card__desc">Why the forward rate comes from interest rates</span></a>
+<a class="ms-card" href="episodes/29-the-carry-trade/"><span class="ms-card__num">Episode 29</span><span class="ms-card__title">The Carry Trade</span><span class="ms-card__desc">Borrow cheap, invest higher, no hedge</span></a>
 </div>
