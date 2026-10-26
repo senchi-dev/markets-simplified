@@ -82,6 +82,7 @@ The detailed notes behind the LinkedIn series. Each episode takes the post and g
 <div class="ms-grid">
 <a class="ms-card" href="episodes/26-the-policy-rate/"><span class="ms-card__num">Episode 26</span><span class="ms-card__title">The Policy Rate</span><span class="ms-card__desc">How a central bank sets the price of money</span></a>
 <a class="ms-card" href="episodes/27-qe-and-qt/"><span class="ms-card__num">Episode 27</span><span class="ms-card__title">QE and QT</span><span class="ms-card__desc">When the central bank buys bonds</span></a>
+<a class="ms-card" href="episodes/30-pricing-rate-cuts/"><span class="ms-card__num">Episode 30</span><span class="ms-card__title">Pricing Rate Cuts</span><span class="ms-card__desc">Where the number of priced cuts comes from</span></a>
 </div>
 
 ## FX
