@@ -39,6 +39,8 @@ average       (4.00 + 3.75 + 3.50 + 3.25) / 4 = 3.625%
 
 That matches the OIS. We read "3 cuts priced over the year" by rebuilding the path that gives 3.625%.
 
+This is a simplification. A real OIS compounds the overnight rate day after day, which gives a slightly higher rate than a simple average (here about 3.67% with quarterly compounding). The gap is a few bps, so the method is fine for reading the number of cuts, but a desk uses exact compounding to price.
+
 ## Formula 2, a cut counts according to the time left
 
 A cut decided early weighs more in the average than a cut decided late.

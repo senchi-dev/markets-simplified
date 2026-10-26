@@ -39,6 +39,8 @@ moyenne     (4,00 + 3,75 + 3,50 + 3,25) / 4 = 3,625 %
 
 Ça colle avec l'OIS. On a lu « 3 baisses pricées sur l'année » en reconstruisant le chemin qui donne 3,625 %.
 
+C'est une simplification. Un vrai OIS compose le taux overnight jour après jour, ce qui donne un taux légèrement plus haut qu'une moyenne simple (ici environ 3,67 % avec une composition trimestrielle). L'écart est de quelques bps, donc la méthode reste bonne pour lire le nombre de baisses, mais un desk utilise la composition exacte pour pricer.
+
 ## Formule 2, une baisse pèse selon le temps qui reste
 
 Une baisse décidée tôt pèse plus dans la moyenne qu'une baisse décidée tard.
