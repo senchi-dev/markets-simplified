@@ -83,6 +83,7 @@ Les fiches détaillées de la série LinkedIn. Chaque épisode reprend le post e
 <a class="ms-card" href="episodes/26-the-policy-rate/"><span class="ms-card__num">Épisode 26</span><span class="ms-card__title">The Policy Rate</span><span class="ms-card__desc">Comment une banque centrale fixe le prix de l'argent</span></a>
 <a class="ms-card" href="episodes/27-qe-and-qt/"><span class="ms-card__num">Épisode 27</span><span class="ms-card__title">QE and QT</span><span class="ms-card__desc">Quand la banque centrale achète des obligations</span></a>
 <a class="ms-card" href="episodes/30-pricing-rate-cuts/"><span class="ms-card__num">Épisode 30</span><span class="ms-card__title">Pricing Rate Cuts</span><span class="ms-card__desc">D'où sort le nombre de baisses pricées</span></a>
+<a class="ms-card" href="episodes/31-inflation-breakevens/"><span class="ms-card__num">Épisode 31</span><span class="ms-card__title">Inflation Breakevens</span><span class="ms-card__desc">Lire l'inflation attendue dans le prix des obligations</span></a>
 </div>
 
 ## Changes
