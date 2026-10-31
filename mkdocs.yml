@@ -79,6 +79,7 @@ nav:
       - "2. The Yield Curve": episodes/02-the-yield-curve.md
       - "3. Duration": episodes/03-duration.md
       - "4. DV01": episodes/04-dv01.md
+      - "33. Bond Futures": episodes/33-bond-futures.md
   - Crédit:
       - "5. Credit Spread": episodes/05-credit-spread.md
       - "6. Credit Default Swaps (CDS)": episodes/06-credit-default-swaps.md

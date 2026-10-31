@@ -19,6 +19,7 @@ The detailed notes behind the LinkedIn series. Each episode takes the post and g
 <a class="ms-card" href="episodes/02-the-yield-curve/"><span class="ms-card__num">Episode 02</span><span class="ms-card__title">The Yield Curve</span><span class="ms-card__desc">The map of rates across maturities</span></a>
 <a class="ms-card" href="episodes/03-duration/"><span class="ms-card__num">Episode 03</span><span class="ms-card__title">Duration</span><span class="ms-card__desc">How sensitive a bond is to rates, in %</span></a>
 <a class="ms-card" href="episodes/04-dv01/"><span class="ms-card__num">Episode 04</span><span class="ms-card__title">DV01</span><span class="ms-card__desc">The same sensitivity, in money</span></a>
+<a class="ms-card" href="episodes/33-bond-futures/"><span class="ms-card__num">Episode 33</span><span class="ms-card__title">Bond Futures</span><span class="ms-card__desc">The most liquid tool to hedge rates</span></a>
 </div>
 
 ## Credit

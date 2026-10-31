@@ -19,6 +19,7 @@ Les fiches détaillées de la série LinkedIn. Chaque épisode reprend le post e
 <a class="ms-card" href="episodes/02-the-yield-curve/"><span class="ms-card__num">Épisode 02</span><span class="ms-card__title">The Yield Curve</span><span class="ms-card__desc">La carte des taux selon la maturité</span></a>
 <a class="ms-card" href="episodes/03-duration/"><span class="ms-card__num">Épisode 03</span><span class="ms-card__title">Duration</span><span class="ms-card__desc">La sensibilité d'une obligation aux taux, en %</span></a>
 <a class="ms-card" href="episodes/04-dv01/"><span class="ms-card__num">Épisode 04</span><span class="ms-card__title">DV01</span><span class="ms-card__desc">La même sensibilité, mais en argent</span></a>
+<a class="ms-card" href="episodes/33-bond-futures/"><span class="ms-card__num">Épisode 33</span><span class="ms-card__title">Bond Futures</span><span class="ms-card__desc">Le produit le plus liquide pour couvrir les taux</span></a>
 </div>
 
 ## Crédit
