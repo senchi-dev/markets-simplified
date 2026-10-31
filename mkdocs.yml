@@ -60,6 +60,7 @@ plugins:
             Modèles: Models
             Banques centrales: Central banks
             Changes: FX
+            Produits: Products
 
 markdown_extensions:
   - tables
@@ -114,3 +115,5 @@ nav:
   - Changes:
       - "28. FX Forwards": episodes/28-fx-forwards.md
       - "29. The Carry Trade": episodes/29-the-carry-trade.md
+  - Produits:
+      - "32. ETFs": episodes/32-etfs.md
