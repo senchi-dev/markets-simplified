@@ -1,0 +1,2705 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Detailed notes for the Markets, Simplified LinkedIn series (rates, credit, options)">
+      
+      
+        <meta name="author" content="Marwane Benaddi">
+      
+      
+        <link rel="canonical" href="https://senchi-dev.github.io/markets-simplified/en/episodes/32-etfs/">
+      
+      
+        <link rel="prev" href="../29-the-carry-trade/">
+      
+      
+      
+        
+          <link rel="alternate" href="../../../episodes/32-etfs/" hreflang="fr">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>32. ETFs - Markets, Simplified</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etfs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="Markets, Simplified" class="md-header__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markets, Simplified
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              32. ETFs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../episodes/32-etfs/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Markets, Simplified" class="md-nav__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    Markets, Simplified
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rates and bonds
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rates and bonds
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fixed-vs-floating-rate-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fixed vs Floating Rate Debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-yield-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Yield Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dv01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. DV01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-bond-futures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Bond Futures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Credit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-credit-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Credit Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-credit-default-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Credit Default Swaps (CDS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cds-indices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. CDS Indices (CDX & iTraxx)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-cdo-tranches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. CDO Tranches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-the-big-short/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The Big Short
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swaps and funding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Swaps and funding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-interest-rate-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interest Rate Swaps (IRS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-short-selling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Short Selling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Options
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Options (Calls & Puts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-put-call-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Put-Call Parity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Greeks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Greeks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-delta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Delta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-gamma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Gamma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-theta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Theta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-vega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volatility
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Volatility
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-implied-volatility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Implied Volatility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-the-gamma-squeeze/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. The Gamma Squeeze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-the-volatility-skew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. The Volatility Skew
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-the-straddle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. The Straddle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-the-strangle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. The Strangle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-the-vertical-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. The Vertical Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-black-scholes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Black-Scholes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Central banks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Central banks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-the-policy-rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. The Policy Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-qe-and-qt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. QE and QT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-pricing-rate-cuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Pricing Rate Cuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-inflation-breakevens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Inflation Breakevens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-fx-forwards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. FX Forwards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-the-carry-trade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. The Carry Trade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. ETFs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. ETFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-an-etf-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What an ETF is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-price-stays-close-to-nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the price stays close to NAV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why the price stays close to NAV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-etf-trades-above-nav-premium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ETF trades above NAV (premium)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-etf-trades-below-nav-discount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ETF trades below NAV (discount)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-live-price-inav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The live price, iNAV
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-market-and-secondary-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary market and secondary market
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-really-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it really costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What it really costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking difference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-effect-of-fees-over-10-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The effect of fees over 10 years
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-bid-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The bid-ask
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-mechanism-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the mechanism breaks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When the mechanism breaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-24-august-2015-the-etf-flash-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 24 August 2015, the ETF "flash crash"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-march-2020-bond-etfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. March 2020, bond ETFs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leveraged-etfs-the-effect-of-daily-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leveraged ETFs, the effect of daily reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-or-synthetic-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical or synthetic replication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-an-etf-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What an ETF is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-price-stays-close-to-nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the price stays close to NAV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why the price stays close to NAV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-etf-trades-above-nav-premium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ETF trades above NAV (premium)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-etf-trades-below-nav-discount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ETF trades below NAV (discount)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-live-price-inav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The live price, iNAV
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-market-and-secondary-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary market and secondary market
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-really-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it really costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What it really costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking difference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-effect-of-fees-over-10-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The effect of fees over 10 years
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-bid-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The bid-ask
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-mechanism-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the mechanism breaks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When the mechanism breaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-24-august-2015-the-etf-flash-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 24 August 2015, the ETF "flash crash"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-march-2020-bond-etfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. March 2020, bond ETFs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leveraged-etfs-the-effect-of-daily-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leveraged ETFs, the effect of daily reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-or-synthetic-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical or synthetic replication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p class="ms-kicker">Episode 32</p>
+
+<h1 id="etfs"><span class="ms-outline">ETFs.</span><a class="headerlink" href="#etfs" title="Permanent link">&para;</a></h1>
+<h2 id="why-this-episode">Why this episode<a class="headerlink" href="#why-this-episode" title="Permanent link">&para;</a></h2>
+<p>Everyone owns an ETF or knows someone who does. Almost nobody knows why its price stays glued to what it holds. It is an arbitrage story, like <a href="../14-put-call-parity/">put-call parity</a> or the <a href="../28-fx-forwards/">FX forward</a>, with a formula, calculations you can redo by hand, and real cases where the mechanism broke. It is also a classic interview question.</p>
+<h2 id="what-an-etf-is">What an ETF is<a class="headerlink" href="#what-an-etf-is" title="Permanent link">&para;</a></h2>
+<p>ETF = exchange-traded fund. A fund holds a basket of assets (for example the 500 stocks of the S&amp;P 500) and you buy a share of the fund on the stock exchange, like a stock.</p>
+<p>Two prices matter.</p>
+<ul>
+<li><strong>The NAV</strong> (net asset value). What the basket inside is actually worth, per share.</li>
+<li><strong>The market price.</strong> What the ETF trades at on the exchange.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>NAV per share = (value of all assets − liabilities) / number of shares
+</code></pre></div>
+<p>If the basket is worth $5,000,000 and there are 50,000 shares, NAV is <strong>$100</strong>.</p>
+<p>A traditional fund (a mutual fund) is bought and sold at NAV directly from the fund, once a day. An ETF trades between investors all day, so its price could drift away from NAV. It almost doesn't, because of one mechanism.</p>
+<h2 id="why-the-price-stays-close-to-nav">Why the price stays close to NAV<a class="headerlink" href="#why-the-price-stays-close-to-nav" title="Permanent link">&para;</a></h2>
+<p>Players called <strong>authorized participants</strong> (APs), big banks and market makers, have the right to <strong>create and destroy</strong> ETF shares directly with the issuer. It is done in blocks called <strong>creation units</strong> (for example 50,000 shares, the size varies by fund), usually <strong>in kind</strong>, meaning the basket is swapped for shares, not cash.</p>
+<h3 id="the-etf-trades-above-nav-premium">The ETF trades above NAV (premium)<a class="headerlink" href="#the-etf-trades-above-nav-premium" title="Permanent link">&para;</a></h3>
+<p>NAV $100, market price $100.40.</p>
+<div class="highlight"><pre><span></span><code>premium = 100.40 / 100 − 1 = +0.40%
+</code></pre></div>
+<p>The AP does this.</p>
+<ol>
+<li>Buys the basket on the market, 50,000 × $100 = $5,000,000.</li>
+<li>Hands it to the issuer, who gives back 50,000 new shares.</li>
+<li>Sells them at $100.40, so 50,000 × 100.40 = $5,020,000.</li>
+<li>Profit = <strong>$20,000</strong> (before costs).</li>
+</ol>
+<p>Selling all those shares pushes the ETF price down toward NAV.</p>
+<h3 id="the-etf-trades-below-nav-discount">The ETF trades below NAV (discount)<a class="headerlink" href="#the-etf-trades-below-nav-discount" title="Permanent link">&para;</a></h3>
+<p>NAV $100, price $99.60, a discount of −0.40%.</p>
+<ol>
+<li>The AP buys 50,000 shares for $4,980,000.</li>
+<li>Gives them back to the issuer and receives the basket, worth $5,000,000.</li>
+<li>Sells the basket.</li>
+<li>Profit = <strong>$20,000</strong>.</li>
+</ol>
+<p>Buying the shares pushes the price up toward NAV.</p>
+<h3 id="the-limit">The limit<a class="headerlink" href="#the-limit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>maximum gap ≈ AP's costs (trading fees + bid-ask + hedging cost)
+</code></pre></div>
+<p>As long as the gap is bigger than the costs, the arbitrage pays, so someone does it, so the gap closes. This is the <strong>arbitrage band</strong>.</p>
+<h3 id="the-live-price-inav">The live price, iNAV<a class="headerlink" href="#the-live-price-inav" title="Permanent link">&para;</a></h3>
+<p>The official NAV is calculated once a day, at the close. During the session the issuer publishes an estimate, the <strong>iNAV</strong> (indicative NAV), recalculated every few seconds from the basket's prices. It is the APs' reference.</p>
+<h2 id="primary-market-and-secondary-market">Primary market and secondary market<a class="headerlink" href="#primary-market-and-secondary-market" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Primary market</th>
+<th>Secondary market</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who</td>
+<td>APs and the issuer</td>
+<td>All investors</td>
+</tr>
+<tr>
+<td>What</td>
+<td>Creating and destroying shares, in blocks</td>
+<td>Buying and selling existing shares on the exchange</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>At NAV (basket against shares)</td>
+<td>Market price, with a bid-ask</td>
+</tr>
+</tbody>
+</table>
+<p>When you buy an ETF on the exchange, you buy an existing share from another investor. The ETF does not need to sell any assets. The primary market only steps in when demand or supply goes beyond what the secondary market absorbs.</p>
+<h2 id="what-it-really-costs">What it really costs<a class="headerlink" href="#what-it-really-costs" title="Permanent link">&para;</a></h2>
+<h3 id="tracking-difference">Tracking difference<a class="headerlink" href="#tracking-difference" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>tracking difference = ETF return − index return
+                    ≈ − expense ratio + securities lending income − trading costs
+</code></pre></div>
+<p><strong>Example.</strong> Index +8.00%, expense ratio 0.20%, the ETF returns +7.82%. The tracking difference is −0.18% (the fund also earned a bit by lending out its securities).</p>
+<p><strong>Tracking error</strong> is something else. It is the volatility of that gap over time. A low tracking error means the ETF follows the index closely day after day.</p>
+<h3 id="the-effect-of-fees-over-10-years">The effect of fees over 10 years<a class="headerlink" href="#the-effect-of-fees-over-10-years" title="Permanent link">&para;</a></h3>
+<p>$10,000 invested for 10 years with a gross return of 7% a year.</p>
+<table>
+<thead>
+<tr>
+<th>Annual fee</th>
+<th>Value after 10 years</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.20% (index ETF)</td>
+<td>10,000 × 1.068^10 = <strong>$19,307</strong></td>
+</tr>
+<tr>
+<td>1.00% (typical active fund)</td>
+<td>10,000 × 1.06^10 = <strong>$17,908</strong></td>
+</tr>
+<tr>
+<td>Gap</td>
+<td><strong>$1,398</strong>, about 14% of the starting capital</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-bid-ask">The bid-ask<a class="headerlink" href="#the-bid-ask" title="Permanent link">&para;</a></h3>
+<p>When you buy and sell, you also pay the gap between the bid and the ask. For a liquid ETF it can be 0.01% to 0.05%. On $100,000 with a 0.04% bid-ask, a round trip costs about $40. For a thinly traded ETF it can exceed 0.5%.</p>
+<h2 id="when-the-mechanism-breaks">When the mechanism breaks<a class="headerlink" href="#when-the-mechanism-breaks" title="Permanent link">&para;</a></h2>
+<p>The arbitrage works as long as the AP can <strong>buy and sell the basket</strong> quickly and at a known price. In a panic, that is no longer true.</p>
+<h3 id="1-24-august-2015-the-etf-flash-crash">1. 24 August 2015, the ETF "flash crash"<a class="headerlink" href="#1-24-august-2015-the-etf-flash-crash" title="Permanent link">&para;</a></h3>
+<p>On Monday 24 August 2015, the US market opened after a sell-off in Chinese markets. The S&amp;P 500 was down about 5% at one point in the session. Many stocks opened late or were halted repeatedly (individual circuit-breaker rules), so <strong>the basket had no reliable price</strong>. The iNAV became wrong and APs no longer knew how to arbitrage.</p>
+<p>According to the SEC's research note published in December 2015, about 19% of exchange-traded products (ETPs) fell 20% or more at some point in the session, against under 5% of single stocks. More than a thousand halts hit 327 ETPs. Some ETFs traded far below their NAV for a few minutes, because there was no reference price for the stocks they held.</p>
+<p><strong>Why.</strong> An ETF's price is derived from the basket. With no price for the basket, the ETF price becomes just a panic price, which corrects when the basket starts quoting again.</p>
+<h3 id="2-march-2020-bond-etfs">2. March 2020, bond ETFs<a class="headerlink" href="#2-march-2020-bond-etfs" title="Permanent link">&para;</a></h3>
+<p>Bonds trade rarely, over the counter (OTC). In a panic, <strong>the ETF can be the only thing trading</strong>. It becomes the real "price discovery", and the NAV, calculated from stale or estimated bond prices, lags behind.</p>
+<p>Numbers from that period.</p>
+<ul>
+<li>The US bond ETF BND (total bond market) traded about 6% below its NAV on 12 March 2020, then came back to about a 1.7% discount the next day.</li>
+<li>The corporate bond ETF LQD traded below its NAV by roughly 3% to 5% depending on the measure and the moment, in the week of 16 to 20 March.</li>
+<li>On 23 March the Fed announced it would buy corporate bond <strong>ETFs</strong>, a first. Right after, LQD went from a discount of about 2.8% on 20 March to a premium of about 2.9% on 23 March, while its NAV had only gained about 1.4%. ETF purchases only started several weeks later, which shows the announcement was enough.</li>
+</ul>
+<p><strong>Why.</strong> APs could no longer buy the bond basket, which was barely selling, so they could no longer arbitrage the discount. And the discount was not necessarily an error. It reflected that the <strong>real</strong> value of the bonds was lower than the displayed NAV.</p>
+<p><strong>The lesson.</strong> An ETF is only as liquid as its assets. The less liquid the underlying (corporate bonds, high yield, emerging market debt), the bigger the gap to NAV can get under stress.</p>
+<h2 id="leveraged-etfs-the-effect-of-daily-reset">Leveraged ETFs, the effect of daily reset<a class="headerlink" href="#leveraged-etfs-the-effect-of-daily-reset" title="Permanent link">&para;</a></h2>
+<p>A 2x ETF aims for <strong>2 times the daily return</strong> of the index, not 2 times over a longer period. It resets its leverage every day.</p>
+<p><strong>Example.</strong> The index rises 10% one day and falls 10% the next.</p>
+<div class="highlight"><pre><span></span><code>Index:      1.10 × 0.90 = 0.99      so −1%
+2x ETF:     1.20 × 0.80 = 0.96      so −4%
+</code></pre></div>
+<p>"2 times" would have been −2%. Three days (+10%, −10%, +10%):</p>
+<div class="highlight"><pre><span></span><code>Index:      1.10 × 0.90 × 1.10 = 1.089     +8.9%
+2x ETF:     1.20 × 0.80 × 1.20 = 1.152     +15.2%   (not +17.8%)
+</code></pre></div>
+<p>The more the index oscillates, the wider the gap. This "volatility drag" is why these products are meant for a few days, not years.</p>
+<h2 id="physical-or-synthetic-replication">Physical or synthetic replication<a class="headerlink" href="#physical-or-synthetic-replication" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Physical.</strong> The ETF actually holds the stocks or bonds of the index (or a representative sample).</li>
+<li><strong>Synthetic.</strong> The ETF holds a different basket and enters a <strong>swap</strong> with a bank, which pays it the index return. Common in Europe for indices that are hard to access. One extra risk, the bank on the swap (counterparty risk, seen in the <a href="../06-credit-default-swaps/">CDS</a> episode).</li>
+</ul>
+<h2 id="classic-pitfalls">Classic pitfalls<a class="headerlink" href="#classic-pitfalls" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Buying an illiquid ETF at any price.</strong> The bid-ask can eat several months of return. Use limit orders and look at the iNAV.</li>
+<li><strong>Trading at the open or close of a wild session.</strong> That is when the gap to NAV is widest.</li>
+<li><strong>Confusing the ETF's liquidity with its assets' liquidity.</strong> A bond ETF trades like a stock but its basket does not.</li>
+<li><strong>Forgetting volatility drag</strong> on leveraged or inverse ETFs.</li>
+<li><strong>Thinking tracking error is a cost.</strong> It is a dispersion, the cost is the tracking difference.</li>
+<li><strong>Ignoring counterparty risk</strong> on synthetic ETFs.</li>
+<li><strong>Treating a discount as a gift.</strong> In March 2020, the discount partly reflected a real value lower than NAV, not only a pricing error.</li>
+</ul>
+<h2 id="the-st-interview-angle">The S&amp;T interview angle<a class="headerlink" href="#the-st-interview-angle" title="Permanent link">&para;</a></h2>
+<p><strong>"How does an ETF stay close to its NAV?"</strong> Through authorized participant arbitrage. If the ETF trades above NAV, the AP buys the basket, creates shares and sells them, which pushes the price down. Below NAV, it buys shares, redeems them for the basket and sells it, which pushes the price up.</p>
+<p><strong>"Why can a bond ETF trade at a much bigger discount than an equity ETF?"</strong> Because arbitrage requires being able to buy or sell the basket. Bonds trade rarely and the NAV uses stale prices. Under stress, the ETF becomes the real price.</p>
+<p><strong>"What is the difference between tracking error and tracking difference?"</strong> Tracking difference is the cumulative return gap between the ETF and its index, roughly the fees. Tracking error is the volatility of that gap.</p>
+<p><strong>"Why doesn't a 2x ETF make twice the performance over a year?"</strong> It resets its leverage every day. When the market oscillates, compounding loses value. Example, +10% then −10% gives −1% for the index and −4% for the 2x.</p>
+<p><strong>"What is a market maker's role on an ETF?"</strong> Quote a bid-ask, hedge its risk with the basket or futures, and create or redeem shares when the gap exceeds its costs.</p>
+<p><strong>"Can ETF flows move the market?"</strong> Yes. Large creations or redemptions force APs to buy or sell the underlying basket, which weighs on its prices, especially for less liquid assets.</p>
+<h2 id="links-to-previous-episodes">Links to previous episodes<a class="headerlink" href="#links-to-previous-episodes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../14-put-call-parity/">Put-Call Parity</a>, same arbitrage logic, two paths that must cost the same.</li>
+<li><a href="../28-fx-forwards/">FX Forwards</a>, a price set by arbitrage and not by a forecast.</li>
+<li><a href="../27-qe-and-qt/">QE and QT</a>, March 2020 and the Fed's purchase of bond ETFs.</li>
+<li><a href="../05-credit-spread/">Credit Spread</a>, the corporate bonds LQD holds.</li>
+<li><a href="../06-credit-default-swaps/">Credit Default Swaps</a>, the counterparty risk of synthetic ETFs.</li>
+<li><a href="../11-repo/">Repo</a>, bond market liquidity under stress.</li>
+</ul>
+<div class="ms-takeaway">
+<h2 id="key-takeaway">Key takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h2>
+<ul>
+<li>An ETF is a listed basket. NAV = (assets − liabilities) / number of shares.</li>
+<li>Its price stays close to NAV because authorized participants create or redeem shares in blocks, and pocket the gap (example, 0.40% on $5m = $20,000).</li>
+<li>The real cost is tracking difference (≈ expense ratio) plus the bid-ask. 0.20% versus 1.00% in fees is about $1,400 on $10,000 over 10 years.</li>
+<li>The arbitrage breaks when the basket has no reliable price (24 August 2015) or cannot trade (bonds in March 2020).</li>
+<li>Leveraged ETFs reset their leverage every day. +10% then −10% gives −1% for the index and −4% for a 2x.</li>
+<li>An ETF is only as liquid as its assets.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../29-the-carry-trade/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 29. The Carry Trade">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                29. The Carry Trade
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "search.highlight", "search.suggest", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

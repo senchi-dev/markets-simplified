@@ -1,0 +1,2886 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Fiches détaillées de la série LinkedIn Markets, Simplified (taux, crédit, options)">
+      
+      
+        <meta name="author" content="Marwane Benaddi">
+      
+      
+        <link rel="canonical" href="https://senchi-dev.github.io/markets-simplified/episodes/29-the-carry-trade/">
+      
+      
+        <link rel="prev" href="../28-fx-forwards/">
+      
+      
+        <link rel="next" href="../32-etfs/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="fr">
+        
+          <link rel="alternate" href="../../en/episodes/29-the-carry-trade/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>29. The Carry Trade - Markets, Simplified</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-carry-trade" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Markets, Simplified" class="md-header__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markets, Simplified
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              29. The Carry Trade
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/episodes/29-the-carry-trade/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/senchi-dev/markets-simplified" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Markets, Simplified" class="md-nav__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    Markets, Simplified
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/senchi-dev/markets-simplified" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taux et obligations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Taux et obligations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fixed-vs-floating-rate-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fixed vs Floating Rate Debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-yield-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Yield Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dv01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. DV01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-bond-futures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Bond Futures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crédit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Crédit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-credit-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Credit Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-credit-default-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Credit Default Swaps (CDS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cds-indices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. CDS Indices (CDX & iTraxx)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-cdo-tranches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. CDO Tranches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-the-big-short/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The Big Short
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swaps et financement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Swaps et financement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-interest-rate-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interest Rate Swaps (IRS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-short-selling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Short Selling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Options
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Options (Calls & Puts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-put-call-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Put-Call Parity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les Greeks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Les Greeks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-delta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Delta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-gamma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Gamma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-theta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Theta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-vega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volatilité
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Volatilité
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-implied-volatility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Implied Volatility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-the-gamma-squeeze/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. The Gamma Squeeze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-the-volatility-skew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. The Volatility Skew
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stratégies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stratégies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-the-straddle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. The Straddle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-the-strangle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. The Strangle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-the-vertical-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. The Vertical Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modèles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modèles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-black-scholes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Black-Scholes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Banques centrales
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Banques centrales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-the-policy-rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. The Policy Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-qe-and-qt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. QE and QT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-pricing-rate-cuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Pricing Rate Cuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-inflation-breakevens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Inflation Breakevens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Changes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-fx-forwards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. FX Forwards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. The Carry Trade
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. The Carry Trade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-cet-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi cet épisode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Définition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexemple-chiffre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'exemple chiffré
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-point-dequilibre-est-le-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le point d'équilibre est le forward
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le point d&#39;équilibre est le forward">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meme-trade-version-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Même trade, version forward
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-ca-marche-la-plupart-du-temps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi ça marche (la plupart du temps)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pourquoi ça marche (la plupart du temps)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-le-marche-laisse-ca-exister" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi le marché laisse ça exister
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-ca-perd-les-pertes-dun-coup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comment ça perd, les pertes d'un coup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comment ça perd, les pertes d&#39;un coup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-levier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le levier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-spirale-de-denouement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La spirale de dénouement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quand-ca-a-mal-tourne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quand ça a mal tourné
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quand ça a mal tourné">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-octobre-1998-apres-ltcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Octobre 1998, après LTCM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2008-laudjpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 2008, l'AUD/JPY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-janvier-2015-le-franc-suisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Janvier 2015, le franc suisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-aout-2024-le-yen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Août 2024, le yen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-mesurer-si-le-carry-est-interessant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comment mesurer si le carry est intéressant
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comment mesurer si le carry est intéressant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-ratio-carry-volatilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le ratio carry / volatilité
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-que-disent-les-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ce que disent les options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#se-couvrir-avec-des-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Se couvrir avec des options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-carry-nest-pas-que-du-fx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le carry n'est pas que du FX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pieges-classiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pièges classiques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langle-entretien-st" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'angle entretien S&amp;T
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liens-avec-les-episodes-precedents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liens avec les épisodes précédents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-retenir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À retenir
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produits
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Produits
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-etfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. ETFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-cet-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi cet épisode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Définition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexemple-chiffre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'exemple chiffré
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-point-dequilibre-est-le-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le point d'équilibre est le forward
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le point d&#39;équilibre est le forward">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meme-trade-version-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Même trade, version forward
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-ca-marche-la-plupart-du-temps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi ça marche (la plupart du temps)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pourquoi ça marche (la plupart du temps)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-le-marche-laisse-ca-exister" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi le marché laisse ça exister
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-ca-perd-les-pertes-dun-coup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comment ça perd, les pertes d'un coup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comment ça perd, les pertes d&#39;un coup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-levier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le levier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-spirale-de-denouement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La spirale de dénouement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quand-ca-a-mal-tourne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quand ça a mal tourné
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quand ça a mal tourné">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-octobre-1998-apres-ltcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Octobre 1998, après LTCM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2008-laudjpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 2008, l'AUD/JPY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-janvier-2015-le-franc-suisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Janvier 2015, le franc suisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-aout-2024-le-yen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Août 2024, le yen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-mesurer-si-le-carry-est-interessant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comment mesurer si le carry est intéressant
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comment mesurer si le carry est intéressant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-ratio-carry-volatilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le ratio carry / volatilité
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-que-disent-les-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ce que disent les options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#se-couvrir-avec-des-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Se couvrir avec des options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-carry-nest-pas-que-du-fx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le carry n'est pas que du FX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pieges-classiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pièges classiques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langle-entretien-st" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'angle entretien S&amp;T
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liens-avec-les-episodes-precedents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liens avec les épisodes précédents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-retenir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À retenir
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p class="ms-kicker">Épisode 29</p>
+
+<h1 id="the-carry-trade">The Carry <span class="ms-outline">Trade.</span><a class="headerlink" href="#the-carry-trade" title="Permanent link">&para;</a></h1>
+<h2 id="pourquoi-cet-episode">Pourquoi cet épisode<a class="headerlink" href="#pourquoi-cet-episode" title="Permanent link">&para;</a></h2>
+<p>L'<a href="../28-fx-forwards/">épisode 28</a> montrait que le forward est <strong>couvert</strong>. Tu bloques le taux de change, donc tu ne gagnes rien de plus que le taux sans risque. Le carry trade est exactement le même montage <strong>sans la couverture</strong>. Tu gardes l'écart de taux, et tu prends le risque de change. C'est l'une des stratégies les plus utilisées du marché, et elle a une forme de risque très particulière, de petits gains réguliers et de grosses pertes d'un coup.</p>
+<h2 id="definition">Définition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>Tu empruntes dans une monnaie à taux <strong>bas</strong> (la monnaie de financement), tu changes l'argent dans une monnaie à taux <strong>haut</strong>, tu le places, et tu <strong>ne couvres pas</strong> le taux de change. Tu touches l'écart de taux, le <strong>carry</strong>, tant que le taux de change ne bouge pas contre toi.</p>
+<p>La version classique pendant des années, emprunter en <strong>yen</strong> (taux proche de 0 %) et placer en <strong>dollars</strong> (4 à 5 %). Le yen a un nom dans ce rôle, la monnaie de financement. On parlait de "Mrs Watanabe", les épargnants japonais qui plaçaient leur argent à l'étranger.</p>
+<h2 id="lexemple-chiffre">L'exemple chiffré<a class="headerlink" href="#lexemple-chiffre" title="Permanent link">&para;</a></h2>
+<p>USD/JPY = 150 (1 dollar coûte 150 yens). Taux yen <strong>0,5 %</strong>, taux dollar <strong>4 %</strong>.</p>
+<p><strong>Aujourd'hui.</strong></p>
+<div class="highlight"><pre><span></span><code>Tu empruntes 15 000 000 ¥ à 0,5 %
+Tu changes : 15 000 000 / 150 = 100 000 $
+Tu places 100 000 $ à 4 %
+</code></pre></div>
+<p><strong>Dans 1 an.</strong></p>
+<div class="highlight"><pre><span></span><code>Tu as :  100 000 $ × 1,04      = 104 000 $
+Tu dois : 15 000 000 ¥ × 1,005 = 15 075 000 ¥
+</code></pre></div>
+<p>Tu as des dollars et tu dois des yens. Tout dépend du taux de change dans un an.</p>
+<table>
+<thead>
+<tr>
+<th>USD/JPY dans 1 an</th>
+<th>104 000 $ valent</th>
+<th>Tu rends</th>
+<th>Résultat en yens</th>
+<th>En dollars</th>
+<th>Sur 100 000 $</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>160 (dollar monte)</td>
+<td>16 640 000 ¥</td>
+<td>15 075 000 ¥</td>
+<td>+1 565 000 ¥</td>
+<td>+9 781 $</td>
+<td>+9,8 %</td>
+</tr>
+<tr>
+<td>150 (inchangé)</td>
+<td>15 600 000 ¥</td>
+<td>15 075 000 ¥</td>
+<td>+525 000 ¥</td>
+<td>+3 500 $</td>
+<td>+3,5 %</td>
+</tr>
+<tr>
+<td>144,95</td>
+<td>15 075 000 ¥</td>
+<td>15 075 000 ¥</td>
+<td>0</td>
+<td>0</td>
+<td>0 %</td>
+</tr>
+<tr>
+<td>140 (yen monte)</td>
+<td>14 560 000 ¥</td>
+<td>15 075 000 ¥</td>
+<td>−515 000 ¥</td>
+<td>−3 679 $</td>
+<td>−3,7 %</td>
+</tr>
+<tr>
+<td>130 (yen monte beaucoup)</td>
+<td>13 520 000 ¥</td>
+<td>15 075 000 ¥</td>
+<td>−1 555 000 ¥</td>
+<td>−11 962 $</td>
+<td>−12,0 %</td>
+</tr>
+</tbody>
+</table>
+<p>Un mouvement de 6,7 % du yen (150 vers 140) efface toute l'année d'intérêts, et au-delà.</p>
+<h2 id="le-point-dequilibre-est-le-forward">Le point d'équilibre est le forward<a class="headerlink" href="#le-point-dequilibre-est-le-forward" title="Permanent link">&para;</a></h2>
+<p>À quel taux ne gagnes-tu rien ?</p>
+<div class="highlight"><pre><span></span><code>104 000 × X = 15 075 000
+X = 15 075 000 / 104 000 = 144,95
+</code></pre></div>
+<p>C'est <strong>exactement le taux forward</strong> de l'épisode précédent (150 × 1,005 / 1,04 = 144,95).</p>
+<p>Donc le carry trade est un <strong>pari que le taux de change dans un an sera meilleur que le forward</strong>. Pas meilleur que le spot, meilleur que le forward.</p>
+<h3 id="meme-trade-version-forward">Même trade, version forward<a class="headerlink" href="#meme-trade-version-forward" title="Permanent link">&para;</a></h3>
+<p>On peut faire le même trade sans emprunter ni placer rien. On <strong>achète USD/JPY à terme</strong> à 144,95. Dans un an, si le spot est à 150, tu achètes à 144,95 et tu revends à 150 :</p>
+<div class="highlight"><pre><span></span><code>profit = 150 − 144,95 = 5,05 ¥ par dollar  -&gt;  5,05 / 144,95 ≈ 3,5 %
+</code></pre></div>
+<p>Même résultat que le montage emprunt + placement (3,5 %). C'est pour ça que sur un desk on parle de "long USD/JPY forward" pour dire "faire du carry". Les points de terme (−505 pips, épisode 28) sont le prix à payer pour être long de la monnaie à taux haut, et le trade gagne si le spot finit au-dessus du forward.</p>
+<h2 id="pourquoi-ca-marche-la-plupart-du-temps">Pourquoi ça marche (la plupart du temps)<a class="headerlink" href="#pourquoi-ca-marche-la-plupart-du-temps" title="Permanent link">&para;</a></h2>
+<p>L'<a href="../28-fx-forwards/">épisode 28</a> disait que la <strong>parité non couverte</strong> (UIP) prévoit que la monnaie à taux haut se déprécie exactement de l'écart de taux. Si c'était vrai, le carry trade rapporterait zéro en moyenne.</p>
+<p>En pratique, c'est faux. Les études (à partir de Fama, 1984) montrent que les monnaies à taux haut se déprécient <strong>moins</strong> que l'écart de taux, parfois pas du tout. C'est le "forward premium puzzle". Le carry trade a donc gagné de l'argent en moyenne sur des décennies.</p>
+<h3 id="pourquoi-le-marche-laisse-ca-exister">Pourquoi le marché laisse ça exister<a class="headerlink" href="#pourquoi-le-marche-laisse-ca-exister" title="Permanent link">&para;</a></h3>
+<p>La réponse la plus répandue, c'est que le carry est la <strong>rémunération d'un risque</strong>, comme l'assurance qu'on vend. Tu encaisses une petite prime chaque année, et en échange tu acceptes de perdre beaucoup quand le marché panique. Le carry se comporte comme la vente d'une option, dont on a vu le profil dans l'<a href="../13-options/">épisode 13</a> (petite prime, grosse perte possible).</p>
+<p>Autres explications avancées. Les banques centrales qui lissent les taux de change. Les investisseurs qui réagissent trop lentement aux écarts de taux. Les flux de couverture des entreprises. Personne n'a de réponse définitive.</p>
+<h2 id="comment-ca-perd-les-pertes-dun-coup">Comment ça perd, les pertes d'un coup<a class="headerlink" href="#comment-ca-perd-les-pertes-dun-coup" title="Permanent link">&para;</a></h2>
+<p>Les gains sont <strong>petits et réguliers</strong> (quelques % par an). Les pertes sont <strong>grosses et brutales</strong>. Les traders disent que le carry monte par l'escalier et descend par l'ascenseur. Les rendements d'un carry trade sont "à asymétrie négative" (negative skew), il y a beaucoup de petits gains et de rares très grosses pertes.</p>
+<h3 id="le-levier">Le levier<a class="headerlink" href="#le-levier" title="Permanent link">&para;</a></h3>
+<p>Presque personne ne fait du carry sans levier, parce que 3,5 % par an est peu. Avec du levier :</p>
+<table>
+<thead>
+<tr>
+<th>Levier</th>
+<th>Gain si rien ne bouge (3,5 %)</th>
+<th>Perte si USD/JPY va à 140 (−3,7 %)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1x</td>
+<td>+3,5 %</td>
+<td>−3,7 %</td>
+</tr>
+<tr>
+<td>5x</td>
+<td>+17,5 %</td>
+<td>−18,4 %</td>
+</tr>
+<tr>
+<td>10x</td>
+<td>+35 %</td>
+<td>−36,8 %</td>
+</tr>
+<tr>
+<td>20x</td>
+<td>+70 %</td>
+<td>−73,6 %</td>
+</tr>
+</tbody>
+</table>
+<p>Avec un levier de 20x, un mouvement de 6,7 % du yen détruit les trois quarts du capital. Et les courtiers FX déclenchent la liquidation de force bien avant ça.</p>
+<h3 id="la-spirale-de-denouement">La spirale de dénouement<a class="headerlink" href="#la-spirale-de-denouement" title="Permanent link">&para;</a></h3>
+<p>Tout le monde fait le même trade, emprunter du yen et le vendre. Quand quelque chose fait peur au marché :</p>
+<ol>
+<li>Les investisseurs ferment leurs positions, donc ils <strong>rachètent du yen</strong> pour rembourser leurs prêts.</li>
+<li>Racheter du yen le fait monter.</li>
+<li>Un yen plus fort fait perdre les autres carry traders, qui ferment à leur tour (appels de marge, stop-loss).</li>
+<li>Le yen monte encore plus.</li>
+</ol>
+<p>C'est la même mécanique que la spirale des fonds de pension britanniques de l'<a href="../27-qe-and-qt/">épisode 27</a> (les ventes forcées font bouger le prix, ce qui force d'autres ventes). C'est aussi la même que le gamma squeeze de l'<a href="../20-the-gamma-squeeze/">épisode 20</a>, où la couverture des uns nourrit le mouvement qui force les autres.</p>
+<h2 id="quand-ca-a-mal-tourne">Quand ça a mal tourné<a class="headerlink" href="#quand-ca-a-mal-tourne" title="Permanent link">&para;</a></h2>
+<h3 id="1-octobre-1998-apres-ltcm">1. Octobre 1998, après LTCM<a class="headerlink" href="#1-octobre-1998-apres-ltcm" title="Permanent link">&para;</a></h3>
+<p>L'été 1998, la Russie fait défaut sur sa dette, le fonds LTCM s'effondre (<a href="../25-black-scholes/">épisode 25</a>). Les hedge funds, qui avaient emprunté en yen pour financer des positions partout, dénouent d'un coup. Les 7 et 8 octobre 1998, USD/JPY passe d'environ 135 à environ 112 en deux jours, un yen environ 15 % plus fort.</p>
+<p><strong>Pourquoi.</strong> Les positions de carry étaient énormes et concentrées sur la même monnaie de financement. Quand les fonds ont eu besoin de cash ailleurs, tous ont racheté du yen en même temps.</p>
+<h3 id="2-2008-laudjpy">2. 2008, l'AUD/JPY<a class="headerlink" href="#2-2008-laudjpy" title="Permanent link">&para;</a></h3>
+<p>L'Australie avait des taux autour de 7 %, le Japon autour de 0,5 %. AUD/JPY était la paire de carry la plus populaire. Elle valait environ 107 en juillet 2008 et environ 55 en octobre 2008. Presque la moitié de sa valeur en trois mois.</p>
+<p><strong>Pourquoi.</strong> La crise Lehman a fait fuir tout le monde vers les monnaies sûres (yen, dollar) et vendre les monnaies à taux haut. Sur ces trois mois, le carry gagné (environ 6,5 % par an, donc environ 1,6 % sur la période) ne pesait rien face à une baisse de 45 %.</p>
+<h3 id="3-janvier-2015-le-franc-suisse">3. Janvier 2015, le franc suisse<a class="headerlink" href="#3-janvier-2015-le-franc-suisse" title="Permanent link">&para;</a></h3>
+<p>Depuis 2011, la banque centrale suisse (BNS) maintenait un plancher à 1,20 franc pour 1 euro. Les taux suisses étaient très bas. Beaucoup de ménages en Pologne, en Hongrie et dans d'autres pays d'Europe de l'Est s'étaient endettés <strong>en francs suisses</strong> pour leur crédit immobilier, parce que le taux était plus bas que celui du crédit en monnaie locale. Ils étaient, sans le savoir, dans un carry trade, <strong>empruntés en franc, revenus en zloty ou en forint</strong>.</p>
+<p>Le 15 janvier 2015, la BNS abandonne le plancher sans prévenir. Le franc monte jusqu'à environ 30 % face à l'euro en quelques minutes, et finit la journée autour de 15 à 20 % plus haut.</p>
+<p><strong>Conséquences.</strong> La dette de ces ménages a augmenté d'autant en une nuit, alors que leurs salaires restaient en monnaie locale. Des courtiers FX ont fait faillite le jour même, parce que leurs clients avaient des pertes supérieures à leur dépôt (par exemple Alpari UK, et FXCM a dû être renfloué). Le point commun, une position qui gagne un petit carry pendant des années, avec une banque centrale qui cache un risque de saut.</p>
+<h3 id="4-aout-2024-le-yen">4. Août 2024, le yen<a class="headerlink" href="#4-aout-2024-le-yen" title="Permanent link">&para;</a></h3>
+<p>Pendant des années, des investisseurs du monde entier avaient emprunté en yen. Fin juillet 2024, la Banque du Japon relève ses taux et laisse entendre d'autres hausses. En même temps, la Fed laisse entrevoir des baisses, donc l'écart de taux se réduit des deux côtés. USD/JPY passe d'environ 162 début juillet à environ 142 le 5 août, un yen environ 14 % plus fort. Le Nikkei perd environ 12 % le 5 août, sa pire séance depuis 1987, puis rebondit presque entièrement dans les jours suivants.</p>
+<p><strong>Pourquoi.</strong> L'écart de taux qui justifiait le trade diminuait (moins de carry), et le yen montait (perte de change). Les deux effets jouent dans le même sens, donc les positions ferment en même temps.</p>
+<h2 id="comment-mesurer-si-le-carry-est-interessant">Comment mesurer si le carry est intéressant<a class="headerlink" href="#comment-mesurer-si-le-carry-est-interessant" title="Permanent link">&para;</a></h2>
+<h3 id="le-ratio-carry-volatilite">Le ratio carry / volatilité<a class="headerlink" href="#le-ratio-carry-volatilite" title="Permanent link">&para;</a></h3>
+<p>Gagner 3,5 % ne veut pas dire la même chose si la paire bouge de 5 % par an ou de 15 % par an.</p>
+<div class="highlight"><pre><span></span><code>ratio carry / vol = écart de taux / volatilité du taux de change
+</code></pre></div>
+<p><strong>Exemple.</strong> Écart de taux 3,5 %.
+- Si la volatilité implicite de USD/JPY est 7 %, ratio = 3,5 / 7 = 0,5.
+- Si elle est 14 %, ratio = 3,5 / 14 = 0,25.</p>
+<p>Avec le même écart, le trade est deux fois moins intéressant quand la volatilité double. Les traders cherchent un ratio élevé, et une baisse du ratio (volatilité qui monte) est un signal d'alerte.</p>
+<h3 id="ce-que-disent-les-options">Ce que disent les options<a class="headerlink" href="#ce-que-disent-les-options" title="Permanent link">&para;</a></h3>
+<p>On a vu dans l'<a href="../21-the-volatility-skew/">épisode 21</a> que le prix des puts et des calls n'est pas symétrique quand le marché craint une direction. Pour une paire de carry, le marché paie plus cher pour se protéger contre la <strong>chute de la monnaie à taux haut</strong> (donc contre le dénouement). On lit ça dans le <strong>risk reversal</strong>, la différence de volatilité implicite entre un put et un call de même delta. Quand ce risk reversal devient très déséquilibré, le marché price un risque de dénouement.</p>
+<h3 id="se-couvrir-avec-des-options">Se couvrir avec des options<a class="headerlink" href="#se-couvrir-avec-des-options" title="Permanent link">&para;</a></h3>
+<p>On peut acheter un put sur la monnaie à taux haut (ici un put USD/JPY, qui gagne si le dollar baisse face au yen), pour plafonner la perte. Ça coûte de la prime, qui mange une partie du carry. C'est l'<a href="../13-options/">épisode 13</a> appliqué au FX. Le trade devient un carry avec un plancher de perte, et sa rentabilité dépend du ratio entre le carry reçu et la prime payée.</p>
+<h2 id="le-carry-nest-pas-que-du-fx">Le carry n'est pas que du FX<a class="headerlink" href="#le-carry-nest-pas-que-du-fx" title="Permanent link">&para;</a></h2>
+<p>Le mot "carry" désigne en général <strong>ce que tu gagnes si rien ne bouge</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Marché</th>
+<th>Ce que fait le trade</th>
+<th>Le carry</th>
+<th>Le risque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FX</td>
+<td>Long la monnaie à taux haut, court celle à taux bas</td>
+<td>L'écart de taux</td>
+<td>Le dénouement, le saut de change</td>
+</tr>
+<tr>
+<td>Obligations</td>
+<td>Acheter une obligation longue financée en <a href="../11-repo/">repo</a> court</td>
+<td>Le coupon moins le coût du repo</td>
+<td>Les taux montent (<a href="../03-duration/">duration</a>)</td>
+</tr>
+<tr>
+<td>Courbe des taux</td>
+<td>Être payeur ou receveur dans un <a href="../10-interest-rate-swaps/">swap</a>, être sur la pente de la <a href="../02-the-yield-curve/">courbe</a></td>
+<td>Le roll-down (le titre se rapproche de l'échéance et glisse le long de la courbe)</td>
+<td>La courbe bouge</td>
+</tr>
+<tr>
+<td>Crédit</td>
+<td>Vendre de la protection sur un <a href="../06-credit-default-swaps/">CDS</a></td>
+<td>La prime reçue</td>
+<td>Le défaut</td>
+</tr>
+<tr>
+<td>Options</td>
+<td>Vendre une option, voir <a href="../17-theta/">theta</a></td>
+<td>La prime qui s'érode</td>
+<td>Le gros mouvement</td>
+</tr>
+</tbody>
+</table>
+<p>Même structure à chaque fois. Un petit revenu régulier, contre une grosse perte rare.</p>
+<h2 id="pieges-classiques">Pièges classiques<a class="headerlink" href="#pieges-classiques" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Croire que le carry est un gain sans risque.</strong> Tant que l'on ne couvre pas, ce n'est pas du tout sans risque. Le gain est la rémunération d'un risque de change.</li>
+<li><strong>Comparer au spot et pas au forward.</strong> Le point d'équilibre est le forward (144,95), pas le spot (150). Il y a un petit écart qui fait la différence entre gagner et perdre.</li>
+<li><strong>Oublier le levier.</strong> Les chiffres d'un carry sans levier sont petits. C'est le levier qui rend le trade attractif, et qui le rend dangereux.</li>
+<li><strong>Le risque de saut d'un taux de change administré.</strong> Quand une banque centrale défend un plancher ou un cap (franc suisse en 2015), le risque est caché jusqu'au jour où il saute d'un coup.</li>
+<li><strong>Se fier à la volatilité récente.</strong> La volatilité est basse juste avant les dénouements, parce que le carry marche bien. Un ratio carry / vol très élevé peut être un signe de complaisance plutôt qu'une bonne affaire.</li>
+<li><strong>Les coûts.</strong> Bid-ask, financement du levier, rollover quotidien. Sur 3,5 % de carry, ça compte.</li>
+</ul>
+<h2 id="langle-entretien-st">L'angle entretien S&amp;T<a class="headerlink" href="#langle-entretien-st" title="Permanent link">&para;</a></h2>
+<p><strong>"C'est quoi un carry trade ?"</strong> Emprunter dans une monnaie à taux bas, placer dans une monnaie à taux haut, sans couvrir le change. On gagne l'écart de taux tant que la monnaie à taux haut ne se déprécie pas plus que cet écart.</p>
+<p><strong>"Où est le point d'équilibre ?"</strong> Au taux forward. Si le spot final est meilleur que le forward, le trade gagne, sinon il perd.</p>
+<p><strong>"Pourquoi ça marche, alors que la parité non couverte dit le contraire ?"</strong> Les monnaies à taux haut se déprécient en moyenne moins que l'écart de taux (forward premium puzzle). Le carry est aussi une rémunération pour le risque de dénouement.</p>
+<p><strong>"Quel est le profil de risque ?"</strong> Petits gains réguliers, grosses pertes brutales. Asymétrie négative, comme vendre une option.</p>
+<p><strong>"Pourquoi les pertes arrivent-elles toutes en même temps ?"</strong> Tout le monde fait le même trade, donc quand un choc arrive, tout le monde ferme en même temps, ce qui fait bouger le prix contre tous les autres. Une spirale de ventes forcées.</p>
+<p><strong>"Cite des exemples."</strong> 1998 après LTCM, 2008 AUD/JPY, 2015 franc suisse, août 2024 yen.</p>
+<p><strong>"Comment on se couvre ?"</strong> Avec un put sur la monnaie à taux haut. Ça plafonne la perte mais ça mange une partie du carry.</p>
+<p><strong>"Quelle est la différence entre un carry trade et un forward ?"</strong> Un forward est couvert, donc il ne rapporte rien de plus que les taux. Le carry n'est pas couvert, donc il peut gagner ou perdre. Le carry est un pari que le spot final sera meilleur que le forward.</p>
+<h2 id="liens-avec-les-episodes-precedents">Liens avec les épisodes précédents<a class="headerlink" href="#liens-avec-les-episodes-precedents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../28-fx-forwards/">FX Forwards</a>, le point d'équilibre du carry est le forward.</li>
+<li><a href="../27-qe-and-qt/">QE and QT</a>, la même spirale de ventes forcées, et les écarts de taux entre pays viennent des banques centrales.</li>
+<li><a href="../26-the-policy-rate/">The Policy Rate</a>, ce sont les décisions de taux qui créent et défont les écarts.</li>
+<li><a href="../13-options/">Options</a>, le carry ressemble à une vente d'option, et une option peut le couvrir.</li>
+<li><a href="../21-the-volatility-skew/">Volatility Skew</a>, le risk reversal lit la peur du dénouement.</li>
+<li><a href="../17-theta/">Theta</a>, vendre de l'option, c'est du carry aussi.</li>
+</ul>
+<div class="ms-takeaway">
+<h2 id="a-retenir">À retenir<a class="headerlink" href="#a-retenir" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Le carry trade, c'est emprunter dans une monnaie à taux bas, placer dans une monnaie à taux haut, sans couvrir le change.</li>
+<li>Le point d'équilibre est le taux forward. Le trade gagne si le taux de change final est meilleur que le forward.</li>
+<li>Il gagne en moyenne parce que les monnaies à taux haut se déprécient moins que l'écart de taux, mais c'est la rémunération d'un risque.</li>
+<li>Le profil est petits gains réguliers, grosses pertes d'un coup. Le levier amplifie les deux.</li>
+<li>Les pertes arrivent en même temps parce que tout le monde fait le même trade et sort en même temps (1998, 2008, 2015, 2024).</li>
+<li>Le carry n'existe pas qu'en FX. C'est aussi les obligations financées en repo, la vente de CDS et la vente d'options.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../28-fx-forwards/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 28. FX Forwards">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                28. FX Forwards
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../32-etfs/" class="md-footer__link md-footer__link--next" aria-label="Suivant: 32. ETFs">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                32. ETFs
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "search.highlight", "search.suggest", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

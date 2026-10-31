@@ -1,0 +1,2778 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Detailed notes for the Markets, Simplified LinkedIn series (rates, credit, options)">
+      
+      
+        <meta name="author" content="Marwane Benaddi">
+      
+      
+        <link rel="canonical" href="https://senchi-dev.github.io/markets-simplified/en/episodes/27-qe-and-qt/">
+      
+      
+        <link rel="prev" href="../26-the-policy-rate/">
+      
+      
+        <link rel="next" href="../30-pricing-rate-cuts/">
+      
+      
+        
+          <link rel="alternate" href="../../../episodes/27-qe-and-qt/" hreflang="fr">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>27. QE and QT - Markets, Simplified</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qe-and-qt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="Markets, Simplified" class="md-header__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markets, Simplified
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              27. QE and QT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../episodes/27-qe-and-qt/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Markets, Simplified" class="md-nav__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    Markets, Simplified
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rates and bonds
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rates and bonds
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fixed-vs-floating-rate-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fixed vs Floating Rate Debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-yield-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Yield Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dv01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. DV01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-bond-futures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Bond Futures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Credit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-credit-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Credit Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-credit-default-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Credit Default Swaps (CDS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cds-indices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. CDS Indices (CDX & iTraxx)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-cdo-tranches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. CDO Tranches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-the-big-short/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The Big Short
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swaps and funding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Swaps and funding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-interest-rate-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interest Rate Swaps (IRS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-short-selling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Short Selling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Options
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Options (Calls & Puts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-put-call-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Put-Call Parity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Greeks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Greeks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-delta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Delta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-gamma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Gamma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-theta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Theta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-vega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volatility
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Volatility
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-implied-volatility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Implied Volatility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-the-gamma-squeeze/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. The Gamma Squeeze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-the-volatility-skew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. The Volatility Skew
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-the-straddle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. The Straddle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-the-strangle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. The Strangle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-the-vertical-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. The Vertical Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-black-scholes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Black-Scholes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Central banks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Central banks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-the-policy-rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. The Policy Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. QE and QT
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. QE and QT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-in-the-balance-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens in the balance sheets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-lowers-long-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it lowers long rates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why it lowers long rates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-price-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The price effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-less-duration-available-the-scarcity-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Less duration available (the scarcity effect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-portfolio-rebalancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Portfolio rebalancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orders-of-magnitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orders of magnitude
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qe-in-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QE in numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QE in numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ECB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bank-of-japan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bank of Japan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QT in practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-went-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When it went wrong
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When it went wrong">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-taper-tantrum-2013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The taper tantrum, 2013
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-repo-panic-september-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The repo panic, September 2019
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-gilt-and-ldi-crisis-uk-september-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The gilt and LDI crisis, UK, September 2022
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-silicon-valley-bank-march-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Silicon Valley Bank, March 2023
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-central-bank-losses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Central bank losses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-pricing-rate-cuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Pricing Rate Cuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-inflation-breakevens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Inflation Breakevens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-fx-forwards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. FX Forwards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-the-carry-trade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. The Carry Trade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-etfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. ETFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-in-the-balance-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens in the balance sheets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-lowers-long-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it lowers long rates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why it lowers long rates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-price-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The price effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-less-duration-available-the-scarcity-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Less duration available (the scarcity effect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-portfolio-rebalancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Portfolio rebalancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orders-of-magnitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orders of magnitude
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qe-in-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QE in numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QE in numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ECB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bank-of-japan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bank of Japan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QT in practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-it-went-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When it went wrong
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When it went wrong">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-taper-tantrum-2013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The taper tantrum, 2013
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-repo-panic-september-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The repo panic, September 2019
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-gilt-and-ldi-crisis-uk-september-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The gilt and LDI crisis, UK, September 2022
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-silicon-valley-bank-march-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Silicon Valley Bank, March 2023
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-central-bank-losses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Central bank losses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p class="ms-kicker">Episode 27</p>
+
+<h1 id="qe-and-qt">QE and <span class="ms-outline">QT.</span><a class="headerlink" href="#qe-and-qt" title="Permanent link">&para;</a></h1>
+<h2 id="why-this-episode">Why this episode<a class="headerlink" href="#why-this-episode" title="Permanent link">&para;</a></h2>
+<p><a href="../26-the-policy-rate/">Episode 26</a> explained how a central bank controls the overnight rate. But in 2008 and again in 2020, central banks took that rate to zero and the economy still needed help. The policy rate only controls day-to-day money, while mortgages, corporate loans and government borrowing are priced off <strong>long-term rates</strong> (5, 10, 30 years). QE is the tool used to push those long rates down. QT is the reverse.</p>
+<p>This episode explains how it works in the balance sheets, why it lowers rates, what it did in practice, and above all the times it went wrong, and why.</p>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<p><strong>QE (quantitative easing).</strong> The central bank buys large amounts of bonds, mostly government bonds (the Fed also bought MBS, bonds backed by mortgages, see <a href="../08-cdo-tranches/">episode 8</a>). It pays for them with <strong>reserves it creates</strong>.</p>
+<p><strong>QT (quantitative tightening).</strong> The reverse. The central bank shrinks its balance sheet, either by not reinvesting the bonds that mature (passive QT) or by selling them on the market (active QT).</p>
+<p>Important point, the central bank does not buy bonds directly from the government. It buys them on the <strong>secondary market</strong>, from investors (pension funds, insurers, banks). Financing governments directly is forbidden for the ECB by the European treaties.</p>
+<h2 id="what-happens-in-the-balance-sheets">What happens in the balance sheets<a class="headerlink" href="#what-happens-in-the-balance-sheets" title="Permanent link">&para;</a></h2>
+<p>The Fed buys $1bn of Treasuries from a pension fund.</p>
+<table>
+<thead>
+<tr>
+<th>Who</th>
+<th>Assets</th>
+<th>Liabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fed</td>
+<td>+$1bn Treasuries</td>
+<td>+$1bn reserves (owed to the fund's bank)</td>
+</tr>
+<tr>
+<td>The fund's bank</td>
+<td>+$1bn reserves at the Fed</td>
+<td>+$1bn deposit (owed to the pension fund)</td>
+</tr>
+<tr>
+<td>Pension fund</td>
+<td>−$1bn Treasuries, +$1bn deposit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Three consequences.</p>
+<ol>
+<li>The pension fund swapped a bond for cash.</li>
+<li>The bank ends up with new reserves, created by the Fed.</li>
+<li>The Fed's balance sheet grew by $1bn.</li>
+</ol>
+<p>Do that for trillions and the banking system is flooded with reserves. That is exactly why the Fed and the ECB now run a <strong>floor system</strong>, with the market rate stuck to the deposit rate (<a href="../26-the-policy-rate/">episode 26</a>).</p>
+<p>QT goes the other way. When a bond held by the Fed matures, the Treasury repays the Fed. The money leaves the Treasury's account, so the Treasury has to borrow again from private investors, who pay with bank deposits. At the end of the chain, reserves disappear.</p>
+<h2 id="why-it-lowers-long-rates">Why it lowers long rates<a class="headerlink" href="#why-it-lowers-long-rates" title="Permanent link">&para;</a></h2>
+<h3 id="1-the-price-effect">1. The price effect<a class="headerlink" href="#1-the-price-effect" title="Permanent link">&para;</a></h3>
+<p>A huge buyer shows up, bond prices go up, and when a bond's price goes up its yield goes down.</p>
+<p><strong>Example.</strong> A 10-year bond has a <a href="../03-duration/">duration</a> of about 9. If the buying pushes its price up 4%:</p>
+<div class="highlight"><pre><span></span><code>yield drop ≈ 4% / 9 ≈ 0.45%
+</code></pre></div>
+<h3 id="2-less-duration-available-the-scarcity-effect">2. Less duration available (the scarcity effect)<a class="headerlink" href="#2-less-duration-available-the-scarcity-effect" title="Permanent link">&para;</a></h3>
+<p>The central bank takes long bonds out of investors' hands. Those who still need long assets (a life insurer has to cover 30-year liabilities) compete for what is left, so they accept a lower yield. In practice it is the <strong>term premium</strong> that falls, the extra yield demanded for locking money up for a long time.</p>
+<h3 id="3-portfolio-rebalancing">3. Portfolio rebalancing<a class="headerlink" href="#3-portfolio-rebalancing" title="Permanent link">&para;</a></h3>
+<p>The pension fund now holds cash that pays almost nothing. It puts it into corporate bonds or stocks. <a href="../05-credit-spread/">Credit spreads</a> tighten and stocks go up. That is intended, the central bank wants the whole structure of rates to fall, not just government yields.</p>
+<h3 id="4-the-signal">4. The signal<a class="headerlink" href="#4-the-signal" title="Permanent link">&para;</a></h3>
+<p>Buying bonds for years tells the market that policy rates will stay low for a long time. Expected future short rates fall, and so do long rates.</p>
+<h3 id="orders-of-magnitude">Orders of magnitude<a class="headerlink" href="#orders-of-magnitude" title="Permanent link">&para;</a></h3>
+<p>Fed research on the first QE (Gagnon, Raskin, Remache and Sack, 2011) estimates it lowered the US 10-year yield by roughly 0.3% to 1%, mostly through the term premium. Later programmes are estimated to have had smaller effects, because markets already expected them.</p>
+<h2 id="qe-in-numbers">QE in numbers<a class="headerlink" href="#qe-in-numbers" title="Permanent link">&para;</a></h2>
+<h3 id="fed">Fed<a class="headerlink" href="#fed" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Programme</th>
+<th>Dates</th>
+<th>What was bought</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QE1</td>
+<td>Nov 2008 to 2010</td>
+<td>MBS and agency debt, then Treasuries from March 2009 (about $1.75tn in total)</td>
+</tr>
+<tr>
+<td>QE2</td>
+<td>Nov 2010 to June 2011</td>
+<td>$600bn of Treasuries</td>
+</tr>
+<tr>
+<td>QE3</td>
+<td>Sept 2012 to Oct 2014</td>
+<td>No fixed total, $40bn of MBS a month, then an extra $45bn of Treasuries a month</td>
+</tr>
+<tr>
+<td>Covid QE</td>
+<td>March 2020 to March 2022</td>
+<td>Unlimited at first, then $120bn a month</td>
+</tr>
+</tbody>
+</table>
+<p>The Fed's balance sheet went from about $900bn before 2008 to about $4.5tn in 2015, then close to $9tn at the 2022 peak.</p>
+<h3 id="ecb">ECB<a class="headerlink" href="#ecb" title="Permanent link">&para;</a></h3>
+<ul>
+<li>January 2015, launch of the APP (asset purchase programme) with government bond buying, €60bn a month from March 2015.</li>
+<li>March 2020, PEPP (pandemic emergency purchase programme), with the envelope raised to €1.85tn.</li>
+<li>APP reinvestments stopped in July 2023, PEPP reinvestments at the end of 2024.</li>
+</ul>
+<h3 id="bank-of-japan">Bank of Japan<a class="headerlink" href="#bank-of-japan" title="Permanent link">&para;</a></h3>
+<p>The QE pioneer, from 2001. In 2013, QQE (quantitative and qualitative easing). In 2016 it added <strong>yield curve control</strong>, targeting the 10-year yield directly around 0% and buying as much as needed to hold it. It ended up owning more than half of Japanese government debt. It left negative rates and yield curve control in March 2024, with its first rate hike in 17 years.</p>
+<h2 id="qt-in-practice">QT in practice<a class="headerlink" href="#qt-in-practice" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Fed, 2017-2019.</strong> First QT, gradual runoff, stopped in 2019 (see the September 2019 repo episode below).</li>
+<li><strong>Fed, from June 2022.</strong> Passive QT with monthly caps raised to $95bn a month ($60bn Treasuries, $35bn MBS). The Treasury cap was cut to $25bn in June 2024, then to $5bn in April 2025, and the Fed ended balance sheet runoff on 1 December 2025.</li>
+<li><strong>BoE.</strong> The only major central bank running <strong>active</strong> QT, selling gilts on the market from November 2022.</li>
+</ul>
+<p>Why slow down and then stop? Because in a floor system you need enough reserves for the rate to stay at the floor. Take out too many and money markets tighten. That is exactly what happened in 2019.</p>
+<h2 id="when-it-went-wrong">When it went wrong<a class="headerlink" href="#when-it-went-wrong" title="Permanent link">&para;</a></h2>
+<h3 id="1-the-taper-tantrum-2013">1. The taper tantrum, 2013<a class="headerlink" href="#1-the-taper-tantrum-2013" title="Permanent link">&para;</a></h3>
+<p><strong>What happened.</strong> In May 2013, Fed chair Ben Bernanke told Congress the Fed could <strong>slow</strong> its purchases ("tapering") in the coming meetings. He did not talk about stopping, selling, or hiking. The US 10-year yield went from about 1.6% in early May to close to 3% by September. Emerging market currencies and bonds sold off hard (India, Indonesia, Brazil, Turkey and South Africa, nicknamed the "Fragile Five").</p>
+<p><strong>Why.</strong> QE had crushed the term premium and pushed investors into riskier assets, including emerging market debt. Just the signal that the main buyer would slow down was enough for the market to put the term premium back in at once and for money to leave emerging markets. The market reacts to expectations, not to the purchases themselves.</p>
+<p><strong>The lesson.</strong> Exiting QE has to be communicated very slowly and very early. Since then the Fed announces its balance sheet plans months in advance.</p>
+<h3 id="2-the-repo-panic-september-2019">2. The repo panic, September 2019<a class="headerlink" href="#2-the-repo-panic-september-2019" title="Permanent link">&para;</a></h3>
+<p><strong>What happened.</strong> On 17 September 2019, the US overnight repo rate spiked. SOFR printed 5.25% while the fed funds range was 2.00% to 2.25%, and some trades went through around 10% during the day. The effective fed funds rate broke above its range.</p>
+<p><strong>Why.</strong> The first QT had taken reserves from about $2.8tn (2014) down to about $1.4tn. That day, two cash drains landed at the same time. Companies paid their quarterly taxes, and purchases of newly issued Treasuries settled. Both moved cash from banks into the Treasury's account at the Fed. Banks that still had reserves did not want to go below their regulatory and internal buffers, so nobody lent. The system no longer had enough reserves to run as a floor system.</p>
+<p><strong>The response.</strong> The Fed injected cash through repo operations from the next day, then started buying T-bills again (about $60bn a month from October 2019) to rebuild reserves. In 2021 it created a permanent repo facility (the Standing Repo Facility, <a href="../26-the-policy-rate/">episode 26</a>).</p>
+<p><strong>The lesson.</strong> There is a minimum level of reserves, and nobody knows exactly where it is until they hit it. That is why the 2022 QT was slowed and then stopped before getting there.</p>
+<h3 id="3-the-gilt-and-ldi-crisis-uk-september-2022">3. The gilt and LDI crisis, UK, September 2022<a class="headerlink" href="#3-the-gilt-and-ldi-crisis-uk-september-2022" title="Permanent link">&para;</a></h3>
+<p><strong>What happened.</strong> On 23 September 2022, the UK government presented a "mini-budget" with large unfunded tax cuts. Gilts (UK government bonds) sold off violently. The 30-year yield went from about 3.7% to above 5% in a few days. On 28 September the BoE announced it would <strong>buy</strong> long gilts, up to £5bn a day, at the very moment it was about to start <strong>selling</strong> them as part of its QT.</p>
+<p><strong>Why.</strong> Many UK defined-benefit pension funds used <strong>LDI</strong> strategies (liability-driven investment). To hedge their long-term liabilities, they took exposure to long gilts with leverage, through swaps and repo. When rates jump, those positions lose money and counterparties ask for more collateral (margin calls). To raise that cash, funds sell gilts, which pushes rates up further, which triggers new margin calls. A spiral. The BoE stepped in as buyer of last resort to break it.</p>
+<p><strong>The response.</strong> Temporary purchases from 28 September to 14 October 2022, about £19bn in total, and the start of QT sales pushed back to 1 November. Leverage rules for LDI funds were tightened afterwards.</p>
+<p><strong>The lesson.</strong> QT and fiscal policy can collide. And a central bank can end up doing QE and QT at the same time, for two different goals (financial stability on one side, monetary policy on the other).</p>
+<h3 id="4-silicon-valley-bank-march-2023">4. Silicon Valley Bank, March 2023<a class="headerlink" href="#4-silicon-valley-bank-march-2023" title="Permanent link">&para;</a></h3>
+<p><strong>What happened.</strong> SVB, the 16th largest US bank, failed on 10 March 2023 after two days of massive withdrawals.</p>
+<p><strong>Why it is linked to QE.</strong> During Covid QE, bank deposits exploded (the reserves created by the Fed end up as deposits, see the balance sheets above). SVB's deposits roughly tripled between 2019 and 2021. SVB put a large part of that money into long Treasuries and MBS at very low yields. When the Fed raised rates in 2022, the price of those bonds fell (that is <a href="../03-duration/">duration</a>). Unrealised losses reached about $15bn at the end of 2022, roughly the size of its equity. When SVB had to sell some of those securities at a loss to pay out deposits, clients panicked and pulled their money.</p>
+<p><strong>The lesson.</strong> QE creates deposits that banks have to put somewhere. If they go into long bonds without a hedge, the exit from QE and rising rates turn that into a huge rate risk.</p>
+<h3 id="5-central-bank-losses">5. Central bank losses<a class="headerlink" href="#5-central-bank-losses" title="Permanent link">&para;</a></h3>
+<p><strong>What happened.</strong> The Fed started posting losses in September 2022. It books them as a "deferred asset" (to be repaid from future profits), which went above $200bn. The BoE lost money on its QE portfolio, and the UK Treasury covers those losses. The ECB reported a loss for 2023, its first since the early 2000s.</p>
+<p><strong>Why.</strong> During QE the central bank bought bonds paying 1% or 2% and funded them with reserves. When it raises rates to 4% or 5%, it pays that rate on reserves (IORB, <a href="../26-the-policy-rate/">episode 26</a>). It earns 1-2% and pays 4-5%, so it loses money. That is negative carry, like a bank that borrows at a higher rate than it lends.</p>
+<p><strong>Why it is not a bankruptcy.</strong> A central bank cannot go bust in its own currency, since it creates it. The real cost is political and fiscal. It stops sending profits to the government for years, and its losses become a political debate.</p>
+<h2 id="classic-pitfalls">Classic pitfalls<a class="headerlink" href="#classic-pitfalls" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>"QE is printing banknotes."</strong> No. QE creates reserves, which only banks hold. It is not money landing directly in households' pockets. The effect on inflation goes through rates and asset prices.</li>
+<li><strong>"QE finances the government."</strong> Not directly. Purchases happen on the secondary market. But in practice QE makes government borrowing cheaper, hence the debate.</li>
+<li><strong>"QE caused the 2021-2022 inflation."</strong> The 2009-2014 QE did not create inflation. The 2021-2022 inflation came from a mix of shocks (supply chains, energy, large fiscal stimulus, post-Covid demand). The exact role of Covid QE is still debated.</li>
+<li><strong>"QT means selling bonds."</strong> Usually not. The Fed and the ECB run passive QT, they just let bonds mature.</li>
+<li><strong>The stock matters more than the flow.</strong> What weighs on long rates is the total amount of bonds the central bank holds, not this month's pace of buying.</li>
+</ul>
+<h2 id="the-st-interview-angle">The S&amp;T interview angle<a class="headerlink" href="#the-st-interview-angle" title="Permanent link">&para;</a></h2>
+<p><strong>"Explain QE."</strong> The central bank buys bonds on the market with reserves it creates. That pushes prices up and long yields down, mostly by compressing the term premium, pushes investors into riskier assets, and signals that rates will stay low.</p>
+<p><strong>"Difference between cutting the policy rate and doing QE?"</strong> The policy rate works on the front end of the curve, QE on the long end. QE is used when the policy rate is already at zero.</p>
+<p><strong>"What does QT do to the curve?"</strong> It puts duration back into the market, so it pushes the term premium and long rates up. A steepening effect.</p>
+<p><strong>"Why did the Fed stop QT?"</strong> To avoid falling back into scarce reserves like September 2019, when repo spiked.</p>
+<p><strong>"Walk me through the LDI crisis."</strong> A sharp jump in long rates after the mini-budget, margin calls on pension funds' leveraged positions, forced gilt sales, a spiral, and the BoE stepping in as buyer of last resort.</p>
+<p><strong>"Why do central banks lose money?"</strong> They pay the policy rate on the reserves created during QE, while the bonds they bought pay much less.</p>
+<h2 id="links-to-previous-episodes">Links to previous episodes<a class="headerlink" href="#links-to-previous-episodes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../26-the-policy-rate/">The Policy Rate</a>, the tool for the front end, and the floor system QE created.</li>
+<li><a href="../02-the-yield-curve/">The Yield Curve</a>, QE flattens the curve, QT steepens it.</li>
+<li><a href="../03-duration/">Duration</a> and <a href="../04-dv01/">DV01</a>, to size the effect of purchases and SVB's losses.</li>
+<li><a href="../05-credit-spread/">Credit Spread</a>, portfolio rebalancing tightens spreads.</li>
+<li><a href="../11-repo/">Repo</a>, the market that broke in September 2019.</li>
+</ul>
+<div class="ms-takeaway">
+<h2 id="key-takeaway">Key takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h2>
+<ul>
+<li>QE is the central bank buying bonds with reserves it creates. QT is the reverse.</li>
+<li>It is used to push long rates down when the policy rate is already at zero, mostly by crushing the term premium.</li>
+<li>It flooded banks with reserves, which is why we have today's floor system.</li>
+<li>What can go wrong. Just signalling the exit makes rates jump (2013). Too much QT dries up repo (2019). Leveraged positions built on low rates break when rates rise (LDI 2022, SVB 2023). And the central bank loses money when it hikes.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../26-the-policy-rate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 26. The Policy Rate">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                26. The Policy Rate
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../30-pricing-rate-cuts/" class="md-footer__link md-footer__link--next" aria-label="Next: 30. Pricing Rate Cuts">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                30. Pricing Rate Cuts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "search.highlight", "search.suggest", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

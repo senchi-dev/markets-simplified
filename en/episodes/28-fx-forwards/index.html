@@ -1,0 +1,2865 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Detailed notes for the Markets, Simplified LinkedIn series (rates, credit, options)">
+      
+      
+        <meta name="author" content="Marwane Benaddi">
+      
+      
+        <link rel="canonical" href="https://senchi-dev.github.io/markets-simplified/en/episodes/28-fx-forwards/">
+      
+      
+        <link rel="prev" href="../31-inflation-breakevens/">
+      
+      
+        <link rel="next" href="../29-the-carry-trade/">
+      
+      
+        
+          <link rel="alternate" href="../../../episodes/28-fx-forwards/" hreflang="fr">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>28. FX Forwards - Markets, Simplified</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fx-forwards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="Markets, Simplified" class="md-header__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markets, Simplified
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              28. FX Forwards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../episodes/28-fx-forwards/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Markets, Simplified" class="md-nav__button md-logo" aria-label="Markets, Simplified" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg>
+
+    </a>
+    Markets, Simplified
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/senchi-dev/markets-simplified" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rates and bonds
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rates and bonds
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fixed-vs-floating-rate-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fixed vs Floating Rate Debt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-yield-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Yield Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dv01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. DV01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-bond-futures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Bond Futures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Credit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-credit-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Credit Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-credit-default-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Credit Default Swaps (CDS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cds-indices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. CDS Indices (CDX & iTraxx)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-cdo-tranches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. CDO Tranches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-the-big-short/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The Big Short
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swaps and funding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Swaps and funding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-interest-rate-swaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interest Rate Swaps (IRS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-short-selling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Short Selling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Options
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Options (Calls & Puts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-put-call-parity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Put-Call Parity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Greeks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Greeks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-delta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Delta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-gamma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Gamma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-theta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Theta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-vega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volatility
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Volatility
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-implied-volatility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Implied Volatility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-the-gamma-squeeze/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. The Gamma Squeeze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-the-volatility-skew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. The Volatility Skew
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-the-straddle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. The Straddle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-the-strangle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. The Strangle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-the-vertical-spread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. The Vertical Spread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-black-scholes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Black-Scholes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Central banks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Central banks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-the-policy-rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. The Policy Rate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-qe-and-qt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. QE and QT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-pricing-rate-cuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Pricing Rate Cuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-inflation-breakevens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Inflation Breakevens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. FX Forwards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. FX Forwards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-an-exchange-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading an exchange rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading an exchange rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bid-ask-and-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bid, ask and spread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quoting-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quoting conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spot-and-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spot and forward
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example-two-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example, two paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The example, two paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-both-paths-must-give-the-same-amount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why both paths must give the same amount
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What it means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-example-usdjpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second example, USD/JPY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-forward-is-not-a-forecast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The forward is not a forecast
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-uses-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who uses it
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Who uses it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-company-hedging-its-fx-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A company hedging its FX risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fx-swap-a-loan-in-disguise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The FX swap, a loan in disguise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ndfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NDFs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-formula-breaks-a-bit-the-cross-currency-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the formula breaks a bit, the cross-currency basis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where the formula breaks a bit, the cross-currency basis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-a-crisis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In a crisis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-the-carry-trade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. The Carry Trade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-etfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. ETFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-episode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this episode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-an-exchange-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading an exchange rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading an exchange rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bid-ask-and-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bid, ask and spread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quoting-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quoting conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spot-and-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spot and forward
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example-two-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example, two paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The example, two paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-both-paths-must-give-the-same-amount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why both paths must give the same amount
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What it means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-example-usdjpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second example, USD/JPY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-forward-is-not-a-forecast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The forward is not a forecast
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-uses-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who uses it
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Who uses it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-company-hedging-its-fx-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A company hedging its FX risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fx-swap-a-loan-in-disguise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The FX swap, a loan in disguise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ndfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NDFs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-formula-breaks-a-bit-the-cross-currency-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the formula breaks a bit, the cross-currency basis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where the formula breaks a bit, the cross-currency basis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-a-crisis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In a crisis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classic pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-st-interview-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The S&amp;T interview angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-previous-episodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links to previous episodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p class="ms-kicker">Episode 28</p>
+
+<h1 id="fx-forwards">FX <span class="ms-outline">Forwards.</span><a class="headerlink" href="#fx-forwards" title="Permanent link">&para;</a></h1>
+<h2 id="why-this-episode">Why this episode<a class="headerlink" href="#why-this-episode" title="Permanent link">&para;</a></h2>
+<p>The last two episodes (<a href="../26-the-policy-rate/">the policy rate</a>, <a href="../27-qe-and-qt/">QE and QT</a>) explained how each central bank sets the price of money in its own currency. This episode opens the foreign exchange market (FX) through the most direct link with all that. The gap between two countries' interest rates sets the price at which you can exchange those two currencies in the future. Not a forecast, an arbitrage calculation you can redo by hand.</p>
+<h2 id="reading-an-exchange-rate">Reading an exchange rate<a class="headerlink" href="#reading-an-exchange-rate" title="Permanent link">&para;</a></h2>
+<p><strong>EUR/USD = 1.10</strong> means 1 euro costs 1.10 dollars.</p>
+<ul>
+<li>The first currency (EUR) is the <strong>base currency</strong>. You always price 1 unit of the base.</li>
+<li>The second (USD) is the <strong>quote currency</strong>, the one the price is written in.</li>
+<li>If EUR/USD goes to 1.12, you get more dollars for 1 euro, so the euro got stronger and the dollar weaker.</li>
+<li>If EUR/USD goes to 1.08, the euro got weaker.</li>
+</ul>
+<h3 id="the-pip">The pip<a class="headerlink" href="#the-pip" title="Permanent link">&para;</a></h3>
+<p>A <strong>pip</strong> is the 4th decimal, 0.0001. Going from 1.1000 to 1.1050 is a 50 pip move. Exception, for pairs with the yen (USD/JPY = 150.00) the pip is the 2nd decimal, 0.01, because one yen is worth very little.</p>
+<h3 id="bid-ask-and-spread">Bid, ask and spread<a class="headerlink" href="#bid-ask-and-spread" title="Permanent link">&para;</a></h3>
+<p>A bank always quotes two prices, for example EUR/USD 1.1000 / 1.1002.</p>
+<ul>
+<li><strong>Bid</strong> (1.1000), the price at which the bank buys euros for dollars.</li>
+<li><strong>Ask</strong> (1.1002), the price at which it sells them.</li>
+<li>The gap (2 pips) is the bank's margin. On the big pairs it is tiny, on thinly traded currencies it can be tens of pips.</li>
+</ul>
+<h3 id="quoting-conventions">Quoting conventions<a class="headerlink" href="#quoting-conventions" title="Permanent link">&para;</a></h3>
+<p>You do not choose the order of the currencies freely. The market follows a hierarchy. EUR comes before GBP, which comes before AUD, NZD, USD, CAD, CHF, then JPY. Hence EUR/USD, GBP/USD, USD/JPY, USD/CHF. The dollar is the base against most other currencies, but not against the euro or the pound.</p>
+<h3 id="market-size">Market size<a class="headerlink" href="#market-size" title="Permanent link">&para;</a></h3>
+<p>FX is the largest financial market in the world. The BIS triennial survey (the BIS is the central banks' bank) measured about $7.5tn traded <strong>per day</strong> in April 2022, about half of it in FX swaps (see below). The dollar is on one side of roughly 9 trades out of 10.</p>
+<h2 id="spot-and-forward">Spot and forward<a class="headerlink" href="#spot-and-forward" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Spot.</strong> You exchange today, at today's rate. In practice settlement happens 2 business days later (T+2), with a few exceptions like USD/CAD (T+1).</li>
+<li><strong>Forward.</strong> You agree today on a rate, but the exchange happens later, for example in 1 year. Nothing changes hands before that date. The rate is locked.</li>
+</ul>
+<h2 id="the-question">The question<a class="headerlink" href="#the-question" title="Permanent link">&para;</a></h2>
+<p>EUR/USD is at 1.10 today. What rate should a bank give you to exchange in 1 year?</p>
+<p>You might think it guesses where the euro will be in a year. It does not guess anything. It only uses the spot rate and the interest rate in each currency.</p>
+<h2 id="the-example-two-paths">The example, two paths<a class="headerlink" href="#the-example-two-paths" title="Permanent link">&para;</a></h2>
+<p>You have <strong>€100</strong> and want dollars in 1 year.</p>
+<ul>
+<li>Interest rate on euros, <strong>2%</strong> a year.</li>
+<li>Interest rate on dollars, <strong>4%</strong> a year.</li>
+<li>Spot, <strong>1.10</strong>.</li>
+</ul>
+<p><strong>Path 1, exchange now, then save in dollars.</strong></p>
+<div class="highlight"><pre><span></span><code>€100 × 1.10 = $110 today
+$110 saved at 4% for 1 year -&gt; 110 × 1.04 = $114.40
+</code></pre></div>
+<p>In a year you have <strong>$114.40</strong>.</p>
+<p><strong>Path 2, save in euros, then exchange in a year.</strong></p>
+<div class="highlight"><pre><span></span><code>€100 saved at 2% for 1 year -&gt; 100 × 1.02 = €102
+In a year you exchange €102 at the forward rate F -&gt; 102 × F dollars
+</code></pre></div>
+<h3 id="why-both-paths-must-give-the-same-amount">Why both paths must give the same amount<a class="headerlink" href="#why-both-paths-must-give-the-same-amount" title="Permanent link">&para;</a></h3>
+<p>Both paths have zero risk. From day one you know exactly what you will get.</p>
+<p>If path 1 gave more dollars than path 2, everyone would do path 1 and the reverse of path 2 at the same time (borrow dollars, exchange into euros, save in euros, sell them back at the forward), and make money with no risk. Banks would lose every time. So the forward rate is set so that both paths give exactly the same result.</p>
+<div class="highlight"><pre><span></span><code>102 × F = 114.40
+F = 114.40 / 102 = 1.1216
+</code></pre></div>
+<p>The 1-year forward is <strong>1.1216</strong>.</p>
+<h2 id="the-formula">The formula<a class="headerlink" href="#the-formula" title="Permanent link">&para;</a></h2>
+<p>It is the same calculation written in general. It is called <strong>covered interest parity</strong> (CIP).</p>
+<div class="highlight"><pre><span></span><code>Forward = Spot × (1 + quote currency rate × T) / (1 + base currency rate × T)
+</code></pre></div>
+<ul>
+<li><strong>T</strong> = time in years (6 months = 0.5, 3 months = 0.25).</li>
+<li>The <strong>quote</strong> currency's rate (the 2nd one) goes on <strong>top</strong>. The <strong>base</strong> currency's rate (the 1st one) goes at the <strong>bottom</strong>.</li>
+</ul>
+<p>For EUR/USD, the dollar is the quote currency.</p>
+<div class="highlight"><pre><span></span><code>1 year   : 1.10 × (1 + 0.04) / (1 + 0.02)             = 1.1216
+6 months : 1.10 × (1 + 0.04 × 0.5) / (1 + 0.02 × 0.5) = 1.10 × 1.02 / 1.01 = 1.1109
+</code></pre></div>
+<p>For more than a year you use compounded rates, (1 + r)^T instead of (1 + r × T). And on a desk you count days exactly, with each currency's convention (actual days / 360 for the dollar and the euro, actual days / 365 for the pound).</p>
+<h2 id="what-it-means">What it means<a class="headerlink" href="#what-it-means" title="Permanent link">&para;</a></h2>
+<p>In a year you get 1.1216 dollars per euro instead of 1.10. On the forward, the euro is worth a bit more and the dollar a bit less.</p>
+<p>The rule, <strong>the currency with the higher interest rate is cheaper on the forward</strong>. It trades at a <strong>forward discount</strong>. The other trades at a <strong>forward premium</strong>.</p>
+<p>Why? Dollars pay 2% more than euros. If the forward did not adjust, you would switch your euros into dollars, earn the extra 2%, and lock in your way back into euros with the forward, with no risk at all. The forward takes exactly that 2% back. No free lunch.</p>
+<h3 id="forward-points">Forward points<a class="headerlink" href="#forward-points" title="Permanent link">&para;</a></h3>
+<p>The gap between forward and spot is called the <strong>forward points</strong>.</p>
+<div class="highlight"><pre><span></span><code>1.1216 − 1.10 = 0.0216 = 216 pips
+</code></pre></div>
+<p>On a screen, banks do not quote the full forward. They quote the spot and the points (+216). The full forward (1.1216) is called the <strong>outright</strong>.</p>
+<p>Quick approximation, the points are roughly spot × rate gap × T. Here 1.10 × 2% × 1 = 0.022, so about 220 pips.</p>
+<h2 id="second-example-usdjpy">Second example, USD/JPY<a class="headerlink" href="#second-example-usdjpy" title="Permanent link">&para;</a></h2>
+<p>Spot USD/JPY = 150. Dollar rate 4%, yen rate 0.5%. Here the dollar is the <strong>base</strong> currency, so its rate goes at the bottom.</p>
+<div class="highlight"><pre><span></span><code>1-year forward = 150 × (1 + 0.005) / (1 + 0.04) = 150 × 1.005 / 1.04 = 144.95
+</code></pre></div>
+<p>The forward is <strong>lower</strong> than spot. That makes sense, the base currency (the dollar) has the higher rate, so it is the one trading at a discount. Forward points, 144.95 − 150 = −5.05 yen, so −505 pips (a yen pip is 0.01).</p>
+<p>Same rule, the currency that pays more is cheaper in the future. Only the way it shows up in the number changes, depending on whether it is the base or the quote.</p>
+<h2 id="the-forward-is-not-a-forecast">The forward is not a forecast<a class="headerlink" href="#the-forward-is-not-a-forecast" title="Permanent link">&para;</a></h2>
+<p>This is the most important and most misunderstood point. The 1.1216 forward does <strong>not</strong> say the market thinks the euro will rise. It is just the result of the arbitrage. If the rates were the other way around (euro at 4%, dollar at 2%), the forward would be below spot, whatever the market thinks of the euro.</p>
+<p>The "forecast" version of the formula exists, it is <strong>uncovered interest parity</strong> (UIP). It would say the higher-yielding currency will weaken by the rate gap. In practice it does not work. Studies show high-yielding currencies tend not to weaken that much, and sometimes even rise (the "forward premium puzzle", Fama, 1984). That is what makes the carry trade possible, borrowing in the low-rate currency and investing in the high-rate one, while keeping the currency risk. It often earns a little, and sometimes loses a lot at once.</p>
+<p><strong>An example of that, August 2024.</strong> For years, investors borrowed in yen (rates near zero) to invest in dollars and elsewhere. At the end of July 2024 the Bank of Japan raised rates and the yen rallied. USD/JPY went from about 162 in early July to about 142 on 5 August. Those who had borrowed in yen had to pay back more, they all cut their positions at the same time, which pushed the yen up further. On 5 August 2024 the Nikkei lost about 12% in one session.</p>
+<p>Key difference. The forward (CIP) is <strong>covered</strong>, so there is no currency risk, and arbitrage makes it hold. The carry trade (UIP) is <strong>not covered</strong>, so you take the currency risk, and nothing forces the formula to hold.</p>
+<h2 id="who-uses-it">Who uses it<a class="headerlink" href="#who-uses-it" title="Permanent link">&para;</a></h2>
+<h3 id="a-company-hedging-its-fx-risk">A company hedging its FX risk<a class="headerlink" href="#a-company-hedging-its-fx-risk" title="Permanent link">&para;</a></h3>
+<p>A French company will receive $10m in 1 year. Its costs are in euros. It does not know what the dollar will be worth in a year, so it sells its dollars forward today, at 1.1216.</p>
+<div class="highlight"><pre><span></span><code>$10,000,000 / 1.1216 = €8,915,835
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>EUR/USD in 1 year</th>
+<th>Unhedged</th>
+<th>With the forward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.00</td>
+<td>€10,000,000</td>
+<td>€8,915,835</td>
+</tr>
+<tr>
+<td>1.1216</td>
+<td>€8,915,835</td>
+<td>€8,915,835</td>
+</tr>
+<tr>
+<td>1.25</td>
+<td>€8,000,000</td>
+<td>€8,915,835</td>
+</tr>
+</tbody>
+</table>
+<p>With the forward it knows its number to the cent. It gives up the good case (1.00) to protect itself from the bad case (1.25). It is the same trade-off as an <a href="../10-interest-rate-swaps/">interest rate swap</a>, you swap uncertainty for a fixed number.</p>
+<h3 id="the-fx-swap-a-loan-in-disguise">The FX swap, a loan in disguise<a class="headerlink" href="#the-fx-swap-a-loan-in-disguise" title="Permanent link">&para;</a></h3>
+<p>An <strong>FX swap</strong> combines two operations in one trade. An exchange at spot today, and the reverse exchange at the forward later.</p>
+<p><strong>Example.</strong> A European bank needs dollars for 3 months. It gives €100m and receives $110m today at the 1.10 spot. In 3 months it gives the dollars back and gets its €100m back, at the forward rate fixed today.</p>
+<p>In practice it is a <strong>dollar loan secured by euros</strong>. Exactly like a <a href="../11-repo/">repo</a>, where you borrow cash against securities as collateral, except that here the collateral is another currency. The cost of the loan is hidden in the forward points.</p>
+<p>It is the most traded FX product in the world. Non-US banks, Japanese insurers buying US bonds, European asset managers, they all use it to fund or hedge themselves in dollars.</p>
+<h3 id="ndfs">NDFs<a class="headerlink" href="#ndfs" title="Permanent link">&para;</a></h3>
+<p>Some currencies cannot be exchanged freely abroad (capital controls). For those, people use <strong>NDFs</strong> (non-deliverable forwards). Nobody delivers the currency. At maturity you compare the forward rate with the actual rate on the day and only settle the difference, in dollars. It is common for currencies like the Brazilian real, the Indian rupee or the Korean won.</p>
+<h2 id="where-the-formula-breaks-a-bit-the-cross-currency-basis">Where the formula breaks a bit, the cross-currency basis<a class="headerlink" href="#where-the-formula-breaks-a-bit-the-cross-currency-basis" title="Permanent link">&para;</a></h2>
+<p>Before 2008 the formula held almost perfectly. Since then there has been a persistent gap.</p>
+<p><strong>Example.</strong> With the rates from the example, the theoretical 3-month forward is:</p>
+<div class="highlight"><pre><span></span><code>1.10 × (1 + 0.04 × 0.25) / (1 + 0.02 × 0.25) = 1.10 × 1.01 / 1.005 = 1.1055
+</code></pre></div>
+<p>Say the market actually quotes 1.1062. What dollar rate does that imply?</p>
+<div class="highlight"><pre><span></span><code>1 + implied dollar rate × 0.25 = 1.1062 × 1.005 / 1.10 = 1.0107
+implied dollar rate ≈ 4.27%
+</code></pre></div>
+<p>Borrowing dollars through the FX swap costs 4.27%, while the "normal" dollar rate is 4.00%. That gap of about 27 basis points is the <strong>cross-currency basis</strong>. By convention it is written as negative (here about −27 bps) when borrowing dollars through FX costs more than the formula says.</p>
+<h3 id="why-it-exists">Why it exists<a class="headerlink" href="#why-it-exists" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Balance sheet cost.</strong> To arbitrage the gap, a bank has to borrow and lend, so grow its balance sheet. Since 2008, capital rules (the leverage ratio in particular) make that expensive. The arbitrage still exists but it is no longer free, so it does not fully close the gap.</li>
+<li><strong>Demand for dollars.</strong> Many non-US players need dollars (banks, Japanese insurers hedging their US bonds, companies with dollar debt). They are willing to pay a bit more.</li>
+<li><strong>Quarter-ends and year-ends.</strong> Banks shrink their balance sheets before reporting dates. The basis often widens around those dates.</li>
+</ul>
+<h3 id="in-a-crisis">In a crisis<a class="headerlink" href="#in-a-crisis" title="Permanent link">&para;</a></h3>
+<p>The basis blows out when everyone wants dollars at the same time. In 2008, and again in March 2020. In March 2020 the Fed expanded its <strong>swap lines</strong>, FX swaps between the Fed and other central banks (ECB, BoJ, BoE, SNB...). It lends them dollars against their currency, and they lend the dollars on to their banks. The basis narrowed in the following weeks. The Fed acts as the dollar lender of last resort for the whole world.</p>
+<h2 id="classic-pitfalls">Classic pitfalls<a class="headerlink" href="#classic-pitfalls" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>"The forward is what the market expects."</strong> No. It is the result of the spot + rates arbitrage. See UIP and CIP above.</li>
+<li><strong>Putting the rates on the wrong side.</strong> The quote currency's rate (the 2nd) on top, the base currency's rate (the 1st) at the bottom. Quick check, the currency with the higher rate must be cheaper on the forward.</li>
+<li><strong>Mixing up points and outright.</strong> "+216" are points, added to spot. The outright is 1.1216.</li>
+<li><strong>Forgetting the yen pip.</strong> On USD/JPY, 1 pip = 0.01, not 0.0001.</li>
+<li><strong>Simple vs compound interest.</strong> Under a year, (1 + r × T). Over a year, (1 + r)^T. And day count conventions differ by currency.</li>
+<li><strong>Thinking a hedge makes money.</strong> It removes uncertainty, it does not create profit. If the dollar rises, the hedged company "loses" compared with the unhedged one.</li>
+</ul>
+<h2 id="the-st-interview-angle">The S&amp;T interview angle<a class="headerlink" href="#the-st-interview-angle" title="Permanent link">&para;</a></h2>
+<p><strong>"EUR/USD is at 1.10, euro rate 2%, dollar rate 4%. 1-year forward?"</strong> 1.10 × 1.04 / 1.02 = 1.1216. The dollar has the higher rate, so it is cheaper on the forward, so the EUR/USD forward is above spot.</p>
+<p><strong>"Why does the higher-rate currency trade at a forward discount?"</strong> Otherwise you could borrow in the low-rate currency, invest in the high-rate one, and hedge the way back with the forward for a risk-free profit. The forward cancels out the rate gap.</p>
+<p><strong>"Is the forward a forecast?"</strong> No, it is an arbitrage price. The forecast would be UIP, which does not hold in the data, and that is why the carry trade exists.</p>
+<p><strong>"What is an FX swap and what is it for?"</strong> A spot and an opposite forward in the same trade. Economically, a secured loan in another currency. It is used to fund in dollars or to hedge a foreign-currency portfolio.</p>
+<p><strong>"What is the cross-currency basis?"</strong> The gap between the dollar borrowing cost implied by FX swaps and the direct dollar rate. It exists because arbitrage costs balance sheet since 2008 and because demand for dollars outside the US is strong. It widens in crises and at quarter-ends.</p>
+<p><strong>"How did the Fed calm the dollar market in March 2020?"</strong> By expanding its swap lines with other central banks, which lent the dollars on to their banks.</p>
+<h2 id="links-to-previous-episodes">Links to previous episodes<a class="headerlink" href="#links-to-previous-episodes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../26-the-policy-rate/">The Policy Rate</a>, policy rates set the rates that go into the formula.</li>
+<li><a href="../27-qe-and-qt/">QE and QT</a>, low rates and then the fast 2022 hikes that moved rate gaps and forwards.</li>
+<li><a href="../10-interest-rate-swaps/">Interest Rate Swaps</a>, the same logic of swapping uncertainty for a fixed number.</li>
+<li><a href="../11-repo/">Repo</a>, an FX swap is a secured loan, like a repo with a currency as collateral.</li>
+<li><a href="../14-put-call-parity/">Put-Call Parity</a>, the same arbitrage reasoning, two risk-free paths must cost the same.</li>
+</ul>
+<div class="ms-takeaway">
+<h2 id="key-takeaway">Key takeaway<a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h2>
+<ul>
+<li>EUR/USD = 1.10 means 1 euro costs 1.10 dollars. Base first, quote second.</li>
+<li>The forward is not a forecast. It is set so that exchanging now and saving, or saving and exchanging later, give the same result.</li>
+<li><code>Forward = Spot × (1 + quote rate × T) / (1 + base rate × T)</code>.</li>
+<li>The currency with the higher interest rate is cheaper on the forward. The forward cancels out the rate gap.</li>
+<li>Companies use it to lock in their exchange rate, banks use FX swaps to borrow dollars.</li>
+<li>Since 2008, borrowing dollars through FX costs a bit more than the formula says (the cross-currency basis), and the gap blows out in a crisis.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../31-inflation-breakevens/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 31. Inflation Breakevens">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                31. Inflation Breakevens
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../29-the-carry-trade/" class="md-footer__link md-footer__link--next" aria-label="Next: 29. The Carry Trade">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                29. The Carry Trade
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.footer", "navigation.top", "search.highlight", "search.suggest", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
